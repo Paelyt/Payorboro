@@ -1,0 +1,10 @@
+--------------------------
+2018-10-23 @ 18:43:53
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-10-23 @ 19:24:31
+--------------------------
+Message: Server cannot set content type after HTTP headers have been sent.
+

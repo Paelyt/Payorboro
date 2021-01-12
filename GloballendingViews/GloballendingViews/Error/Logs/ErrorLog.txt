@@ -1,0 +1,5 @@
+--------------------------
+2018-11-28 @ 10:18:35
+--------------------------
+Message: CustomerDetails :<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soap:Body><querySubscriberInfoResponse xmlns="http://service.haiwai.sms.star.com"><out xmlns="http://service.haiwai.sms.star.com"><balance xmlns="http://haiwai.model.sms.star.com">5.33</balance><canOrderProductInfos xmlns="http://haiwai.model.sms.star.com" /><customerName xmlns="http://haiwai.model.sms.star.com">MR. ERNEST</customerName><orderedProductsDesc xmlns="http://haiwai.model.sms.star.com">Classic Bouquet;</orderedProductsDesc><returnCode xmlns="http://haiwai.model.sms.star.com">0</returnCode><returnMsg xmlns="http://haiwai.model.sms.star.com">成功</returnMsg><smartCardCode xmlns="http://haiwai.model.sms.star.com">02146533082</smartCardCode><subscriberStatus xmlns="http://haiwai.model.sms.star.com">2</subscriberStatus><transactionlNo xmlns="http://haiwai.model.sms.star.com">420020181128101829TyC7l</transactionlNo></out></querySubscriberInfoResponse></soap:Body></soap:Envelope>
+

@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.haiwai.sms.star.com" xmlns:haiw="http://haiwai.model.sms.star.com">
+
+  <soapenv:Header>
+    <CALLCENTER_USERNAME xmlns="NAMESPACE_STARSMS">StarCallCenter</CALLCENTER_USERNAME>
+    <CALLCENTER_PASSWORD xmlns="NAMESPACE_STARSMS">StarCallCenter</CALLCENTER_PASSWORD>
+  </soapenv:Header>
+  <soapenv:Body>
+    <ser:customerPay2>
+      <ser:in0>
+        <!--Optional:-->
+       <haiw:customerTel>$Phone</haiw:customerTel>
+        <!--Optional:-->
+        <haiw:fee>$fee</haiw:fee>
+        <!--Optional:-->
+        <haiw:payerID>$payerID</haiw:payerID>
+        <!--Optional:-->
+        <haiw:payerPwd>$payerPwd</haiw:payerPwd>
+        <!--Optional:-->
+        <haiw:smartCardCode>$smartCardCode</haiw:smartCardCode>
+        <!--Optional:-->
+        <haiw:transactionNo>$transactionNo</haiw:transactionNo>
+        <!--Optional:-->
+        <haiw:transferTime>$transferTime</haiw:transferTime>
+      </ser:in0>
+    </ser:customerPay2>
+  </soapenv:Body>
+</soapenv:Envelope>

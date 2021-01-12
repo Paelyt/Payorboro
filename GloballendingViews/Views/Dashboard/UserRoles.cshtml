@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "CreateRole";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+@model GloballendingViews.ViewModels.LoanViewModel
+@*<h2>All Transaction</h2>*@
+<link rel="stylesheet" type="text/css" href=@Url.Content("/content/assets/themes/admin/color-schemes/default.css")>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/content/assets/themes/components/default.css")>
+
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/Datatable/bootstrap.min.css")>
+<script src=@Url.Content("/Styles/Datatable/jquery.min.js")></script>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/Datatable/jquery.dataTables.min.css")>
+<script src=@Url.Content("/Styles/Datatable/jquery.dataTables.min.js")></script>
+<script src=@Url.Content("/Styles/Datatable/bootstrap.min.js")></script>
+@*<link rel="stylesheet" href=@Url.Content("/Styles/Datatable/jquery-ui.css") />*@
+
+<div class="forms">
+    @if (TempData["message"] == null)
+    {
+        <div class=""></div>
+    }
+    else
+    {
+        <div id="Msg" class="alert alert-success">
+            <h4> @TempData["message"] </h4>
+        </div>
+    }
+    <h2 class="title1"></h2>
+    <div class="form-grids row widget-shadow" data-example-id="basic-forms" style="margin-left:50px;">
+        <div class="form-title">
+            <h4>Assign Role</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="form-body">
+                    @using (Html.BeginForm("UserRoles", "Dashboard", FormMethod.Post, new { id = "signup" }))
+                    {
+                        <form>
+
+                            <div class="form-group">
+                                @*<input type="text" id="txt" name="txt" readonly="readonly" />*@
+                                @*<input type="text" style="display:none;" name="id" class="form-control1" value="" id="exampleInputEmail1" placeholder="ID">*@
+                                <label for="exampleInputEmail1">User Email</label>
+                                @*@Html.DropDownList("id", new SelectList(ViewBag.listUser, "id", "Email"), new { @onchange = "selectedtext(this); this.form.submit();" })*@
+
+
+                                @Html.DropDownList("id", new SelectList(ViewBag.listUser, "id", "Email"), new { @onchange = "CallChangefunc(this.value)" })
+                             </div>
+
+                            <div class="form-group">
+
+                                <label for="exampleInputEmail1">Assigned Role List :</label>
+                               @foreach (var Assigned in Model.GetAssignRoless)
+                        {
+
+
+                                <input id="@Assigned.userid" type="checkbox" name="userid" value="@Assigned.userid" checked="checked" disabled="disabled" />
+                                <label for="@Assigned.userid">
+                                    @Assigned.Rolename
+                                </label>
+                               }
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">UnAssigned Role List :</label>
+                                @foreach (var unAssigned in Model.UnGetAssignRoless)
+                        {
+                                    <input id="@unAssigned.Roleid" type="checkbox" name="roleid" value="@unAssigned.Roleid" />
+                                    <label for="@unAssigned.Roleid">
+                                        @unAssigned.Rolename
+                                    </label>
+                                }
+                            </div>
+
+                            <button type="submit" class="btn btn-default">Create User n Roles</button>
+
+                        </form>
+                    }
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+        <div class="tables">
+            @*<h2 class="title1">Tables</h2>*@
+            <div class="table-responsive bs-example widget-shadow" style="margin-left:40px;">
+                <h4>User Roles</h4>
+                @{int i = 0;}
+                <table id="myTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="row">No</th>
+                            @*<th>userid</th>
+                <th>Role ID</th>*@
+                            <th>Role Name</th>
+                            <th>Email</th>
+                            @*<th>ID</th>*@
+                            @*<th>Edit</th>*@
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var UserRole in ViewBag.Data)
+                        {
+                            <tr>
+                                <td scope="row">@(++i)</td>
+                                @*<td>@UserRole.userid</td>
+                    <td>@UserRole.roleid</td>*@
+                                <td>@UserRole.rolename</td>
+                                <td>@UserRole.email</td>
+                                @*<td>@UserRole.id</td>*@
+                                @* <td>
+                    <a onclick="return confirm('Are You Sure ?')" href="@Url.Action("Delete","Loan", new { id = UserRole.userid  })">Delete</a>
+
+                                                <a onclick="return confirm('Are You Want To Edit ?')" href="@Url.Action("Edit","Loan", new { id = UserRole.userid  })"> Edit</a>
+                                            </td>*@
+
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                </div>
+        </div>
+    </div>
+
+</div>
+@* This is For Updating my users *@
+<script>
+function CallChangefunc(val)
+{
+    window.location.href = "/Dashboard/UserRoles?value=" + val;
+}
+</script>
+
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/DatePicker/lightpick.css")>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src=@Url.Content("/Styles/DatePicker/lightpick.js")></script>
+<script>
+    var picker = new Lightpick({ field: document.getElementById('datepicker') });
+    var picker = new Lightpick({ field: document.getElementById('datepickers') });
+</script>
+
+

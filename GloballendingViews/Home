@@ -1,0 +1,75 @@
+--------------------------
+2018-11-17 @ 21:02:41
+--------------------------
+Message: The remote name could not be resolved: 'portal.bulksmsnigeria.net'
+
+--------------------------
+2018-11-18 @ 19:16:18
+--------------------------
+Message: The remote name could not be resolved: 'portal.bulksmsnigeria.net'
+
+--------------------------
+2018-11-18 @ 19:27:58
+--------------------------
+Message: The remote name could not be resolved: 'portal.bulksmsnigeria.net'
+
+--------------------------
+2018-11-18 @ 21:43:00
+--------------------------
+Message: The remote name could not be resolved: 'portal.bulksmsnigeria.net'
+
+--------------------------
+2018-11-19 @ 06:58:17
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-19 @ 07:28:15
+--------------------------
+Message: resetLink: http://localhost:3346/Home/ResetPassword?value=tK_ZLNQYLCH3RHTMD9OBMLW5TPKFJLUUFRRMUN4RYV0UXW2G9AAOLVTOUKW3032
+
+--------------------------
+2018-11-19 @ 07:29:11
+--------------------------
+Message: Body:<!DOCTYPE html>
+<html>
+<head>
+    <title>:: Paytrx | Email</title>
+</head>
+<body style="font-family:calibri; color:#666;">
+    <div style="margin:0 auto; padding:2%;">
+        <h4 style="font-style: italic;"><span>Hello</span> <span> </span><span>,</span></h4>
+        <p style="text-align: justify">
+            http://localhost:3346/Home/ResetPassword?value=tK_ZLNQYLCH3RHTMD9OBMLW5TPKFJLUUFRRMUN4RYV0UXW2G9AAOLVTOUKW3032<br /><br /> If you did not perform a password reset, please contact our support team here: <a href="mailto:info@paelyt.com">info@paelyt.com</a>.
+        </p>
+        <div style="margin-top:40px;margin-bottom:20px;min-height:1px;background:#e5e5e5;"></div>
+        <p style="font-style: italic; color:#0199e6;">Paytrx, Collections & Settlements made EASY</p>
+        <p>
+            <img src="https://www.paytrx.com/images/mailfooterImg.png" alt="Paytrx">
+        </p>
+        <p style="margin:0;font-size:12px;line-height:14px;text-align:center;">
+            © Paytrx 2017
+            <br> Collections & Settlements made EASY
+            <br>
+        </p>
+    </div>
+</body>
+</html>
+
+--------------------------
+2018-11-19 @ 07:29:12
+--------------------------
+Executing Assembly: System.Net.Mail.SmtpClient, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Executing Method: Send
+Executing Line Number: 0
+Exeption Message: Failure sending mail.
+Inner Exeption: System.Net.WebException: The remote name could not be resolved: 'smtp.gmail.com'
+   at System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   at System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   at System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   at System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   at System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+

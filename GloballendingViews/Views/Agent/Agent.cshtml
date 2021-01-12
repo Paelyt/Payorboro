@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Agent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model GloballendingViews.ViewModels.LoanViewModel
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+</script>
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Agent</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Create Agent</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section-padding contact-us-padding">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="">
+
+                    @if (TempData["message"] == null)
+                    {
+                        <div class=""></div>
+                    }
+                    else
+                    {
+                        <div id="Msg" class="alert alert-success">
+                            <h3> @TempData["message"] </h3>
+                        </div>
+                    }
+                </div>
+                @using (Html.BeginForm("CreateAgent", "Agent", FormMethod.Post))
+                {
+
+
+                    <form action="" method="post">
+                        <div class="row list-input">
+
+
+                            <div class="col-md-6 mr0">
+                                <div class="single-get-touch">
+
+                                    @Html.TextBoxFor(model => model.AgentModel.FirstName, new { placeholder = "First Name", required = "required" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 mr0">
+                                <div class="single-get-touch">
+                                    @Html.TextBoxFor(model => model.AgentModel.LastName, new { placeholder = "Last Name", required = "required" })
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 mr0">
+                                <div class="single-get-touch">
+
+                                    @Html.TextBoxFor(model => model.AgentModel.PhoneNumber, new { placeholder = "Phone Number", type = "text", @Value = "1.5%", required = "required" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 mr0">
+                                <div class="single-get-touch">
+                                    @Html.TextBoxFor(model => model.AgentModel.ContactEmail, new { placeholder = "Email Address", type = "text", required = "required", id = "Email", @class = "datepicker" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mr0">
+                                <div class="single-get-touch">
+                                    @Html.TextBoxFor(model => model.AccountsModel.pasword, new { placeholder = "Password", type = "password", required = "required" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mr0">
+                                <div class="single-get-touch">
+                                    @Html.TextBoxFor(model => model.AccountsModel.confirmPassword, new { placeholder = "Password", type = "password", required = "required" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mr0">
+                                <div class="single-get-touch">
+
+                                    @Html.TextAreaFor(model => model.AgentModel.ContactAddress, new { placeholder = "Contact Address *", type = "text", cols = "55", rows = "5", required = "required" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mr0">
+                                <div class="single-get-touch">
+                                    @Html.TextBoxFor(model => model.AgentModel.NextOfKinName, new { placeholder = "Next Of Kin Name", required = "required" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mr0">
+                                <div class="single-get-touch">
+                                    @Html.TextBoxFor(model => model.AgentModel.NextOfKinPhoneNumber, new { placeholder = "Next Of Kin PhoneNumber", required = "required" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mr0">
+                                <div class="single-get-touch">
+                                    @Html.TextAreaFor(model => model.AgentModel.NextOfKinAddress, new { placeholder = "Next Of Kin Address", type = "text", cols = "55", rows = "5", required = "required" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="single-get-touch">
+                                    <input type="submit" name="submit" class="btn btn-default btn-sm" value="Create Agent" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+    <script>
+  $(function() {
+    $( ".datepicker" ).datepicker();
+  });
+
+
+    </script>
+</section>
+

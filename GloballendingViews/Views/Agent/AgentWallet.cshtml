@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "AgentWallet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Customer</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Customer</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row list-input">
+    <div class="col-md-3 mr0" style="margin:auto;">
+        <div class="single-get-touch">
+            <a href="@Url.Action("CreditWallet","Agent")">credit Wallet</a>
+            <table cellpadding="2" cellspacing="2" border="1">
+                <tr>
+
+                    <th>Agent Wallet Balance</th>
+                   
+
+
+
+                </tr>
+                <tr>
+                    @if (TempData["paymentmsg"] == null)
+                    {
+                        <div class=""></div>
+                    }
+                    else
+                    {
+                        <h3> @TempData["paymentmsg"] </h3>
+                    }
+                    <th>@if (TempData["Balance"] == null)
+                    {
+                        <div class=""></div>
+                    }
+                    else
+                    {
+                        <div id="Msg" class="alert alert-success">
+                            <h3> @TempData["Balance"] </h3>
+                        </div>
+                    }</th>
+
+
+
+
+                </tr>
+              
+                    @*foreach (var CustomerService in Model)
+                    {
+                        <tr>
+                                <td>@CustomerService.CustomerIDLabel</td>
+                            <td>@CustomerService.CustomerID</td>
+                            
+
+                            <td>
+                                
+                                <a onclick="return confirm('Are You Want To Fund Wallet ?')" href="@Url.Action("EditCustomerService", "Customer", new { id = CustomerService.ID })"> Fund Wallet
+                            </td>
+
+
+                        </tr>
+                    }*@
+              
+            </table>
+
+           
+        </div>
+    </div>
+
+
+</div>
+

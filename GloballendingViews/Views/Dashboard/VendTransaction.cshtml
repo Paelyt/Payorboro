@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "AllTransaction";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+
+@*<h2>All Transaction</h2>*@
+<link rel="stylesheet" type="text/css" href=@Url.Content("/content/assets/themes/admin/color-schemes/default.css")>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/content/assets/themes/components/default.css")>
+
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/Datatable/bootstrap.min.css")>
+<script src=@Url.Content("/Styles/Datatable/jquery.min.js")></script>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/Datatable/jquery.dataTables.min.css")>
+<script src=@Url.Content("/Styles/Datatable/jquery.dataTables.min.js")></script>
+<script src=@Url.Content("/Styles/Datatable/bootstrap.min.js")></script>
+@*<link rel="stylesheet" href=@Url.Content("/Styles/Datatable/jquery-ui.css") />*@
+
+
+<div class="form-grids row widget-shadow " style="margin-left:40px;" data-example-id="basic-forms">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-12">
+            <div class="form-body">
+                @using (Html.BeginForm("VendTransaction", "Dashboard", FormMethod.Post, new { id = "" }))
+            {
+            <form>
+               
+                <div class="col-md-3">
+                    <label for="exampleInputEmail1">Date From</label>
+
+                    <div class=''>
+                        <input type='text' autocomplete="off" value="" class="form-control" name="txtDatePicker1" id="datepicker" />
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="exampleInputEmail1">Date To</label>
+
+                    <div class=''>
+                        <input name="txtDatePicker" autocomplete="off" type='text' value="" class="form-control" id="datepickers" />
+
+                    </div>
+                </div>
+
+                <br />
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-default">Search</button>
+                </div>
+
+            </form>
+            }
+                <div class="col-md-3">
+                    <a href=@Url.Action("Exportoexcel", "Dashboard", new { }) class="">
+                        <button type="submit" class="btn btn-default" onchange="CallChangefunc()">Export To Excel</button>
+                    </a>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="col-md-3"></div>
+
+    </div>
+
+    <div class="tables">
+        @*<h2 class="title1">Tables</h2>*@
+        <div class="table-responsive bs-example widget-shadow" id="no-more-tables" style="margin-left:40px;">
+            <h4>My Transactions</h4>
+            @{int i = 0;}
+            <table id="myTable" class="col-md-12 table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                    <tr>
+                        <th>No</th>
+                        <th>Transaction Date</th>
+                        <th>Reference Number</th>
+                        <th>Customer ID</th>
+                        <th>Marchant Name</th>
+                        <th>Customer Name</th>
+                        <th>Amount</th>
+                        <th>Transaction Type</th>
+                        <th>Conv Fee</th>
+                        <th>Bank Share</th>
+                        <th>Gpl Share</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Data == null)
+                    {
+                        <h2>No Record Found</h2>
+                    }
+                    else
+                    {
+
+                        foreach (var Report in ViewBag.Data)
+                        {
+                            <tr>
+
+                                <th scope="row">@(++i)</th>
+                                <td>@Report.TrasactionDate</td>
+                                <td>@Report.ReferenceNum</td>
+                                <td>@Report.CustomerId</td>
+                                <td>@Report.MarchantName</td>
+                                <td>@Report.CustomerName</td>
+                                <td>@Report.Amount</td>
+                                <td>@Report.TransactionType</td>
+                                <td>@Report.Convfee</td>
+                                <td>@Report.bankshare</td>
+                                <td>@Report.GplShare</td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').dataTable();
+
+        });
+       
+    </script>
+<script>
+function CallChangefunc(val)
+{
+    window.location.href = "/Dashboard/Exportoexcel";
+}
+</script>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/DatePicker/lightpick.css")>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src=@Url.Content("/Styles/DatePicker/lightpick.js")></script>
+<script>
+    var picker = new Lightpick({ field: document.getElementById('datepicker') });
+    var picker = new Lightpick({ field: document.getElementById('datepickers') });
+</script>

@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewBag.Title = "GetPaymentResponse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model GloballendingViews.Classes.Power.Receipt
+<!DOCTYPE html>
+<!-- html -->
+<html>
+<!-- head -->
+<head>
+    <title>Boro</title>
+    <link href=@Url.Content("/Styles/css/bootstrap.css") rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
+    <link rel="stylesheet" href=@Url.Content("/Style/scss/bootstrap-select.css")><!-- bootstrap-select-CSS -->
+    <link href=@Url.Content("/Styles/css/font-awesome.css") rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type='text/javascript' src=@Url.Content("/Styles/js/jquery-2.2.3.min.js")></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href=@Url.Content("/Styles/css/style.css") rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <!--meta data-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Online Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--//meta data-->
+    <!-- online fonts -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- /online fonts -->
+
+</head>
+<!-- //head -->
+<!-- body -->
+<body>
+    <!--header-->
+    <!--//-->
+    <!-- innerbanner -->
+    <div class="agileits-inner-banner-TV">
+
+    </div>
+    <!-- //innerbanner -->
+    <!-- breadcrumbs -->
+    <div class="w3layouts-breadcrumbs text-center">
+        <div class="container">
+            <span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>ELECTRICITY</span></span>
+        </div>
+    </div>
+    <!-- //breadcrumbs -->
+    <!--Vertical Tab-->
+    <div class="categories-section main-grid-border" id="mobilew3layouts">
+        <div class="container">
+            <div class="category-list">
+                <div id="parentVerticalTab">
+                    <div class="agileits-tab_nav">
+                        <ul class="resp-tabs-list hor_1">
+                            <li><i class="icon fa fa-television" aria-hidden="false"></i>@TempData["BillerName"]</li>
+                            <li>
+                                <p>
+
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="resp-tabs-container hor_1">
+                        <!-- tab1 -->
+                        <div>
+                            <div class="tabs-box">
+
+
+
+                                <div class="clearfix"> </div>
+                                <div class="tab-grids">
+                                    <div class="tab-grid">
+@using (Html.BeginForm("Requery", "Power", FormMethod.Post, new { id = "paytrx_form" }))
+{
+                                        <div style=" padding-left:5%; padding-top:1%;padding-right:5%;padding-bottom:1%; border solid 1px #ddd;">
+
+                                            @if (TempData["ErrMsg"] != null)
+                                            {
+                                                <div id="Msg" class="alert alert-danger">
+                                                    @TempData["ErrMsg"]
+                                                </div>
+                                            }
+                                            <div class="">
+                                                <p style="text-align: center; padding-bottom:20px;"><img src="@TempData["message"]" class="w3ls-mobile" width="200" alt="" data-pin-nopin="true"></p>
+                                                <p>
+                                                    <span style="font-weight: 800; color: #555;">Customer Name:</span>
+                                                    <span>@Model.customerName</span>
+                                                </p>
+                                                <p>
+                                                    <span style="font-weight: 800; color: #555;">Meter Number:</span>
+                                                    <span>@Model.CustomerID</span>
+                                                </p>
+        <p>
+        <span style="font-weight: 800; color: #555;">Reference Number:</span>
+        <span>@Model.transactionlNo</span>
+        </p>
+        <p><span style="font-weight: 800; color: #555;">Customer Address:</span> <span>@Model.ServiceDetails</span></p>
+           <p><span style="font-weight: 800; color: #555;">Phone:</span><span>@Model.Phone</span></p>
+
+                                                <p><span style="font-weight: 800; color: #555;">Meter Token:</span><span>@Model.ServiceValueDetails2</span></p>
+
+                                                <p><span style="font-weight: 800; color: #555;">Meter Unit:</span><span>@Model.ServiceValueDetails1</span></p>
+
+                                                <p>
+                                                    <span style="font-weight: 800; color: #555;">BonusToken Unit:</span><span>@ViewBag.BonusToken</span>
+                                                </p>
+
+
+                                                <p><span style="font-weight: 800; color: #555;">Amount:</span>   <span> @Model.Amount</span></p>
+
+                                                <p><span style="font-weight: 800; color: #555;">Convenience fee:</span>  <span>@Model.ConvFee</span></p>
+
+                                                <p>
+                                                    <span style="font-weight: 800; color: #555;">Total Amount:</span>  <span>@TempData["Amount"]</span>
+                                                </p>
+
+                                               
+                                 @if (Model.ServiceValueDetails2 == null)
+                                                    {
+                                                        <p>
+          <input type="submit" class="submit buttonFB" value="Requery" />
+                                                        </p>
+                                                    }
+                                              
+                                            </div>
+                                           @{
+                                               string groupName = "";
+                                            }
+                                            <button onclick="javascript: printDiv('parentVerticalTab')" class="btn btn-primary btn-md"><i class="fa fa-print"></i> Print Receipt</button>
+                                            <br>
+                                            <div style="text-align:center;">
+                                                <span><img src=@Url.Content("HomeStyle/images/receiptLogo.png") class="w3ls-mobile" alt="" data-pin-nopin="true"></span>
+
+                                                <p style="color:#007fff; margin-top:-5px;">© Pay or Borrow 2018, motto.</p>
+                                            </div>
+
+                                        </div>
+                                               }
+                                    </div>
+
+                                </div>
+
+                                <div class="clearfix"> </div>
+                            </div>
+                            <!-- script -->
+                            <script>
+			$(document).ready(function() {
+				$("#tab2").hide();
+				$("#tab3").hide();
+				$("#tab4").hide();
+				$(".tabs-menu a").click(function(event){
+					event.preventDefault();
+					var tab=$(this).attr("href");
+					$(".tab-grid").not(tab).css("display","none");
+					$(tab).fadeIn("slow");
+				});
+			});
+                            </script>
+
+                        </div>
+                        <!-- /tab1 -->
+
+
+
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Plug-in Initialisation-->
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+    </script>
+    <!-- //Categories -->
+    <!--footer-->
+    <!--//footer-->
+    <!-- for bootstrap working -->
+    <script src=@Url.Content("/Styles/js/bootstrap.js")></script>
+    <!-- //for bootstrap working --><!-- Responsive-slider -->
+    <!-- Banner-slider -->
+    <script src=@Url.Content("/Styles/js/responsiveslides.min.js")></script>
+    <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+    </script>
+    <!-- //Banner-slider -->
+    <!-- //Responsive-slider -->
+    <!-- Bootstrap select option script -->
+    <script src=@Url.Content("/Styles/js/bootstrap-select.js")></script>
+
+    <!-- //Bootstrap select option script -->
+    <!-- easy-responsive-tabs -->
+    <link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/css/easy-responsive-tabs.css ") />
+    <script src=@Url.Content("/Styles/js/easyResponsiveTabs.js")></script>
+    <!-- //easy-responsive-tabs -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+				$(document).ready(function() {
+
+
+					$().UItoTop({ easingType: 'easeOutQuart' });
+
+					});
+    </script>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src=@Url.Content("/Styles/js/move-top.js")></script>
+    <script type="text/javascript" src=@Url.Content("/Styles/js/easing.js")></script>
+    <script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- //here ends scrolling icon -->
+
+    <script>
+	function printDiv(divID)
+{
+
+	var divElements = document.getElementById(divID).innerHTML;
+	var oldPage = document.body.innerHTML;
+
+
+	document.body.innerHTML = "<html><head><title></title></head><body>" +
+	divElements + "</body>";
+	window.print();
+
+	document.body.innerHTML = oldPage;
+
+
+}
+    </script>
+</body>
+<!-- //body -->
+</html>
+<!-- //html -->

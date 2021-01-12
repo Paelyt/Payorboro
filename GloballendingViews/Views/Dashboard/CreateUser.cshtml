@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "CreateUser";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+@model GloballendingViews.ViewModels.LoanViewModel
+@*<h2>CreateUser</h2>*@
+
+<link rel="stylesheet" type="text/css" href=@Url.Content("/content/assets/themes/admin/color-schemes/default.css")>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/content/assets/themes/components/default.css")>
+
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/Datatable/bootstrap.min.css")>
+<script src=@Url.Content("/Styles/Datatable/jquery.min.js")></script>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/Datatable/jquery.dataTables.min.css")>
+<script src=@Url.Content("/Styles/Datatable/jquery.dataTables.min.js")></script>
+<script src=@Url.Content("/Styles/Datatable/bootstrap.min.js")></script>
+
+<div class="forms">
+    @if (TempData["message"] == null)
+    {
+        <div class=""></div>
+    }
+    else
+    {
+        <div id="Msg" class="alert alert-success">
+            <h4> @TempData["message"] </h4>
+        </div>
+    }
+    <h2 class="title1"></h2>
+    <div class="form-grids row widget-shadow" data-example-id="basic-forms" style="margin-left:50px;">
+        <div class="form-title">
+            <h4>Create User</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="form-body">
+                    @using (Html.BeginForm("CreateUser", "Dashboard", FormMethod.Post, new { id = "signup" }))
+                    {
+                        <form>
+
+                           
+               <div class="form-group">
+       <input type="text" style="display:none;" name="id" class="form-control1" value="" id="exampleInputEmail1" placeholder="ID">
+<label for="exampleInputEmail1">Firstname</label>
+                                        @Html.TextBoxFor(model => model.AccountsModel.firstname, new { placeholder = "First Name *", @class = "form-control1", type = "text", required = "required", })
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Lastname</label>
+                                        @Html.TextBoxFor(model => model.AccountsModel.lastname, new { placeholder = "Last Name *", @class = "form-control1", type = "text", required = "required", })
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        @Html.TextBoxFor(model => model.AccountsModel.Email, new { placeholder = "Email *", @class = "form-control1", type = "text", required = "required" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Phone</label>
+                 @Html.TextBoxFor(model => model.AccountsModel.Phone, new { placeholder = "Phone *", @class = "form-control1", type = "text", required = "required" })
+                                    </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Password</label>
+                                @Html.TextBoxFor(model => model.AccountsModel.pasword, new { placeholder = "Password *", @class = "form-control1", type = "password", required = "required" })
+                            </div>
+                            
+
+
+                              
+                                <button type="submit" class="btn btn-default">Create User</button>
+                           
+                        </form>
+                    }
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+        <div class="tables">
+            @*<h2 class="title1">Tables</h2>*@
+            <div class="table-responsive bs-example widget-shadow" style="margin-left:40px;">
+                <h4>My Transactions</h4>
+                @{int i = 0;}
+                <table id="myTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Date</th>
+                            <th>Edit User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.Data == null)
+                        {
+                            <h2>No Record Found</h2>
+                        }
+                        else
+                        {
+
+                            foreach (var user in ViewBag.Data)
+                            {
+                                <tr>
+
+                                    <td scope="row">@(++i)</td>
+                                    <td>@user.firstname</td>
+                                    <td>@user.lastname</td>                           <td>@user.Phone</td>
+                                    <td>@user.Email</td>
+                                    <td>@user.Date</td>
+                                   
+                                    <td>
+                                        <a onclick="return confirm('Are You Sure?')" href="@Url.Action("EditUser", "Dashboard", new { id = @user.id })">Edit User</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+@* This is For Updating my users *@
+
+
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
+
+

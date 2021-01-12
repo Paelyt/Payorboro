@@ -1,0 +1,720 @@
+﻿.page-banner {
+    background: url('image-resources/banner.jpg') no-repeat center center fixed,linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: url('image-resources/banner.jpg') no-repeat center center fixed,-webkit-linear-gradient(to right, #4e4376, #2b5876); /* Chrome 10-25, Safari 5.1-6 */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+}
+
+.center-block {
+    float: none !important;
+}
+
+.logo-preview .logo-wrap {
+    height: 50px;
+    overflow: hidden;
+}
+
+    .logo-preview .logo-wrap img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+
+.pin {
+    text-align: center;
+}
+
+.fluidMedia {
+    /*position: relative;*/
+    padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+    .fluidMedia iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: none;
+        overflow-x: hidden;
+        overflow-Y: hidden;
+    }
+
+
+#card_number {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fff;
+    background-image: url('images/cardimages/card.png');
+    -ms-background-size: 60px 34px;
+    background-size: 60px 34px;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: 2px 2px;
+    height: 40px;
+    display: block;
+    width: 100%;
+    padding: 0 0 0 4.5em;
+    line-height: 1.42857143;
+    color: #212121;
+    border: 1px solid #e4e4e4;
+    outline: none;
+    text-indent: 15px;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    box-shadow: none;
+    border-width: 1px;
+    border-radius: 2px;
+    cursor: text;
+}
+
+    #card_number.mastercard {
+        background-image: url('images/cardimages/mastercard.png');
+    }
+
+    #card_number.visa {
+        background-image: url('images/cardimages/visa.png');
+    }
+
+    #card_number.verve {
+        background-image: url('images/cardimages/verve.png');
+    }
+
+    #card_number.visa_electron {
+        background-position: 2px -183px,520px -15px;
+    }
+
+
+
+    #card_number.maestro {
+        background-position: 2px -267px,520px -15px;
+    }
+
+    #card_number.discover {
+        background-position: 2px -309px,520px -15px;
+    }
+
+
+
+    #card_number.valid.visa {
+        border: 0.8px solid #7cfc00;
+    }
+
+    #card_number.valid.visa_electron {
+        border: 0.8px solid #7cfc00;
+    }
+
+    #card_number.valid.mastercard {
+        border: 0.8px solid #7cfc00;
+    }
+
+    #card_number.valid.maestro {
+        border: 0.8px solid #7cfc00;
+    }
+
+    #card_number.valid.discover {
+        border: 0.8px solid #7cfc00;
+    }
+
+    #card_number.valid.verve {
+        border: 0.8px solid #7cfc00;
+    }
+
+
+.pinpads:after {
+    clear: both;
+}
+
+.greydout {
+    -webkit-opacity: 0.12;
+    -moz-opacity: 0.12;
+    opacity: 0.12;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    /*cursor: none !important;*/
+    margin-right: .7em;
+    margin-top: 5px;
+}
+
+    .greydout:hover {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        opacity: 1;
+    }
+
+#greydoutlogo {
+    padding: 0 2em 1em 2em;
+}
+
+.pin_box[readonly] {
+    background-color: #fff;
+    cursor: text;
+    margin-bottom: 0;
+}
+
+.pinpads .btn_pin:last-child {
+    width: 13.7931%;
+    float: right;
+    margin-right: 0;
+}
+
+.pinpads .btn_pin {
+    background: #FAFAFA;
+    height: 33px;
+    margin-bottom: 9px;
+    border-radius: 4px;
+    color: #444;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    width: 13.7931%;
+    float: left;
+    margin-right: 3.44828%;
+    border: 1px solid #959595;
+}
+
+.pinpads:after, .pinpads:before {
+    content: " ";
+    display: table;
+}
+
+.pinpads-wrapper {
+    padding: 6px 5px 5px;
+    margin-top: 2px;
+    border-radius: 0 0 3px 3px;
+    display: block;
+}
+
+.Paytrx-payment-status {
+    margin: 10px auto 70px;
+    max-width: 400px;
+}
+
+    .Paytrx-payment-status img {
+        max-width: 100px;
+    }
+
+    .Paytrx-payment-status h3 {
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        /*color: #44b669;*/
+        font-weight: 700;
+    }
+
+    .Paytrx-payment-status h5 {
+        color: #777;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.3;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+.Paytrx-container {
+    /*background-color: #fafafa;*/
+    font-size: 16px;
+    background: linear-gradient(to right, rgb(142, 158, 171), rgb(238, 242, 243));
+}
+
+    .Paytrx-container .Paytrx-wrapper {
+        width: 420px;
+        max-width: 100%;
+        margin: 50px auto 0;
+        position: relative;
+    }
+
+    .Paytrx-container .Paytrx-engine-wrapper {
+        width: 400px;
+        margin: 30px auto;
+        position: relative;
+    }
+
+    .Paytrx-container .Paytrx-page {
+        background: white;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        /*border: solid 1px #DBDBDB;*/
+        width: 100%;
+    }
+
+        .Paytrx-container .Paytrx-page .Paytrx-header {
+            display: inline-block;
+            width: 100%;
+            padding: 30px 0 0;
+            text-align: center;
+        }
+
+            .Paytrx-container .Paytrx-page .Paytrx-header .Paytrx-company-logo {
+                float: none !important;
+                margin: 0 auto;
+                position: relative !important;
+                display: block !important;
+                margin-bottom: 25px !important;
+                border-radius: 100px !important;
+                /*height: 80px;*/
+                width: 80px;
+            }
+
+            .Paytrx-container .Paytrx-page .Paytrx-header .Paytrx-page-description {
+                font-size: 14px;
+            }
+
+            .Paytrx-container .Paytrx-page .Paytrx-header .Paytrx-plan-info, .Paytrx-container .Paytrx-page .Paytrx-header .Paytrx-page-description {
+                margin-top: 20px;
+                background: #fafafa;
+                padding: 15px;
+                border: solid 1px whitesmoke;
+                border-width: 1px 0;
+            }
+
+        .Paytrx-container .Paytrx-page .Paytrx-body {
+            display: inline-block;
+            padding: 30px;
+            width: 100%;
+        }
+
+.Paytrx-payment-form {
+    display: block;
+    margin-top: 0em;
+}
+
+.Paytrx-container .Paytrx-message {
+    font-size: 13px;
+    border-radius: 2px;
+    display: none;
+    margin-bottom: 20px;
+    text-align: center;
+    clear: both;
+}
+
+.Paytrx-container .form-group {
+    margin-bottom: 10px;
+}
+
+.Paytrx-container .Paytrx-page .submit-group .btn {
+    border-radius: 3px;
+    float: left;
+    height: 42px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Paytrx-container .btn, .Paytrx-container .btn:active {
+    outline: none;
+}
+
+.Paytrx-container .Paytrx-footer {
+    width: 400px;
+    max-width: 100%;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin: 20px auto;
+    text-align: center;
+    opacity: .7;
+    clear: both;
+}
+
+.Paytrx-rounded-border {
+    color: #333;
+    border: solid 1px #333;
+    text-decoration: none;
+    padding: 3px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.Paytrx-container .Paytrx-color-bar {
+    /*background: url(image-resources/full-bg/full-bg-2.jpg) top center;*/
+    height: 3px;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+    top: 0;
+}
+
+.Paytrx-container .form-control {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    border-color: #DADADA;
+    height: 42px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    font-size: 13.5px;
+    padding-left: 15px;
+}
+
+.Paytrx-container.Paytrx-pop {
+    background: 0 0;
+    z-index: 9999;
+}
+
+.Paytrx-container .Paytrx-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.73);
+    z-index: -1;
+}
+
+.Paytrx-container .Paytrx-close {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #FFF;
+    width: 17px;
+    height: 17px;
+    background-color: #DEDEDE;
+    text-align: center;
+    line-height: 1.2em;
+    border-radius: 50%;
+    font-weight: 700;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.2);
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    z-index: 100;
+}
+
+.Paytrx-container .Paytrx-loader {
+    margin: 30px 0;
+    display: none;
+    text-align: center;
+    color: #fff;
+}
+
+.Paytrx-container .Paytrx-box .Paytrx-info {
+    font-size: 14px;
+    color: #777;
+    padding: 0 7px 15px;
+    display: block;
+    width: 100%;
+    clear: both;
+    position: relative;
+}
+
+    .Paytrx-container .Paytrx-box .Paytrx-info > div {
+        text-align: center;
+        margin-bottom: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.4em;
+    }
+
+    .Paytrx-container .Paytrx-box .Paytrx-info .amount {
+        color: #44b669;
+        font-weight: 700;
+    }
+
+.Paytrx-container .Paytrx-box .Paytrx-info {
+    font-size: 14px;
+    color: #777;
+    padding: 0 7px 15px;
+    display: block;
+    width: 100%;
+    clear: both;
+    position: relative;
+}
+
+.Paytrx-container.Paytrx-full.Paytrx-pop .Paytrx-box {
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.2);
+    border: 0;
+}
+
+.Paytrx-container .Paytrx-box .company-logo {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.Paytrx-container .Paytrx-box {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #dbdbdb;
+}
+
+    .Paytrx-container .Paytrx-box .Paytrx-info.no-switch {
+        /*border-bottom: solid 1px #e5e5e5;*/
+    }
+
+    .Paytrx-container .Paytrx-box .Paytrx-info {
+        font-size: 14px;
+        color: #777;
+        padding: 0 7px 15px;
+        display: block;
+        width: 100%;
+        clear: both;
+        position: relative;
+    }
+
+.Paytrx-container .Paytrx-switch {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    float: left;
+    background: #fff;
+}
+
+.Paytrx-container .Paytrx-box .Paytrx-form {
+    border-radius: 0 0 4px 4px;
+    /*background: rgba(245,245,245,.37);*/
+    position: relative;
+    z-index: 2;
+    clear: both;
+    /*min-height: 340px;*/
+}
+
+    .Paytrx-container .Paytrx-box .Paytrx-form label.floating-label {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -13px;
+        z-index: 2;
+        border-radius: 3px 3px 0 0;
+        background: #fff;
+        border: 1px solid #e4e4e4;
+        border-width: 1px 1px 0;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+
+    .Paytrx-container .Paytrx-box .Paytrx-form .btn-pay {
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 3px;
+        background: #44b669;
+        background: -moz-linear-gradient(top,#44b669 0,#40ad57 100%);
+        background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#44b669),color-stop(100%,#40ad57));
+        background: -webkit-linear-gradient(top,#44b669 0,#40ad57 100%);
+        background: -o-linear-gradient(top,#44b669 0,#40ad57 100%);
+        background: -ms-linear-gradient(top,#44b669 0,#40ad57 100%);
+        background: linear-gradient(to bottom,#44b669 0,#40ad57 100%);
+        border: 1px solid #49A861;
+        text-shadow: 1px 1px 1px rgba(0,0,0,.1);
+        outline: 0;
+        color: #fff;
+        margin-top: 10px;
+    }
+
+    .Paytrx-container .Paytrx-box .Paytrx-form > div {
+        padding: 20px 15px 15px;
+    }
+
+    .Paytrx-container .Paytrx-box .Paytrx-form .form-group {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .Paytrx-container .Paytrx-box .Paytrx-form .form-group {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .Paytrx-container .Paytrx-box .Paytrx-form input.has-floating-label {
+        position: relative;
+        margin-top: 13px;
+    }
+
+.Paytrx-container.Paytrx-full.Paytrx-pop.test-mode .Paytrx-wrapper {
+    top: 10%;
+}
+
+.Paytrx-container input, .Paytrx-container input:focus, .Paytrx-container select, .Paytrx-container select:focus, .Paytrx-container textarea, .Paytrx-container textarea:focus {
+    font-size: 15px;
+}
+
+.Paytrx-container .Paytrx-box .Paytrx-form label {
+    font-size: 11px;
+    font-weight: 400;
+    color: #777;
+    letter-spacing: .5px;
+    padding: 5px 10px 0 15px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.Paytrx-engine-label {
+    padding: 5px 10px 0 0 !important;
+}
+
+.Paytrx-container.Paytrx-pop .Paytrx-wrapper {
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+@media (min-width:768px) {
+    .modal-dialog {
+        width: 900px;
+        margin: 20px auto;
+    }
+
+    .details-modal-dialog {
+        width: 500px;
+        margin: 20px auto;
+    }
+
+    .secondary-modal-dialog {
+        width: 640px;
+        margin: 20px auto;
+    }
+
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    }
+
+    .modal-sm {
+        width: 300px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .Paytrx-container .Paytrx-engine-wrapper {
+        width: 300px;
+        margin: 30px auto;
+        position: relative;
+    }
+
+    .Paytrx-container .input-group-addon {
+        display: block;
+        background: none;
+        border: none !important;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    .Paytrx-container .input-group-addon {
+        font-size: 10px;
+        border-color: #DADADA;
+        border-radius: 2px 0 0 2px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        /*background: #f9f9f9;*/
+    }
+
+    .Paytrx-container .Paytrx-wrapper {
+        margin: 0 auto;
+        -ms-border-radius: 0;
+        border-radius: 0;
+    }
+
+    .Paytrx-container .form-group {
+        float: left;
+        width: 100%;
+    }
+
+    .Paytrx-container .input-group-addon span {
+        width: auto;
+        text-align: left;
+        display: block;
+    }
+
+    .Paytrx-container .w-60 {
+        width: 58%;
+        margin-right: 2%;
+    }
+
+    .Paytrx-container .w-40 {
+        width: 40%;
+    }
+
+    .Paytrx-container .submit-group {
+        margin-top: 10px;
+        display: inline-block;
+        width: 100%;
+    }
+
+    #page-content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .Paytrx-container .input-group {
+        display: inline-block;
+        width: 100%;
+        clear: both;
+    }
+}
+
+@media (min-width: 768px) {
+
+
+
+
+    .modal-normal {
+        width: 25%;
+    }
+
+    .body {
+        display: inline-block;
+        padding: 30px;
+        width: 100%;
+    }
+
+    #payment-form {
+        padding-top: 10px;
+        margin-top: 10vh;
+    }
+
+    .input-group-addon span {
+        width: 100px;
+        display: inline-block;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+.control-label {
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.input-group-addon {
+    font-size: 10px;
+    border-color: #DADADA;
+    border-radius: 2px 0 0 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #f9f9f9;
+}
+
+.input-group-addon, .input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+
+
+.page-description {
+    margin-top: 20px;
+    background: #fafafa;
+    padding: 15px;
+    border: solid 1px whitesmoke;
+    border-width: 1px 0;
+    font-size: 14px;
+    text-align: center;
+}

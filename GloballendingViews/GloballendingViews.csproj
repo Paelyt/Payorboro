@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F91E9EE0-3309-4635-A50E-AA0C5928482B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GloballendingViews</RootNamespace>
+    <AssemblyName>GloballendingViews</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataAccess\bin\Debug\DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\..\..\..\UvlotApplication\DataAccessLayerT\bin\Debug\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PowerNowApis\packages\System.Security.Cryptography.X509Certificates.4.1.0\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\StartimeController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Classes\Data.cs" />
+    <Compile Include="Classes\Internetserviceprovider.cs" />
+    <Compile Include="Classes\MyUtility.cs" />
+    <Compile Include="Classes\NotificationService.cs" />
+    <Compile Include="Classes\PaymentManager.cs" />
+    <Compile Include="Classes\Paytv.cs" />
+    <Compile Include="Classes\Power.cs" />
+    <Compile Include="Classes\ReportUtilities.cs" />
+    <Compile Include="Classes\servicelm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\SslValidatot.cs" />
+    <Compile Include="Classes\Utility.cs" />
+    <Compile Include="Classes\WebLog.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AgentController.cs" />
+    <Compile Include="Controllers\AirtimeController.cs" />
+    <Compile Include="Controllers\CakesController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\FlavourController.cs" />
+    <Compile Include="Controllers\IspController.cs" />
+    <Compile Include="Controllers\PaytvController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\LoanBankController.cs" />
+    <Compile Include="Controllers\LoanController.cs" />
+    <Compile Include="Controllers\LoanEmployeeController.cs" />
+    <Compile Include="Controllers\LoanSocialController.cs" />
+    <Compile Include="Controllers\LogginHelper.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PowerController.cs" />
+    <Compile Include="Controllers\ServiceListController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVariables.cs" />
+    <Compile Include="HelperClasses\CryptographyManager.cs" />
+    <Compile Include="HelperClasses\Enum.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AgentModel.cs" />
+    <Compile Include="Models\CustomerClient.cs" />
+    <Compile Include="Models\LoanEmployeeModel.cs" />
+    <Compile Include="Models\LoanBankModel.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\GLobalClient.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\AccountsModel.cs" />
+    <Compile Include="Models\Power.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\LoanSocialModel.cs" />
+    <Compile Include="Models\LoanModel.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\LoanBankViewModel.cs" />
+    <Compile Include="ViewModels\LoanViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\fontawesome-all.min.css" />
+    <Content Include="Content\css\hover.css" />
+    <Content Include="Content\css\magnific-popup.css" />
+    <Content Include="Content\css\menumaker.css" />
+    <Content Include="Content\css\nice-select.css" />
+    <Content Include="Content\css\owl.carousel.min.css" />
+    <Content Include="Content\css\owl.video.play.html" />
+    <Content Include="Content\css\Pe-icon-7-stroke.css" />
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\second-home.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\third-home.css" />
+    <Content Include="Content\img\about.jpg" />
+    <Content Include="Content\img\articale-1.jpg" />
+    <Content Include="Content\img\articale-2.jpg" />
+    <Content Include="Content\img\articale-3.jpg" />
+    <Content Include="Content\img\articale-sm-2.jpg" />
+    <Content Include="Content\img\articale-sm.jpg" />
+    <Content Include="Content\img\brand-1.png" />
+    <Content Include="Content\img\brand-10.png" />
+    <Content Include="Content\img\brand-2.png" />
+    <Content Include="Content\img\brand-3.png" />
+    <Content Include="Content\img\brand-4.png" />
+    <Content Include="Content\img\brand-5.png" />
+    <Content Include="Content\img\brand-6.png" />
+    <Content Include="Content\img\brand-7.png" />
+    <Content Include="Content\img\brand-8.png" />
+    <Content Include="Content\img\brand-9.png" />
+    <Content Include="Content\img\bripcase.png" />
+    <Content Include="Content\img\calculate.jpg" />
+    <Content Include="Content\img\call-2.png" />
+    <Content Include="Content\img\call.png" />
+    <Content Include="Content\img\camera.png" />
+    <Content Include="Content\img\car.png" />
+    <Content Include="Content\img\card.png" />
+    <Content Include="Content\img\ceo.png" />
+    <Content Include="Content\img\choose-1.jpg" />
+    <Content Include="Content\img\choose-2.jpg" />
+    <Content Include="Content\img\choose-3.jpg" />
+    <Content Include="Content\img\clock.png" />
+    <Content Include="Content\img\document.png" />
+    <Content Include="Content\img\dollar.png" />
+    <Content Include="Content\img\dreambg.jpg" />
+    <Content Include="Content\img\edom.png" />
+    <Content Include="Content\img\education.png" />
+    <Content Include="Content\img\envalope-2.png" />
+    <Content Include="Content\img\envalope-3.png" />
+    <Content Include="Content\img\envalope.png" />
+    <Content Include="Content\img\favicon.png" />
+    <Content Include="Content\img\footer-logo.png" />
+    <Content Include="Content\img\get-bg.jpg" />
+    <Content Include="Content\img\get-money.png" />
+    <Content Include="Content\img\handshake.png" />
+    <Content Include="Content\img\home.png" />
+    <Content Include="Content\img\how-it-work-1.jpg" />
+    <Content Include="Content\img\how-it-work-3.jpg" />
+    <Content Include="Content\img\how-it-work-4.jpg" />
+    <Content Include="Content\img\how-it-work.jpg" />
+    <Content Include="Content\img\icon-1.png" />
+    <Content Include="Content\img\icon-2.png" />
+    <Content Include="Content\img\icon-3.png" />
+    <Content Include="Content\img\icon-4.png" />
+    <Content Include="Content\img\large-blog-1.jpg" />
+    <Content Include="Content\img\large-blog-2.jpg" />
+    <Content Include="Content\img\large-blog-3.jpg" />
+    <Content Include="Content\img\large-blog-4.jpg" />
+    <Content Include="Content\img\large-blog-5.jpg" />
+    <Content Include="Content\img\logo-2.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\map-pin-2.png" />
+    <Content Include="Content\img\map-pin.png" />
+    <Content Include="Content\img\map.png" />
+    <Content Include="Content\img\money.png" />
+    <Content Include="Content\img\pade.png" />
+    <Content Include="Content\img\page-header.jpg" />
+    <Content Include="Content\img\portfolio-1.jpg" />
+    <Content Include="Content\img\portfolio-10.jpg" />
+    <Content Include="Content\img\portfolio-11.jpg" />
+    <Content Include="Content\img\portfolio-2.jpg" />
+    <Content Include="Content\img\portfolio-3.jpg" />
+    <Content Include="Content\img\portfolio-4.jpg" />
+    <Content Include="Content\img\portfolio-5.jpg" />
+    <Content Include="Content\img\portfolio-6.jpg" />
+    <Content Include="Content\img\portfolio-7.jpg" />
+    <Content Include="Content\img\portfolio-8.jpg" />
+    <Content Include="Content\img\portfolio-9.jpg" />
+    <Content Include="Content\img\post-2.jpg" />
+    <Content Include="Content\img\post-3.jpg" />
+    <Content Include="Content\img\post.jpg" />
+    <Content Include="Content\img\scall.png" />
+    <Content Include="Content\img\senvelope.png" />
+    <Content Include="Content\img\services-1.png" />
+    <Content Include="Content\img\services-car.jpg" />
+    <Content Include="Content\img\services-education.jpg" />
+    <Content Include="Content\img\services-home.jpg" />
+    <Content Include="Content\img\services-lg.jpg" />
+    <Content Include="Content\img\shap.png" />
+    <Content Include="Content\img\sign.png" />
+    <Content Include="Content\img\single-services.jpg" />
+    <Content Include="Content\img\slider-1.jpg" />
+    <Content Include="Content\img\slider-2.jpg" />
+    <Content Include="Content\img\stouch.png" />
+    <Content Include="Content\img\team-1.jpg" />
+    <Content Include="Content\img\team-2.jpg" />
+    <Content Include="Content\img\team-3.jpg" />
+    <Content Include="Content\img\team-4.jpg" />
+    <Content Include="Content\img\team-5.jpg" />
+    <Content Include="Content\img\team-6.jpg" />
+    <Content Include="Content\img\team-7.jpg" />
+    <Content Include="Content\img\team-8.jpg" />
+    <Content Include="Content\img\testimonial-1.jpg" />
+    <Content Include="Content\img\testimonial-2.jpg" />
+    <Content Include="Content\img\testimonial.jpg" />
+    <Content Include="Content\img\user.png" />
+    <Content Include="Content\img\vision-1.png" />
+    <Content Include="Content\img\vision-2.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\paginate\index.html" />
+    <Content Include="Content\paginate\jquery.paginate.css" />
+    <Content Include="Content\paginate\jquery.paginate.js" />
+    <Content Include="Content\paginate\jquery.paginate.min.css" />
+    <Content Include="Content\paginate\jquery.paginate.min.js" />
+    <Content Include="DashboardStyle\css\MyTable.css" />
+    <Content Include="DashboardStyle\css\style.css" />
+    <Content Include="DashboardStyle\css\styleFeb26.css" />
+    <Content Include="EmailNotifications\PasswordChangeEmailNotification.html" />
+    <Content Include="EmailNotifications\ResetPasswordEmailNotification.html" />
+    <Content Include="EmailNotifications\EnquiryEmailNotification.html" />
+    <Content Include="EmailNotifications\WelcomeEmailNotification.html" />
+    <Content Include="Error\Logs\ErrorLog.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="fonts\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="fonts\fonts\Pe-icon-7-strokebb1d.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="HomeStyle\css\bootstrap.css" />
+    <Content Include="HomeStyle\css\font-awesome.css" />
+    <Content Include="HomeStyle\css\style.css" />
+    <Content Include="HomeStyle\css\style22.css" />
+    <Content Include="HomeStyle\fonts\fontawesome-webfont.svg" />
+    <Content Include="HomeStyle\images\angle.png" />
+    <Content Include="HomeStyle\images\ban11.png" />
+    <Content Include="HomeStyle\images\banner1.jpg" />
+    <Content Include="HomeStyle\images\banner2.jpg" />
+    <Content Include="HomeStyle\images\banner3.jpg" />
+    <Content Include="HomeStyle\images\banner30.jpg" />
+    <Content Include="HomeStyle\images\close.png" />
+    <Content Include="HomeStyle\images\dataIconImg.png" />
+    <Content Include="HomeStyle\images\dott.png" />
+    <Content Include="HomeStyle\images\iconImg.png" />
+    <Content Include="HomeStyle\images\iconImg2.png" />
+    <Content Include="HomeStyle\images\iconImg3.png" />
+    <Content Include="HomeStyle\images\img3.jpg" />
+    <Content Include="HomeStyle\images\img4.jpg" />
+    <Content Include="HomeStyle\images\internetServiceIcon.png" />
+    <Content Include="HomeStyle\images\left.png" />
+    <Content Include="HomeStyle\images\lendingServiceBanner.jpg" />
+    <Content Include="HomeStyle\images\logo.png" />
+    <Content Include="HomeStyle\images\next.png" />
+    <Content Include="HomeStyle\images\payinternet.png" />
+    <Content Include="HomeStyle\images\powerBuyServiceIcon.png" />
+    <Content Include="HomeStyle\images\powerIconImg.png" />
+    <Content Include="HomeStyle\images\powerServiceIcon.png" />
+    <Content Include="HomeStyle\images\powerServiceIconBackUp.png" />
+    <Content Include="HomeStyle\images\prev.png" />
+    <Content Include="HomeStyle\images\profile01.png" />
+    <Content Include="HomeStyle\images\right.png" />
+    <Content Include="HomeStyle\images\statsBg.jpg" />
+    <Content Include="HomeStyle\images\PowerSteps.jpg" />
+    <Content Include="HomeStyle\images\PowerSteps.png" />
+    <Content Include="HomeStyle\images\termsLink01.jpg" />
+    <Content Include="HomeStyle\images\termsLink01.png" />
+    <Content Include="HomeStyle\images\PaytvSteps.jpg" />
+    <Content Include="HomeStyle\images\termsLink02.jpg" />
+    <Content Include="HomeStyle\images\AirtimeDataSteps.jpg" />
+    <Content Include="HomeStyle\images\termsLink03.jpg" />
+    <Content Include="HomeStyle\images\top-arrow.png" />
+    <Content Include="HomeStyle\images\tvIconImg.png" />
+    <Content Include="HomeStyle\images\tvServiceIcon.png" />
+    <Content Include="HomeStyle\images\vendingServiceBanner.jpg" />
+    <Content Include="HomeStyle\js\bootstrap.js" />
+    <Content Include="HomeStyle\js\easing.js" />
+    <Content Include="HomeStyle\js\jquery-2.1.4.min.js" />
+    <Content Include="HomeStyle\js\move-top.js" />
+    <Content Include="HomeStyle\js\numscroller-1.0.js" />
+    <Content Include="HomeStyle\js\responsiveslides.min.js" />
+    <Content Include="HomeStyle\js\slick.js" />
+    <Content Include="HomeStyle\js\SmoothScroll.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="fonts\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="fonts\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="fonts\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="fonts\fonts\Pe-icon-7-strokebb1d.eot" />
+    <Content Include="fonts\fonts\Pe-icon-7-strokebb1d.ttf" />
+    <Content Include="fonts\fonts\Pe-icon-7-strokebb1d.woff" />
+    <Content Include="fonts\fonts\Pe-icon-7-stroked41d.eot" />
+    <Content Include="Cert\Startimes.pfx" />
+    <Content Include="Content\paginate\.gitignore" />
+    <Content Include="Content\paginate\bower.json" />
+    <Content Include="Content\paginate\LICENSE" />
+    <Content Include="Content\paginate\Makefile" />
+    <Content Include="Content\paginate\README.md" />
+    <None Include="Properties\PublishProfiles\GlobalLending23july.pubxml" />
+    <None Include="Properties\PublishProfiles\GlobalLendingPublish.pubxml" />
+    <None Include="Properties\PublishProfiles\GlobalPlatform.pubxml" />
+    <Content Include="Styles\css\bootstrap-select.css" />
+    <Content Include="Styles\css\bootstrap.css" />
+    <Content Include="Styles\css\creditly.css" />
+    <Content Include="Styles\css\easy-responsive-tabs.css" />
+    <Content Include="Styles\css\font-awesome.css" />
+    <Content Include="Styles\css\jquery-ui.css" />
+    <Content Include="Styles\css\jquery.seat-charts.css" />
+    <Content Include="Styles\css\stylenew.css" />
+    <Content Include="Styles\css\style.css" />
+    <Content Include="Styles\DatePicker\lightpick.css" />
+    <Content Include="Styles\DatePicker\lightpick.js" />
+    <Content Include="Styles\FaqStyle\style.css" />
+    <Content Include="Styles\images\CableProviderID\101.png" />
+    <Content Include="Styles\images\CableProviderID\100.png" />
+    <Content Include="Styles\images\CableProviderID\1.png" />
+    <Content Include="Styles\images\CableProviderID\200.jpg" />
+    <Content Include="Styles\images\CableProviderID\200.png" />
+    <Content Include="Styles\images\CableProviderID\smiles.png" />
+    <Content Include="Styles\images\CableProviderID\6.png" />
+    <Content Include="Styles\images\CableProviderID\smile.jpg" />
+    <Content Include="Styles\images\CableProviderID\smile.png" />
+    <Content Include="Styles\images\DataProviderID\203.jpg" />
+    <Content Include="Styles\images\DataProviderID\201.jpg" />
+    <Content Include="Styles\images\DataProviderID\etisalatdataAirtime.jpg" />
+    <Content Include="Styles\images\DataProviderID\204.jpg" />
+    <Content Include="Styles\images\DataProviderID\202.jpg" />
+    <Content Include="Styles\images\DataProviderID\200.jpg" />
+    <Content Include="Styles\images\DataProviderID\spectranetdataAirtime.jpg" />
+    <Content Include="Styles\images\isp\200.jpg" />
+    <Content Include="Styles\images\isp\200.png" />
+    <Content Include="Styles\images\isp\201.jpg" />
+    <Content Include="Styles\images\isp\202.jpg" />
+    <Content Include="Styles\images\isp\203.jpg" />
+    <Content Include="Styles\images\isp\204.jpg" />
+    <Content Include="Styles\images\isp\6.png" />
+    <Content Include="Styles\images\logo.png" />
+    <Content Include="Styles\images\PowerProviderID\1.png" />
+    <Content Include="Styles\images\PowerProviderID\1.jpg" />
+    <Content Include="Styles\images\PowerProviderID\11.jpg" />
+    <Content Include="Styles\images\PowerProviderID\110.png" />
+    <Content Include="Styles\images\PowerProviderID\3.png" />
+    <Content Include="Styles\images\PowerProviderID\5.png" />
+    <Content Include="Styles\images\PowerProviderID\3.jpg" />
+    <Content Include="Styles\images\PowerProviderID\5.jpg" />
+    <Content Include="Styles\images\PowerProviderID\110.jpg" />
+    <Content Include="Styles\images\PowerProviderID\11.png" />
+    <Content Include="Styles\js\bootstrap-select.js" />
+    <Content Include="Styles\js\bootstrap.js" />
+    <Content Include="Styles\js\contact_me.js" />
+    <Content Include="Styles\js\creditly.js" />
+    <Content Include="Styles\js\easing.js" />
+    <Content Include="Styles\js\easyResponsiveTabs.js" />
+    <Content Include="Styles\js\jqBootstrapValidation.js" />
+    <Content Include="Styles\js\jquery-2.2.3.min.js" />
+    <Content Include="Styles\js\jquery-ui.js" />
+    <Content Include="Styles\js\jquery.seat-charts.js" />
+    <Content Include="Styles\js\jqueryChange.min.js" />
+    <Content Include="Styles\js\move-top.js" />
+    <Content Include="Styles\js\responsiveslides.min.js" />
+    <Content Include="Xmlfiles\CustomerPay.xml" />
+    <Content Include="Xmlfiles\queryBalance.xml" />
+    <Content Include="Xmlfiles\StattimeGetCustomerInfo.xml" />
+    <Content Include="HomeStyle\fonts\fontawesome-webfont.eot" />
+    <Content Include="HomeStyle\fonts\fontawesome-webfont.ttf" />
+    <Content Include="HomeStyle\fonts\fontawesome-webfont.woff" />
+    <Content Include="HomeStyle\fonts\fontawesome-webfont.woff2" />
+    <Content Include="HomeStyle\fonts\FontAwesome.otf" />
+    <Content Include="HomeStyle\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="HomeStyle\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Cert\ClientKeyStore.jks" />
+    <Content Include="Cert\ClientTrustStore.jks" />
+    <Content Include="Cert\starCertificate.cer" />
+    <None Include="Properties\PublishProfiles\GlobalLending.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\active.js" />
+    <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\calculator.js" />
+    <Content Include="Scripts\js\gmap.js" />
+    <Content Include="Scripts\js\isotope.pkgd.min.js" />
+    <Content Include="Scripts\js\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\js\jquery-ui.js" />
+    <Content Include="Scripts\js\jquery.magnific-popup.js" />
+    <Content Include="Scripts\js\jquery.nice-select.js" />
+    <Content Include="Scripts\js\menumaker.js" />
+    <Content Include="Scripts\js\owl.carousel.min.js" />
+    <Content Include="Scripts\js\popper.min.js" />
+    <Content Include="Scripts\js\slider.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Styles\images\powerProviders\aedc.jpg" />
+    <Content Include="Styles\images\powerProviders\bedc.jpg" />
+    <Content Include="Styles\images\powerProviders\ekedc.jpg" />
+    <Content Include="Styles\images\powerProviders\ibedc.jpg" />
+    <Content Include="Styles\images\powerProviders\iedc.jpg" />
+    <Content Include="Styles\images\powerProviders\kddc.jpg" />
+    <Content Include="Styles\images\powerProviders\phdc.jpg" />
+    <Content Include="Styles\images\powerProviders\yedc.jpg" />
+    <Content Include="UtilityFiles\paymentForm.html" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contactold.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Loan\Index.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Shared\_Layouts.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Loan\CreateLoan.cshtml" />
+    <Content Include="Views\Loan\Apply.cshtml" />
+    <Content Include="Views\Loan\Index1.cshtml" />
+    <Content Include="Views\Loan\Apply - Copy.cshtml" />
+    <Content Include="Views\Index\Signin.cshtml" />
+    <Content Include="Views\Index\Signup.cshtml" />
+    <Content Include="Views\Index\Roles.cshtml" />
+    <Content Include="Views\Index\Page.cshtml" />
+    <Content Include="Views\Index\UserRole.cshtml" />
+    <Content Include="Views\Index\PageRole.cshtml" />
+    <Content Include="Views\Customer\CheckEligibility.cshtml" />
+    <Content Include="Views\Index\AllUserRoles.cshtml" />
+    <Content Include="Views\Customer\CustomerService.cshtml" />
+    <Content Include="Views\Customer\CreateService.cshtml" />
+    <Content Include="Views\Customer\AllCustomerService.cshtml" />
+    <Content Include="Views\Customer\EditCustomerService.cshtml" />
+    <Content Include="Views\Agent\Agent.cshtml" />
+    <Content Include="Views\Agent\Index.cshtml" />
+    <Content Include="Views\Agent\AgentWallet.cshtml" />
+    <Content Include="Views\Agent\CreditWallet.cshtml" />
+    <Content Include="Views\Power\Buy.cshtml" />
+    <Content Include="Views\Power\CustomerDetails.cshtml" />
+    <Content Include="Views\Shared\_Layoutold.cshtml" />
+    <Content Include="Views\Power\BuyPower.cshtml" />
+    <Content Include="Views\Power\Test.cshtml" />
+    <Content Include="Views\Power\Checkout.cshtml" />
+    <Content Include="Views\Paytv\Index.cshtml" />
+    <Content Include="Views\Cabletv\Paytv.cshtml" />
+    <Content Include="Views\Cabletv\Index.cshtml" />
+    <Content Include="Views\Paytv\Buy.cshtml" />
+    <Content Include="Views\Paytv\Checkout22.cshtml" />
+    <Content Include="Views\Paytv\Receipt.cshtml" />
+    <Content Include="Views\Paytv\PaymentReceipt.cshtml" />
+    <Content Include="Views\Paytv\GetPaymentResponse.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\SigninOld.cshtml" />
+    <Content Include="Views\Shared\_LayoutSignin.cshtml" />
+    <Content Include="Views\Home\RecoverPassword.cshtml" />
+    <Content Include="Views\Home\ResetPassword.cshtml" />
+    <Content Include="Views\Paytv\TestReceipt.cshtml" />
+    <Content Include="Views\Dashboard\Dashboard.cshtml" />
+    <Content Include="Views\Shared\_LayoutDashboard.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\EditProfile.cshtml" />
+    <Content Include="Views\Paytv\Checkout.cshtml" />
+    <Content Include="Views\Dashboard\EditPassword.cshtml" />
+    <Content Include="Views\Home\Faqs.cshtml" />
+    <Content Include="Views\Home\Terms.cshtml" />
+    <Content Include="Views\Shared\_LayoutFaq.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutIndex.cshtml" />
+    <Content Include="Views\Home\SignupOld.cshtml" />
+    <Content Include="Views\Home\Signin.cshtml" />
+    <Content Include="Views\Home\Signup.cshtml" />
+    <Content Include="Views\Home\RecurringBenefit.cshtml" />
+    <Content Include="Views\Dashboard\SucessfulTransaction.cshtml" />
+    <Content Include="Views\Dashboard\AllTransaction.cshtml" />
+    <Content Include="Views\Dashboard\CustomerTransaction.cshtml" />
+    <Content Include="Views\Dashboard\CreateUser.cshtml" />
+    <Content Include="Views\Dashboard\EditUser.cshtml" />
+    <Content Include="Views\Dashboard\CreateRole.cshtml" />
+    <Content Include="Views\Dashboard\EditRole.cshtml" />
+    <Content Include="Views\Dashboard\CreatePage.cshtml" />
+    <Content Include="Views\Dashboard\EditPage.cshtml" />
+    <Content Include="Views\Dashboard\UsernRoles.cshtml" />
+    <Content Include="Views\Dashboard\PagenRoles.cshtml" />
+    <Content Include="Views\Power\GetPaymentResponse.cshtml" />
+    <Content Include="Views\Dashboard\GetPaymentResponse.cshtml" />
+    <Content Include="Views\Dashboard\TransactionStatus.cshtml" />
+    <Content Include="Views\Dashboard\Requery.cshtml" />
+    <Content Include="Views\Isp\Buy.cshtml" />
+    <Content Include="Views\Isp\Check.cshtml" />
+    <Content Include="Views\Isp\Checkout.cshtml" />
+    <Content Include="Views\Isp\GetPaymentResponse.cshtml" />
+    <Content Include="Views\Isp\Receipt.cshtml" />
+    <Content Include="Views\Dashboard\QueryBalance.cshtml" />
+    <Content Include="Views\Airtime\BuyAirtime.cshtml" />
+    <Content Include="Views\Airtime\Checkout.cshtml" />
+    <Content Include="Views\Airtime\GetPaymentResponse.cshtml" />
+    <Content Include="Views\ServiceList\ServiceList.cshtml" />
+    <Content Include="Views\Home\HowptoPay.cshtml" />
+    <Content Include="Views\Home\HowtoPay.cshtml" />
+    <Content Include="Views\Power\BoroPower.cshtml" />
+    <Content Include="Views\Power\Boro.cshtml" />
+    <Content Include="Views\Power\CheckoutBoro.cshtml" />
+    <Content Include="Views\Power\BoroReceipt.cshtml" />
+    <Content Include="Views\Power\GetPaymentResponse - Copy.cshtml" />
+    <Content Include="Views\Paytv\test.cshtml" />
+    <Content Include="Views\Paytv\Indexs.cshtml" />
+    <Content Include="Views\Power\Indexs.cshtml" />
+    <Content Include="Views\Power\Index.cshtml" />
+    <Content Include="Views\Paytv\Buys.cshtml" />
+    <Content Include="Views\Paytv\Checkouts.cshtml" />
+    <Content Include="Views\Dashboard\StartimesQueryBalance.cshtml" />
+    <Content Include="Views\Dashboard\ReportsByMerchant.cshtml" />
+    <Content Include="Views\Airtime\WalletReceipt.cshtml" />
+    <Content Include="Views\Paytv\WalletReceipt.cshtml" />
+    <Content Include="Views\Home\Page.cshtml" />
+    <Content Include="Views\Power\WalletReceipt.cshtml" />
+    <Content Include="Views\Dashboard\CreateBankAdmin.cshtml" />
+    <Content Include="Views\Dashboard\UserRoles.cshtml" />
+    <Content Include="Views\Dashboard\DailyTransactionLog.cshtml" />
+    <Content Include="Views\Dashboard\TransactionLog.cshtml" />
+    <Content Include="Views\Dashboard\LendTransaction.cshtml" />
+    <Content Include="Views\Dashboard\VendTransaction.cshtml" />
+    <Content Include="Views\Dashboard\SaleMargin.cshtml" />
+    <Content Include="Views\Dashboard\GetDetails.cshtml" />
+    <Content Include="Views\Dashboard\BankUsers.cshtml" />
+    <Content Include="Views\Dashboard\DashboardSummary.cshtml" />
+    <Content Include="Views\Dashboard\CheckTransaction.cshtml" />
+    <Content Include="Views\Home\Faq.cshtml" />
+    <Content Include="Views\Home\Tcpower.cshtml" />
+    <Content Include="Views\Home\Tcdata.cshtml" />
+    <Content Include="Views\Home\Tccable.cshtml" />
+    <Content Include="Views\Home\TermsLink.cshtml" />
+    <Content Include="Views\Home\faqpower.cshtml" />
+    <Content Include="Views\Home\faqpaytv.cshtml" />
+    <Content Include="Views\Dashboard\AdminDailyTransactionLog.cshtml" />
+    <Content Include="Views\Dashboard\AdminTransactionLog.cshtml" />
+    <Content Include="Views\Dashboard\AdminVendTransaction.cshtml" />
+    <Content Include="Views\Power\BuyDirectPower.cshtml" />
+    <Content Include="Views\Data\Checkout.cshtml" />
+    <Content Include="Views\Data\GetPaymentResponse.cshtml" />
+    <Content Include="Views\Data\Buy.cshtml" />
+    <Content Include="Views\Data\Index.cshtml" />
+    <Content Include="Views\Dashboard\BuyDirectPower.cshtml" />
+    <Content Include="Views\Dashboard\BuyPower.cshtml" />
+    <Content Include="Views\Dashboard\RequeryTransaction.cshtml" />
+    <Content Include="Views\Power\CheckEligibility.cshtml" />
+    <Content Include="Views\Power\Checkout - Copy.cshtml" />
+    <Content Include="Views\Power\Eligibility.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Dashboard\LendTransactions.cshtml" />
+    <Content Include="Views\Home\faqairtimedata.cshtml" />
+    <Content Include="Views\Home\StepsToPay.cshtml" />
+    <Content Include="Views\Home\PowerSteps.cshtml" />
+    <Content Include="Views\Home\PaytvSteps.cshtml" />
+    <Content Include="Views\Home\DataSteps.cshtml" />
+    <Content Include="Views\Home\AirtimeDataSteps.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="DashboardStyle\fonts\" />
+    <Folder Include="DashboardStyle\images\" />
+    <Folder Include="DashboardStyle\js\" />
+    <Folder Include="Styles\Datatable\" />
+    <Folder Include="Styles\fonts\" />
+    <Folder Include="Styles\images\Airtime\" />
+    <Folder Include="Views\Flavour\" />
+    <Folder Include="Views\LoanBank\" />
+    <Folder Include="Views\LoanEmployee\" />
+    <Folder Include="Views\LoanSocial\" />
+    <Folder Include="Views\NewFolder1\" />
+    <Folder Include="Views\NewFolder2\" />
+    <Folder Include="Views\Startimes\" />
+    <Folder Include="Views\Startime\" />
+    <Folder Include="Views\test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3346</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7689/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

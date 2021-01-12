@@ -1,0 +1,98 @@
+﻿@model IEnumerable<GloballendingViews.Models.LoanModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Fk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoanAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InterestRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlySalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondaryPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryEmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondaryEmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherIncome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_Fk)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoanAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InterestRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthlySalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecondaryPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryEmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecondaryEmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherIncome)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

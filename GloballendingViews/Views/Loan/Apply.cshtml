@@ -1,0 +1,221 @@
+﻿
+@{
+    ViewBag.Title = "Apply";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model GloballendingViews.ViewModels.LoanViewModel
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+</script>
+  
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Apply Now</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Apply Now</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section-padding contact-us-padding">
+    
+    <div class="container">
+       
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="">
+
+                    @if (TempData["message"] == null)
+                    {
+                        <div class=""></div>
+                    }
+                    else
+                    {
+                        <div id="Msg" class="alert alert-success">
+                            <h3> @TempData["message"] </h3>
+                        </div>
+                    }
+                </div>
+@using (Html.BeginForm("Create", "Loan", FormMethod.Post))
+{
+   
+  
+                <form action="" method="post">
+                    <div class="row list-input">
+                       
+                       
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                               
+                            @Html.TextBoxFor(model => model.LoanModel.LoanAmount, new { placeholder = "LOAN AMOUNT (£) *", required = "required" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                               @Html.DropDownListFor(model => model.LoanModel.Tenor, Enumerable.Range(1, 30).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }))
+                            </div>
+                        </div>
+                       
+                       
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                           
+                                @Html.TextBoxFor(model => model.LoanModel.InterestRate, new { placeholder = "Interest Rate *", type="text", @Value = "1.5%" ,  required = "required", @readonly = "readonly" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                             @Html.TextBoxFor(model => model.LoanModel.DateOfBirth, new { placeholder = "Date of Birth *", type = "text", required = "required", id= "datepicker", @class = "datepicker" })
+                               
+                            </div>
+                        </div>
+                      
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanModel.PrimaryPhoneNumber, new { placeholder = "Primary Phone *", type = "number", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanModel.SecondaryPhoneNumber, new { placeholder = "Secondary Phone *", type = "number", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanModel.PrimaryEmailAddress, new { placeholder = "Primary Email *", type = "Email", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanModel.SecondaryEmailAddress, new { placeholder = "Secondary Email *", type = "Email", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanModel.MonthlySalary, new { placeholder = "Monthly Salary *", type = "text", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanModel.OtherIncome, new { placeholder = "Other Income *", type = "text", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mr0">
+                            <div class="single-get-touch">
+                             
+                                @Html.TextAreaFor(model => model.LoanModel.ContactAddress, new { placeholder = "Contact Address *", type = "text", cols = "55", rows = "5", required = "required" })
+                            </div>
+                        </div>
+                       
+                        
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+
+                                @Html.EnumDropDownListFor(model => model.LoanSocialModel.Social, "Select")
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                @Html.TextBoxFor(model => model.LoanBankModel.AccountName, new { placeholder = "Account Name (£) *", required = "required" })
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanBankModel.AccountNumber, new { placeholder = "Account Number  *", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanBankModel.Bvn, new { placeholder = "BVN *", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanEmployeeModel.EmployeeName, new { placeholder = "Employee Name *", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanEmployeeModel.OfficeAddress, new { placeholder = "Office Address *", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanEmployeeModel.EmploymentStatus, new { placeholder = "Employment Status *", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                                @Html.TextBoxFor(model => model.LoanEmployeeModel.EmploymentDuration, new { placeholder = "Employment Duration *", required = "required" })
+                            </div>
+                        </div>
+
+                       
+                        <div class="col-md-6 mr0">
+                            <div class="single-get-touch">
+                               
+                                @Html.EnumDropDownListFor(model =>model.LoanBankModel.BankName, "Select")
+
+
+
+                            </div>
+                        </div>
+                       
+
+                       
+
+                       
+
+                      
+
+                       
+                        
+                        <div class="col-md-12">
+                            <div class="single-get-touch">
+                                <input type="submit" name="submit" class="btn btn-default btn-sm" value="Apply Now" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+}
+            </div>
+        </div>
+    </div>
+    <script>
+  $(function() {
+    $( ".datepicker" ).datepicker();
+  });
+
+  
+    </script>
+</section>
+

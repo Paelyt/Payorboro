@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="agileits-inner-banner">
+
+</div>
+<!-- //innerbanner -->
+<!-- breadcrumbs -->
+<div class="w3layouts-breadcrumbs text-center">
+    <div class="container">
+        <span class="agile-breadcrumbs"><a href="@Url.Action("index", "Home")"><i class="fa fa-home home_1"></i></a> / <span>Contact</span></span>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+	<!-- Contact Page -->
+	<div class="support w3layouts-content">
+			<div class="container">
+				<h3 class="w3-head">Support Page</h3>
+				<div class="col-md-6 w3ls-supportform">
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+{
+    if (TempData["ErrMsg"] != null)
+    {
+        <div id="Msgs" class="alert alert-danger">
+            @TempData["ErrMsg"]
+        </div>
+    }
+   if (TempData["SucMsg"] != null)
+    {
+        <div id="Msgs" class="alert alert-success">
+            @TempData["SucMsg"]
+        </div>
+    }
+			   <form action="#" method="get" name="sentMessage" id="contactForm" novalidate>
+					<select class="sikForm" name="issue">
+						  <option value="Payment">Payment</option>
+						  <option value="Recharge">Recharge</option>
+						  <option value="Booking">Booking</option>
+						  <option value="Account">Account</option>
+						  <option value="Others">Others</option>
+				   </select>
+						<div class="control-group form-group">
+							<div class="controls">
+								<input type="text" name="name" class="form-control sikForm" placeholder="Enter your Name" id="name" required data-validation-required-message="Please enter your name.">
+							</div>
+						</div>
+						<div class="control-group form-group">
+							<div class="controls">
+								<input type="email" name="email" class="form-control sikForm" placeholder="Enter your Email ID" id="email" required data-validation-required-message="Please enter your email address.">
+							</div>
+						</div>
+						<div class="control-group form-group">
+							<div class="controls">
+								<input type="tel" class="form-control sikForm" name="phone" placeholder="Enter mobile Number" id="phone" required="" data-validation-required-message="Please enter your phone number." aria-invalid="false">
+								<p class="help-block"></p>
+							</div>
+						</div>
+							<div class="control-group form-group">
+								<div class="controls sikForm2">
+									<textarea rows="10" cols="100" name="enquiry"  class="form-control" placeholder="Please write here" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+								</div>
+							</div>
+							<div id="success"></div>
+							<!-- For success/fail messages -->
+							<button type="submit" class="submit btn btn-primary">Create Ticket</button>
+						<div class="clearfix"></div>	
+						</form>
+}
+					</div>
+				<div class="col-md-6 agileits-support">
+					<ul>
+							<li style="display:none;"><i class="fa fa-home"></i> 10B Kingsley Emu Street, <br><span style="padding-left:20px;">Lekki Phase1 Lagos.</span></li>
+							<li><i class="fa fa-phone"></i> +234 902 629 8534</li>
+							<li style="display:none;"><i class="fa fa-whatsapp"></i> +234 000 493 8136</li> 
+							<li><i class="fa fa-envelope"></i> info@payorboro.com</li>
+							<li><i class="fa fa-envelope"></i> support@payorboro.com</li>
+					</ul>
+				</div>
+
+				
+				<div class="clearfix"></div>
+	<!-- js files for contact from validation -->
+			<script src="js/jqBootstrapValidation.js"></script>
+			<script src="js/contact_me.js"></script>
+		<!-- //js files for contact from validation -->
+	
+		</div>
+	</div>
+		<!--//Contact Page-->
+	

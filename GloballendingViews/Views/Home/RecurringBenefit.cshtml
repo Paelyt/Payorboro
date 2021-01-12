@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Faqs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="agileits-inner-banner">
+
+</div>
+<!-- //innerbanner -->
+<!-- breadcrumbs -->
+<div class="w3layouts-breadcrumbs text-center">
+    <div class="container">
+        <span class="agile-breadcrumbs"><a href="@Url.Action("index", "Home")"><i class="fa fa-home home_1"></i></a> / <span>Recurring Benefits</span></span>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- FAQ-help-page -->
+<div class="help about w3layouts-content">
+    <div class="container">
+        <h3 class="w3-head">How can we help you?</h3>
+        <div class="faq-w3agile">
+            <h5>Most Frequently asked questions(FAQ)</h5>
+            <ul class="faq">
+                <li class="item1">
+                    <a href="#" title="click here">HOW DO I PURCHASE PAYTV   BOUQUETS? </a>
+                    <ul>
+                        <li class="subitem1"><p style="font-weight:bold;">Type the URL www.payorboro,com in a browser [ Laptop, phone, Tablet or Desktop] </p></li>
+                        <div class="faqPara">
+                            <p>a.	If you are a new user kindly click on “REGISTER” to create an account and enter your details on the next page.</p>
+                            <p>b.	If you are an existing user click on “LOGIN” and enter your login details. You’ll be taken to a page where you will be asked to put in your customer id, the amount you want to purchase and method of payment.</p>
+                            <p>c.	You would be taken to a confirmation page to check that the customer id and other details are valid.</p>
+                            <p>d.	Click confirm and you would be redirected to the payment gateway to enter your payment details.</p>
+                            <p>e.	On successful payment, the receipt of your successful transaction will be displayed, and customers can print this receipt or save on their system. The customer receipt will be displayed</p>
+                        </div>
+                    </ul>
+                </li>
+                <li class="item2">
+                    <a href="#" title="click here">CAN I PURCHASE A TV BOUQUET WITHOUT REGISTERING?</a>
+                    <ul>
+                        <li class="subitem1"><p> </p></li>
+
+                        <div class="faqPara">
+                            <p>a.	Yes, you can. </p>
+                            <p>b.	b.	You can do so by clicking on the Pay for a service button and follow the preceding steps.</p>
+
+                        </div>
+
+                    </ul>
+                </li>
+                <li class="item3">
+                    <a href="#" title="click here">3.	WHAT IS THE MINIMUM AMOUNT FOR PURCHASING TV BOUQUETS? </a>
+                    <ul>
+                        <li class="subitem1"><p style="font-weight:bold;">The minimum amount depends on the bouquet plan selected.</p></li>
+                    </ul>
+                </li>
+                <li class="item4">
+                    <a href="#" title="click here">What if it is taking so much to be redirected to the payment gateway? </a>
+                    <ul>
+                        <li class="subitem1"><p></p></li>
+                        <div class="faqPara">
+                            <p>a.	There is probably a network problem. Kindly Click the Refresh button on your browser or contact us via a phone call via 09026298534.</p>
+                        </div>
+                    </ul>
+                </li>
+                <li class="item5">
+                    <a href="#" title="click here">What happens if my card (VERVE, VISA, MASTERCARD) doesn’t work? </a>
+                    <ul>
+                        <li class="subitem1"><p></p></li>
+                        <div class="faqPara">
+                            <p>a.	Make sure your card is activated for online transactions. You can go to your bank and ask them to activate your card for online transactions..</p>
+                            <p>b.	You can contact us customercare@payorboro.com  for more enquiries or contact us via a phone call via   09026298534 </p>
+                        </div>
+                    </ul>
+                </li>
+                <li class="item6">
+                    <a href="#" title="click here">How do I print my receipt?</a>
+                    <ul>
+                        <li class="subitem1"><p></p></li>
+                        <div class="faqPara">
+                            <p>a.   You can print your receipt by going to "MY TRANSACTIONS" on the main menu.</p>
+                            <p>b.	In the Transaction History table displayed, there is a button called "View". Click on the details button. Filter using the date range. </p>
+                            <p>c.	On the transaction details page, you can see the print receipt as the last item on the page. You would also see other details of the transaction on this page.</p>
+                            <p>d.	d.	Scroll to the bottom of the page. Click "PRINT RECEIPT" to print your receipt.</p>
+
+                        </div>
+                    </ul>
+                </li>
+                <li class="item7">
+                    <a href="#" title="click here">What payment options are available? </a>
+                    <ul>
+                        <li class="subitem1"><p></p></li>
+                        <div class="faqPara">
+                            <p>a.	You can pay via your VISA CARD | VERVE CARD | MASTER CARD | USSD</p>
+
+
+                        </div>
+                    </ul>
+                </li>
+                <li class="item8">
+                    <a href="#" title="click here">How do I solve any other issues I may have?</a>
+                    <ul>
+                        <li class="subitem1"><p></p></li>
+                        <div class="faqPara">
+                            <p>a.	You can send a mail to customercare@payorboro.com</p>
+                            <p>b.	You can go to our Need Help page and contact us appropriately.</p>
+                            <p>c.	You can call us on 07056658772, or through our WhatsApp number 07064546228.</p>
+
+
+                        </div>
+                    </ul>
+                </li>
+                <!-- <li class="item9"><a href="#" title="click here"></a>
+                    <ul>
+                        <li class="subitem1"><p></p></li>
+                    </ul>
+                </li> -->
+                <!-- <li class="item10"><a href="#" title="click here"></a>
+                    <ul>
+                        <li class="subitem1"><p></p></li>
+                    </ul>
+                </li>  -->
+            </ul>
+            <!-- script for tabs -->
+            <script type="text/javascript">
+					$(function() {
+
+						var menu_ul = $('.faq > li > ul'),
+							   menu_a  = $('.faq > li > a');
+
+						menu_ul.hide();
+
+						menu_a.click(function(e) {
+							e.preventDefault();
+							if(!$(this).hasClass('active')) {
+								menu_a.removeClass('active');
+								menu_ul.filter(':visible').slideUp('normal');
+								$(this).addClass('active').next().stop(true,true).slideDown('normal');
+							} else {
+								$(this).removeClass('active');
+								$(this).next().stop(true,true).slideUp('normal');
+							}
+						});
+
+					});
+            </script>
+            <!-- script for tabs -->
+        </div>
+    </div>
+</div>
+<!-- //FAQ-help-page -->

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "CheckEligibility";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model GloballendingViews.ViewModels.LoanViewModel
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Check Eligibility</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Check Eligibility</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row list-input">
+    <div class="col-md-3 mr0" style="margin:auto;">
+        <div class="single-get-touch">
+
+            @if (TempData["message"] == null)
+            {
+                <div class=""></div>
+            }
+            else
+            {
+                <div id="Msg" class="alert alert-success">
+                    <h3> @TempData["message"] </h3>
+                </div>
+            }
+        </div>
+        </div>
+    </div>
+
+        @using (Html.BeginForm("Eligibility", "Customer", FormMethod.Post))
+        {
+            <div class="row list-input">
+                <div class="col-md-3 mr0" style="margin:auto;">
+                    <div class="single-get-touch">
+                        @Html.TextBoxFor(model => model.CustomerEligility.CustomerId, new { placeholder = "Customer ID *", type = "text", required = "required" })
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row list-input">
+                <div class="col-md-3 mr0" style="margin:auto;">
+                    <div class="single-get-touch">
+                        @Html.DropDownList("ddlMerchantName", new SelectList(ViewBag.listMerchant, "id", "MarchantName"))
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <br />
+            <div class="col-md-3" style="margin:auto;">
+                <div class="single-get-touch">
+                    <input type="submit" name="submit" class="btn btn-default btn-sm" value="Check Eligibilty" />
+                </div>
+            </div>
+
+        }
+
+

@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IPagedList<GloballendingViews.Models.CustomerServices>
+                                                       
+@using PagedList.Mvc;
+@using PagedList; 
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Customer</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Customer</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row list-input">
+    <div class="col-md-3 mr0" style="margin:auto;">
+        <div class="single-get-touch">
+            <a href="@Url.Action("CreateService","Customer")">Add New Service</a>
+            <table cellpadding="2" cellspacing="2" border="1">
+                <tr>
+
+                    <th>CustomerIDLabel</th>
+                    <th>CustomerID</th>
+                    <th>PackageTypeIDLabel</th>
+                    <th>PackageType</th>
+                    <th>OtherLabelID</th>
+                    <th>DateCreated</th>
+
+
+
+                </tr>
+                @if (Model.Count() == 0)
+                {
+                    <h2>No Record Found</h2>
+                }
+                else
+                {
+                    foreach (var CustomerService in Model)
+                    {
+                        <tr>
+                            <td>@CustomerService.CustomerIDLabel</td>
+                            <td>@CustomerService.CustomerID</td>
+                            <td>@CustomerService.PackageTypeIDLabel</td>
+                            <td>@CustomerService.PackageType</td>
+                            <td>@CustomerService.OtherLabelID</td>
+                            <td>@CustomerService.DateCreated</td>
+
+
+                            <td>
+                                <a onclick="return confirm('Are You Sure ?')" href="@Url.Action("DeleteCustomerService", "Customer", new { id = CustomerService.ID })">Delete</a>
+
+                                <a onclick="return confirm('Are You Want To Edit ?')" href="@Url.Action("EditCustomerService", "Customer", new { id = CustomerService.ID })"> Edit
+                            </td>
+
+
+                        </tr>
+                    }
+                }
+            </table>
+           
+            @Html.PagedListPager(Model,i=>Url.Action("AllCustomerService", "Customer",new { i,search=Request.QueryString["search"] }))
+        </div>
+    </div>
+
+
+</div>
+<br />
+
+
+

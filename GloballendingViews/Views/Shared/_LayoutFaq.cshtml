@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<!-- html -->
+<html>
+<!-- head -->
+<head>
+    <title>Online Recharge a Corporate Category Bootstrap Responsive Web Template | Faq :: w3layouts</title>
+    <link href=@Url.Content("/Styles/css/bootstrap.css") rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
+    <link href=@Url.Content("/Styles/css/font-awesome.css") rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type='text/javascript' src=@Url.Content("/Styles/js/jquery-2.2.3.min.js")></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href=@Url.Content("/Styles/FaqStyle/style.css") rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <!-- metatags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Online Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //metatags -->
+    <!-- online fonts -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- /online fonts -->
+
+</head>
+<!-- /head -->
+<!-- body -->
+<body>
+    <!--header-->
+    <header>
+        <div class="container">
+            <!--logo-->
+            <div class="logo">
+                <a href="index.html">
+                    <img src=@Url.Content("Styles/images/logo.png") alt="" class="img-responsive">
+                </a>
+            </div>
+            <!--//logo-->
+            <div class="w3layouts-login">
+                <a data-toggle="modal" data-target="#myModal" href="#">Home</a>
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- innerbanner -->
+    @*<div class="agileits-inner-banner">
+
+    </div>*@
+    <div>
+        @RenderBody();
+    </div>
+    <!--footer-->
+    <footer>
+        <div class="container-fluid">
+            <div class="w3-agile-footer-top-at">
+                <div class="col-md-3 agileits-amet-sed">
+                    <h4>Resources</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="@Url.Action("Faq", "Home")">FAQ</a></li>
+                        <li><a href="@Url.Action("TermsLink", "Home")">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Prime Partners</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#" class="scroll">Startimes</a></li>
+                        <li><a href="#" class="scroll">EKEDC</a></li>
+                        <li><a href="#" class="scroll">IBEDC</a></li>
+                        <!-- <li><a href="#mobilew3layouts" class="scroll">BSNL</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Get In Touch</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li style="display:none;"><i class="fa fa-home"></i> 10B Kingsley Emu Street, <br><span style="padding-left:20px;">Lekki Phase1 Lagos.</span></li>
+                        <li><i class="fa fa-phone"></i> +234 902 629 8534</li>
+                        <li style="display:none;"><i class="fa fa-whatsapp"></i> +234 000 493 8136</li>
+                        <li><i class="fa fa-envelope"></i> info@payorboro.com</li>
+                        <li><i class="fa fa-envelope"></i> support@payorboro.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed">
+                    <h4>We Are Social</h4>
+                    <div class="social-top">
+                        <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                        <a href="#"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                        <a href="#"><i id="social-em" class="fa fa-instagram fa-3x social"></i></a>
+                        <!-- <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a> -->
+                        <!-- <a href="mailto:info@boro.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="w3l-footer-bottom">
+            <div class="container-fluid">
+                <div class="col-md-4 w3-footer-logo">
+                    <h2><a href=@Url.Action("Index","Home")>payorboro</a></h2>
+                </div>
+                <div class="col-md-8 agileits-footer-class">
+                    <p>© 2018 payorboro. All Rights Reserved | Powered by  <a href="http://paelyt.com/" target="_blank">Paelyt Solutions <span style="visibility:hidden;">solution</span></a> </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+    <!-- for bootstrap working -->
+    <script src=@Url.Content("/Styles/js/bootstrap.js")></script>
+    <!-- //for bootstrap working -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+				$(document).ready(function() {
+					/*
+						var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear'
+						};
+					*/
+
+					$().UItoTop({ easingType: 'easeOutQuart' });
+
+					});
+    </script>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src=@Url.Content("/Styles/js/move-top.js")></script>
+    <script type="text/javascript" src=@Url.Content("/Styles/js/easing.js")></script>
+    <script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- //here ends scrolling icon -->
+</body>
+<!-- /body -->
+</html>
+<!-- /html -->

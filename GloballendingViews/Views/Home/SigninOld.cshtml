@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSignin.cshtml";
+}
+@model GloballendingViews.ViewModels.LoanViewModel
+
+<div class="mainSignUp add">
+
+    <div class="row iconStyleBox2">
+        <h1 class="formHead">Welcome Back!</h1>
+@using (Html.BeginForm("Logins", "Home", FormMethod.Post, new { id = "" }))
+{
+    <div class="">
+
+        @if (TempData["message"] == null)
+                {
+            <div class=""></div>
+        }
+        else
+        {
+            <div id="Msg" class="alert alert-danger">
+                <h4> @TempData["message"] </h4>
+            </div>
+        }
+    </div>
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                
+                @Html.TextBoxFor(model => model.AccountsModel.Email, new { placeholder = "Email Address *", @class = "", type = "Email", required = "required", })
+                
+                
+                </div>
+                <div class="col-md-6">
+                  
+                @Html.TextBoxFor(model => model.AccountsModel.pasword, new { placeholder = "Password *", @class = "", type = "password", required = "required" })
+
+                </div>
+            </div>
+            <input type="submit" class="" value="Sign In" />
+      
+        </form>
+}
+    </div>
+    <p class="sendBottom">Forgot Your Password? <a href="@Url.Action("RecoverPassword", "Home")">click here for recovery</a>
+    </p>
+</div>
+<script>
+    $(document).ready(function () {
+    $("#Msg").show();
+    setTimeout(function () { $("#Msg").hide(); }, 5000);
+    });
+</script>

@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Global Lending | Home :: Welcome</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Pay or Borrow, pay for bills, borrow bills" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--// Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href=@Url.Content("/HomeStyle/css/bootstrap.css")> <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href=@Url.Content("/HomeStyle/css/style.css") type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href=@Url.Content("/HomeStyle/css/font-awesome.css")> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- //web-fonts -->
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-default link-effect-8" id="link-effect-8">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src=@Url.Content("/HomeStyle/images/logo.png") alt="" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+
+            <!-- navbar-header -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><a href="#about" class="scroll">About</a></li>
+                    <li><a href="#services" class="scroll">Services</a></li>
+                    <li><a href="#testimonials" class="scroll">Testimonials</a></li>
+                    <li><a href="#contact" class="scroll">Contact</a></li>
+@if (Session["User"] == null)
+{
+                   <a href="@Url.Action("Signin", "Home")"><button class="btn btn-default sikBtn">Login</button></a>
+                    <a href="@Url.Action("Signup", "Home")"><button class="btn btn-info sikBtn">Register</button></a>
+}
+@if (Session["User"] != null)
+{
+    <p>
+        <h7 style="color:white;"> @Session["User"] </h7>
+        <a data-toggle="modal" data-target="" href=@Url.Action("LogOut", "Home")>
+            <i class="glyphicon glyphicon-user"></i>Logout
+        </a>
+
+
+    </p>
+}
+                </ul>
+            </div>
+
+            <div class="clearfix"> </div>
+        </nav>
+
+    </div>
+    <!-- Slider -->
+    <div class="slider" id="home">
+        <div class="callbacks_container">
+            <ul class="rslides" id="slider">
+                <li>
+                    <div class="w3layouts-banner-top w3layouts-banner-top1">
+
+                        <div class="container">
+                            <div class="slider-info">
+                                <div class="col-md-6  slider-info-txt">
+                                    <h2>
+                                        NEED TO PAY FOR CABLE TV
+                                        AND YOU HAVE NO CASH?
+                                    </h2>
+
+                                    <p>
+                                        Boro provides modern automated solutions for your business,
+                                        We carefully identify your organization’s needs and map out real time
+                                        flow charts that will later be developed into a full fledge software by
+                                        our team of programmers.
+                                    </p>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="w3layouts-banner-top">
+
+                        <div class="container">
+                            <div class="slider-info">
+                                <div class="col-md-6 slider-info-txt">
+                                    <h3>credit card processing services</h3>
+
+                                    <p>
+                                        Boro provides modern automated solutions for your business,
+                                        We carefully identify your organization’s needs and map out real time
+
+                                        our team of programmers.
+                                    </p>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="w3layouts-banner-top w3layouts-banner-top3">
+
+                        <div class="container">
+                            <div class="slider-info">
+                                <div class="col-md-6 slider-info-txt">
+                                    <h3>Services for all your customer needs</h3>
+
+                                    <p>
+                                        Boro provides modern automated solutions for your business,
+                                        We carefully identify your organization’s needs and map out real time
+                                        flow charts that will later be developed into a full fledge software by
+                                        our team of programmers.
+                                    </p>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+
+        <div>
+
+            @RenderBody()
+        </div>
+    </div>
+    <!-- //Slider -->
+    <!--footer-->
+    <footer>
+        <div class="container-fluid">
+            <div class="w3-agile-footer-top-at">
+                <div class="col-md-3 agileits-amet-sed">
+                    <h4>Resources</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Prime Partners</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll">Startimes</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Aircel</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Vodafone</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">BSNL</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Get In Touch</h4>
+
+                    <ul class="w3ls-nav-bottom">
+                        <li><i class="fa fa-home"></i> 10B Kingley Emu Street, <br><span style="padding-left:20px;">Lekki Phase1 Lagos.</span></li>
+                        <li><i class="fa fa-phone"></i> +234 806 493 8136</li>
+                        <li><i class="fa fa-whatsapp"></i> +234 000 493 8136</li>
+                        <li><i class="fa fa-envelope"></i> info@payorborrow.com</li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed">
+                    <h4>We Are Social</h4>
+                    <div class="social-top">
+                        <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                        <a href="#"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                        <a href="#"><i id="social-em" class="fa fa-instagram fa-3x social"></i></a>
+                        <!-- <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a> -->
+                        <!-- <a href="mailto:info@boro.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="w3l-footer-bottom">
+            <div class="container-fluid">
+                <div class="col-md-4 w3-footer-logo">
+                    <h2><a href="@Url.Action("Index", "Home")">Boro</a></h2>
+                </div>
+                <div class="col-md-8 agileits-footer-class">
+                    <p>© 2018 Boro. All Rights Reserved | Powered by  <a href="http://paelyt.com/" target="_blank">Paelyt Solutions <span style="visibility:hidden;">solution</span></a> </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+    <!-- js-scripts -->
+    <!-- js -->
+    <script type="text/javascript" src=@Url.Content("/HomeStyle/js/jquery-2.1.4.min.js")></script>
+    <script type="text/javascript" src=@Url.Content("/HomeStyle/js/bootstrap.js")></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+    <!-- //js -->
+    <!-- start-smoth-scrolling -->
+    <script src=@Url.Content("/HomeStyle/js/SmoothScroll.min.js")></script>
+    <script type="text/javascript" src=@Url.Content("/HomeStyle/js/move-top.js")></script>
+    <script type="text/javascript" src=@Url.Content("/HomeStyle/js/easing.js")></script>
+    <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- start-smoth-scrolling -->
+    <!-- Baneer-js -->
+    <script src=@Url.Content("/HomeStyle/js/responsiveslides.min.js")></script>
+    <script>
+		$(function () {
+			$("#slider").responsiveSlides({
+				auto: true,
+				pager:false,
+				nav: true,
+				speed: 1000,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+		});
+    </script>
+    <!-- //Baneer-js -->
+    <!-- js for Counter -->
+    <script type="text/javascript" src=@Url.Content("/HomeStyle/js/numscroller-1.0.js")></script>
+    <!-- /js for Counter -->
+    <!-- carousal -->
+    <script src=@Url.Content("/HomeStyle/js/slick.js") type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+		$(document).on('ready', function() {
+		  $(".center").slick({
+			dots: true,
+			infinite: true,
+			centerMode: true,
+			slidesToShow: 2,
+			slidesToScroll: 2,
+			responsive: [
+				{
+				  breakpoint: 768,
+				  settings: {
+					arrows: true,
+					centerMode: false,
+					slidesToShow: 2
+				  }
+				},
+				{
+				  breakpoint: 480,
+				  settings: {
+					arrows: true,
+					centerMode: false,
+					centerPadding: '40px',
+					slidesToShow: 1
+				  }
+				}
+			 ]
+		  });
+		});
+    </script>
+    <script>
+    $(document).ready(function () {
+    $("#Msg").show();
+    setTimeout(function () { $("#Msg").hide(); }, 5000);
+    });
+    </script>
+    <!-- //carousal -->
+    <!-- //js-scripts -->
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b746b0f55ca4cc09e2196b93e3ecac8" Name="Diagram1">
+        <EntityTypeShape EntityType="GlobalTransactModel.Customer" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.CustomerService" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.Loan" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.LoanBank" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.LoanEmployeeInfo" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.LoanSocial" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.Merchant" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.Pag" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.PageAuthentication" Width="1.5" PointX="8" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.pageHeader" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.PaymentLog" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.Role" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.TransactionLog" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.User" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.UserRole" Width="1.5" PointX="8" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.CustomerLedger" Width="1.5" PointX="11.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.CustomerTransaction" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalTransactModel.MerchantServiceType" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="GlobalTransactModel.FK_LoanBank_Loan" ManuallyRouted="false" />
+        <AssociationConnector Association="GlobalTransactModel.FK_LoanBank_Loan1" ManuallyRouted="false" />
+        <AssociationConnector Association="GlobalTransactModel.FK_LoanEmployeeInfo_Loan" ManuallyRouted="false" />
+        <AssociationConnector Association="GlobalTransactModel.FK_LoanSocial_Loan" ManuallyRouted="false" />
+        <AssociationConnector Association="GlobalTransactModel.FK_Pag_Pag1" ManuallyRouted="false" />
+        <AssociationConnector Association="GlobalTransactModel.FK_PageAuthentications_PageAuthentications" ManuallyRouted="false" />
+        <AssociationConnector Association="GlobalTransactModel.FK_UserRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="GlobalTransactModel.FK_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="GlobalTransactModel.FK_UserRoles_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

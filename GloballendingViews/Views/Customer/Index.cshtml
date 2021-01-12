@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model GloballendingViews.ViewModels.LoanViewModel
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Customer</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Customer</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+    <a href="@Url.Action("create","Customer")">Add New Customer</a>
+   <table cellpadding="2" cellspacing="2" border="1">
+       <tr>
+          <th>ID</th>   
+          <th>FirstName</th>
+           <th>LastName</th>
+           <th>ContactAddress</th>
+           <th>PhoneNumber</th>
+           <th>ContactEmail</th>
+           <th>DateCreated</th> 
+          <th>ValueDate</th>
+           <th>ValueTime</th>
+           <th>Amountborrowed</th>
+           <th>AmountPaid</th>
+           <th>OutstandingAmount</th>
+           <th>IsVisible</th>
+           <th>User_FK</th>
+          
+       </tr>
+       @foreach (var Customer in ViewBag.listCustomer)
+       {
+           <tr>
+               <td>@Customer.ID</td>
+               <td>@Customer.FirstName</td>
+               <td>@Customer.LastName</td>
+               <td>@Customer.ContactAddress</td>
+               <td>@Customer.PhoneNumber</td>
+               <td>@Customer.ContactEmail</td>
+               <td>@Customer.DateCreated</td>
+               <td>@Customer.ValueDate</td>
+               <td>@Customer.ValueTime</td>
+               <td>@Customer.Amountborrowed</td>
+               <td>@Customer.AmountPaid</td>
+               <td>@Customer.OutstandingAmount</td>
+               <td>@Customer.IsVisible</td>
+               <td>@Customer.User_FK</td>
+               <td><a onclick="return confirm('Are You Sure ?')" href="@Url.Action("Delete","Customer", new { id = Customer.ID  })">Delete</a>
+               
+                   <a onclick="return confirm('Are You Want To Edit ?')" href="@Url.Action("Edit","Customer", new { Email = Customer.ContactEmail  })"> Edit</td>
+             
+
+           </tr>
+       }
+
+   </table>
+

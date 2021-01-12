@@ -1,0 +1,294 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+@model GloballendingViews.Classes.Paytv.PaytvObj
+
+<link href=@Url.Content("/content/assets/MyTable.css") rel="stylesheet">
+<link rel="stylesheet" type="text/css" href=@Url.Content("/content/assets/themes/admin/color-schemes/default.css")>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/content/assets/themes/components/default.css")>
+
+
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/Datatable/bootstrap.min.css")>
+<script src=@Url.Content("/Styles/Datatable/jquery.min.js")></script>
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/Datatable/jquery.dataTables.min.css")>
+<script src=@Url.Content("/Styles/Datatable/jquery.dataTables.min.js")></script>
+<script src=@Url.Content("/Styles/Datatable/bootstrap.min.js")></script>
+@*<div id="page-wrapper">
+    <div class="main-page">*@
+<!-- Wellcome content starts  -->
+<div class="charts">
+    <div class="mid-content-top charts-grids">
+        <div class="middle-content">
+            <h4 class="title">My Dashboard</h4>
+            @if (Session["User"] != null)
+            {
+                <p>
+       <b>Welcome</b>  <span class="textsize textColor">@Session["User"] </span>
+                </p>
+            }
+                 </div>
+
+    </div>
+</div>
+
+<!-- // Wellcome content ends  -->
+<br>
+<div class="col_3">
+    <div class="col-md-3 widget widget1">
+        <div class="r3_counter_box">
+            <i class="pull-left fa fa-google-wallet icon-rounded"></i>
+            <div class="stats">
+                <h5><strong>@ViewBag.WalletPoint</strong></h5>
+                <span>Wallet Point</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 widget widget1">
+        <div class="r3_counter_box">
+            <i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
+            <div class="stats">
+                <h5><strong>@ViewBag.ReferalCode</strong></h5>
+                <span>Referal Code </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 widget widget1">
+        <div class="r3_counter_box">
+            <i class="pull-left fa fa-money user2 icon-rounded"></i>
+            <div class="stats">
+                <h5><strong>@ViewBag.lastTransaction</strong></h5>
+                <span>Last Transaction</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 widget widget1">
+        <div class="r3_counter_box">
+            <i class="pull-left fa fa-credit-card icon-rounded"></i>
+            <div class="stats">
+                <h5><strong>@ViewBag.NoOfReferal</strong></h5>
+                <span>No Of Referrals</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="clearfix"> </div>
+</div>
+
+<br>
+
+
+<script src="js/index1.js"></script>
+<div id="Servicesa">
+    <p>
+        <h4> <a class="fa fa-user-plus" href="#">Add Service</a></h4>
+    </p>
+    </div>
+
+    <div class="tabs-box">
+        @*<img src="@TempData["message"]" class="w3ls-mobile" alt="" width="200" data-pin-nopin="true">*@
+
+        <div class="clearfix"> </div>
+        <div id="Servicesacc">
+            @*<p>
+                <h4> <a href="#">Add New Service</a></h4>
+            </p>*@
+            <div class="tab-grids" id="Servicesb">
+                <div class="tab-grid">
+
+                    @*<div class="table-responsive bs-example widget-shadow" id="no-more-tables" style="margin-left:20px;">*@
+                    <div class="" id="no-more-tables" style="margin-left:0px;">
+                        @*<h4>&nbsp;&nbsp; My Service List</h4>*@
+                        <br />
+                        @{int i = 0;}
+                        <table id="myTable" class="col-md-12 table-bordered table-striped table-condensed cf">
+                            <thead class="cf">
+
+                                <tr>
+                                    <th>ID</th>
+                                    @*<th>Customer_Fk</th>*@
+                                    <th>Service Name</th>
+                                    <th>CustomerID</th>
+                                    @*<th>PackageTypeIDLabel</th>
+                        <th>PackageType</th>
+                        <th>OtherLabelID</th>
+                        <th>OtherLabel</th>*@
+                                    <th>Date Created</th>
+                                    @*<th>ValueDate</th>*@
+                                    <th>Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var ServiceList in ViewBag.ServiceList)
+                                {
+                                <tr>
+                                    <td>@(++i)</td>
+                                    @*<td>@ServiceList.Customer_FK</td>*@
+                                    <td>@ServiceList.PackageType</td>
+                                    <td>@ServiceList.CustomerID</td>
+                                    @*<td>@ServiceList.PackageTypeIDLabel</td>
+                        <td>@ServiceList.CustomerIDLabel</td>
+                        <td>@ServiceList.OtherLabelID</td>
+                        <td>@ServiceList.OtherLabel</td>*@
+                                    <td>@ServiceList.DateCreated</td>
+                                    @*<td>@ServiceList.ValueDate</td>*@
+
+
+                                    <td>
+                                        <a onclick="return confirm('Are You Sure ?')" href="@Url.Action("DeleteService","Dashboard", new { id = ServiceList.ID  })">Remove |</a>
+                                        @*<a onclick="return confirm('Are You Want To Edit ?')" href="@Url.Action("EditService","Dashboard", new { id = ServiceList.ID  })"> Update |</a>*@
+                                        <a onclick="return confirm('Are You Want To Edit ?')" href="">Proceed</a>
+                                        @*<a onclick="return confirm('Are You Want To Edit ?')" href="@Url.Action("#","Dashboard", new { id = ServiceList.ID  })"> Proceed</a>*@
+                                    </td>
+
+
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Servicesx" style="display:none">
+        <p id="">
+            <a href="#" class="fa fa-backward"><h4>@*Back To My Services List*@</h4></a>
+        </p>
+    </div>
+    <div class="forms" id="AddserviceLists" style="display:none">
+
+        <h2 class="title1"></h2>
+        <div class="form-grids row widget-shadow" data-example-id="basic-forms">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-body">
+
+                        @using (Html.BeginForm("AddServiceList", "Dashboard", FormMethod.Post, new { id = "signup" }))
+            {
+                        <form action="#" method="post" id="signup">
+                            @*<ol>*@
+
+                            @if (TempData["Msg"] != null)
+                                {
+                                <div id="Msg" class="alert alert-danger">
+                                    @TempData["Msg"]
+                                </div>
+                                }
+                            <h4>Services</h4>
+                            <div class="form-group">
+                                <select id="ServicesList" name="ServicesList" class="form-control1" data-live-search="true" required="required">
+                                    <option data-tokens="Select Operator"> Select Service type</option>
+                                    @foreach (var Services in ViewBag.MerchantServiceType)
+                                        {
+                                        <option id="Services" value="@Services.ID" data-tokens="@Services.Description">@Services.Name</option>
+                                        }
+                                </select>
+                            </div>
+
+                            <h4>Services Type</h4>
+                            <div class="form-group">
+                                <select id="SubServicesList" name="SubServicesList" class="form-control1" data-live-search="true" required="required">
+                                    <option data-tokens="Select Operator"></option>
+                                </select>
+                            </div>
+
+                            @*<input type="number" id="tel" name="CustomerId" pattern="\d{10}" placeholder="Enter customer ID" required="required" />*@
+                            <h4>Customer ID</h4>
+                            @Html.TextBoxFor(model => model.CustomerID, null, new { type = "", id = "", @class = "form-control1", required = "required", placeholder = "Enter Customer ID", onkeydown = " return isNumber(event);", onkeypress = "return isNumber(event);", ondrop = "return isNumber(event);", onpaste = "return isNumber(event);" })
+                            <p class="validation01" >
+                                    <span class="invalid">Please enter a valid Smartcard Number</span>
+
+                                </p>
+
+                            <br />
+
+                            <input type="submit" class="btn btn-primary" value="Add Service" />
+
+                            @*</ol>*@
+                        </form>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').dataTable();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#Msg").show();
+            setTimeout(function () { $("#Msg").hide(); }, 5000);
+        });
+
+        $("#Servicesa").click(function () {
+            //  alert("button"); // Remove this line if it worked
+            $("#Servicesx").show();
+            $("#Servicesb").hide();
+            $("#Servicesa").hide();
+            $("#AddserviceLists").show();
+        });
+
+        $("#Servicesx").click(function () {
+            $("#Servicesx").hide();
+            $("#Servicesb").show();
+            $("#Servicesa").show();
+            $("#AddserviceLists").hide();
+        });
+
+
+
+        $(function () {
+
+            $("#ServicesList").change(function () {
+                var t = $(this).val();
+                //alert(t);
+                if (t !== "") {
+                    $.post("@Url.Action("Dashboard", "Dashboard")?val=" + t, function (res) {
+                        if (res.Success === "true") {
+                            // alert(res.Success);
+                            $("#SubServicesList").empty();
+                            $("#SubServicesList").prepend("<option value='' selected='selected'>Select One</option>");
+                            // alert(res.Data.length);
+                            for (var i = 0; i < res.Data.length; i++)
+                            {
+                                $("#SubServicesList").append('<option value="' + res.Data[i].MarchantCode + '">' + res.Data[i].MarchantName + '</option>');
+                                // alert(res.Data[i].MarchantName)
+                            }
+                        }
+                        else {
+                            alert("Error getting data!");
+                        }
+                    });
+                }
+                else {
+                    //Let's clear the values and disable :)
+                    $("input.editableItems").val('').prop('disabled', true);
+                }
+
+            });
+        });
+    </script>
+
+
+<style>
+  .textsize
+  {
+   font-size:larger;
+  }
+  .textColor
+  {
+     color : blue;
+  }
+</style>

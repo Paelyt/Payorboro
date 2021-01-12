@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="agileits-inner-banner-TV">
+
+</div>
+<!-- //innerbanner -->
+<!-- breadcrumbs -->
+<div class="w3layouts-breadcrumbs text-center">
+    <div class="container">
+        <span class="agile-breadcrumbs">
+            <a href="@Url.Action("Index","Home")"><i class="fa fa-home home_1"></i></a> / <span>Select Your Disco</span>
+        </span>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- //breadcrumbs -->
+<!-- Services Images and Links -->
+<div class="service-frame-pad">
+    <div class="container">
+
+        <div class="services-list-img">
+
+            <div class="col-md-3 service-image-links">
+                <a href=@Url.Action("BuyPower", "Power" ,new { Disco = "1" }) class="mask">
+                    <img src=@Url.Content("/Styles/images/PowerProviderID/1.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                </a>
+
+            </div>
+            <div class="col-md-3 service-image-links">
+                <a href="@Url.Action("Buypower", "Power" ,new { Disco = "4" })" class="mask">
+                    <img src=@Url.Content("/Styles/images/PowerProviderID/4.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" id="10" />
+                </a>
+
+            </div>
+            <div class="col-md-3 service-image-links">
+                <a href="@Url.Action("Buypower", "Power",new { Disco = "2" })" class="mask">
+                    <img src=@Url.Content("/Styles/images/PowerProviderID/2.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                </a>
+            </div>
+
+            <div class="col-md-3 service-image-links">
+                @*<a href="@Url.Action("Buypower", "Power",new { Disco = "7" })" class="mask">
+                        <img src=@Url.Content("/Styles/images/PowerProviderID/7.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" id="10" />
+                    </a>*@
+            </div>
+
+
+            <div class="col-md-3 service-image-links">
+                @*<a href="@Url.Action("Buypower", "Power",new { Disco = "10" })" class="mask">
+                        <img src=@Url.Content("/Styles/images/PowerProviderID/10.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                    </a>*@
+            </div>
+
+            <div class="col-md-3 service-image-links">
+                @*<a href="@Url.Action("Buypower", "Power",new { Disco = "8" })" class="mask">
+                    <img src=@Url.Content("/Styles/images/PowerProviderID/8.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)"/>
+                          </a>*@
+            </div>
+
+            <div class="col-md-3 service-image-links">
+                @*<a href="@Url.Action("Buypower", "Power",new { Disco = "9" })" class="mask">
+                        <img src=@Url.Content("/Styles/images/PowerProviderID/9.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)"/>
+                    </a>*@
+            </div>
+
+            <div class="col-md-3 service-image-links">
+                @*<a href="@Url.Action("Buypower", "Power",new { Disco = "6" })" class="mask">
+                    <img src=@Url.Content("/Styles/images/PowerProviderID/6.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                             </a>*@
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>
+<script>
+    function submit() {
+        alert('Testing');
+        $.ajax({
+            url: @Url.Action("BuyPower", "Power") + '?param1=' + $('#myFormSubmit').value ,
+            type: 'POST',
+            // ... other ajax options ...
+        });
+    }
+
+    function submits() {
+        alert('Testing');
+
+    }
+</script>
+<script>
+function CallChangefunc(val)
+{
+    window.location.href = "/Power/BuyPower?value=" + EkedcId;
+}
+</script>
+<!--footer-->
+

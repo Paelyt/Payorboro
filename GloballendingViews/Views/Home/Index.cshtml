@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<div class="slider" id="home">
+    <div class="callbacks_container">
+        <ul class="rslides" id="slider">
+            <li>
+                <div class="w3layouts-banner-top w3layouts-banner-top1">
+
+                    <div class="container">
+                        <div class="slider-info">
+                            <div class="col-md-6  slider-info-txt">
+                                <h3>
+                                   Easy Like Never Before
+                                </h3>
+
+                                <p>
+                                   It is so easy to pay for Startimes tv bouquets. Never miss out on great entertainment.
+                                </p>
+
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+            <li>
+                <div class="w3layouts-banner-top">
+
+                    <div class="container">
+                        <div class="slider-info">
+                            <div class="col-md-6 slider-info-txt">
+                                <h3>UEFA  EUROPA league</h3>
+
+                                <p>
+                         Don’t miss out on UEFA  EUROPA league, Exclusive on Startimes.
+The UEFA Europa League knockout stages are starting to take shape – find out what's on the matchday five agenda with Startimes.
+                                </p>
+
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+            <li>
+                <div class="w3layouts-banner-top w3layouts-banner-top3">
+
+                    <div class="container">
+                        <div class="slider-info">
+                            <div class="col-md-6 slider-info-txt">
+                                <h3>Affordable Subscription</h3>
+
+                                <p>
+                                  With as low as N900, get a monthly subscription with Startimes and enjoy digital TV at its best.
+                                  Also available on Startimes, Daily and Weekly subscription
+                                </p>
+
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="main add">
+
+        <div class="serviceTab">
+            <h5>
+
+                @if (TempData["LogMsg"] == null)
+                {
+                    <div class=""></div>
+                }
+                else
+                {
+                    <div id="Msg" style="color:orange" class="alert alert-danger">
+                        <h5 style="color:blue"> @TempData["LogMsg"] </h5>
+                    </div>
+                }
+
+            </h5>
+
+            <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <button type="button" id="stars" class="btn btn-primary" href="#buyService" data-toggle="tab">
+                        <div class="tabHeader">Pay for a service</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                   <button type="button" id="favorites" class="btn btn-default" href="#borrowService" data-toggle="tab">
+                       <div class="tabHeader">Borrow a service </div>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="well">
+                <div class="tab-content">
+                   <div class="tab-pane fade in active" id="buyService">
+                        <p>Paying for your day-to-day utility bills with ease.</p>
+                        <div class="row iconStyleBox">
+                            <a href="@Url.Action("Index", "Paytv")"  class="sikZoom">
+                            	@*<a href="@Url.Action("Buy", "Paytv")"  class="sikZoom">*@
+									<div class="col-md-4 miniBox2 iconMiniBox ">
+<!-- <img src=@Url.Content("/HomeStyle/images/startTimesServiceIcon.png") class="miniBoxImg1 img-responsive" alt="Tv Icon">-->
+                                     <img src="images/tvServiceIcon.png" class="miniBoxImg2 img-responsive " alt="Tv Icon">
+									<h5>Pay TV</h5>
+									</div> 
+								</a>	
+			 
+                            	<a href="@Url.Action("Index","Power")"  class="sikZoom" style="">
+									<div class="col-md-4 miniBox1 iconMiniBox ">
+                                    <img src=@Url.Content("/HomeStyle/images/powerBuyServiceIcon.png") class="miniBoxImg1 img-responsive" alt="Tv Icon">
+									<h5>Electricity Bills</h5>
+									</div> 
+								</a>	
+								
+	@*<a href="@Url.Action("Check","Isp")"  class="sikZoom" style="">
+       <div class="col-md-4 miniBox3 iconMiniBox ">
+                 <img src=@Url.Content("/HomeStyle/images/internetServiceIcon.png") class="miniBoxImg3 img-responsive" alt="Data Icon">
+			 <h5>Internet Data</h5>
+	  </div> 
+								</a>*@		
+                            <a href="@Url.Action("BuyAirtime","Airtime")" class="sikZoom" style="">
+                                <div class="col-md-4 miniBox3 iconMiniBox ">
+                                    <img src=@Url.Content("/HomeStyle/images/internetServiceIcon.png") class="miniBoxImg3 img-responsive" alt="Data Icon">
+                                    <h5>Airtime</h5>
+                                </div>
+                            </a>	
+                            
+                            
+                            <a href="@Url.Action("index","Data")" class="sikZoom">
+                                <div class="col-md-4 miniBox3 iconMiniBox ">
+                                    <img src=@Url.Content("/HomeStyle/images/internetServiceIcon.png") class="miniBoxImg3 img-responsive" alt="Data Icon">
+                                    <h5>Internet Data</h5>
+                                </div>
+                            </a>	
+							</div>
+                    </div>
+                  
+                    <div class="tab-pane fade in" id="borrowService">
+                        <p>Service Coming Soon</p>
+                        
+                        <div class="row iconStyleBox">
+
+                            <a href="@Url.Action("CheckEligibility","Power")" class="sikZoom">
+                                <div class="col-md-4 miniBox1 iconMiniBox ">
+                                    <img src= class="miniBoxImg1 img-responsive" alt="Tv Icon">
+                                    <h5>Check Eligibilty</h5>
+                                </div>
+                            </a>
+
+                            <a href="@Url.Action("BoroPower","Power")" class="sikZoom">
+                                <div class="col-md-4 miniBox1 iconMiniBox ">
+                                    <img src=@Url.Content("/HomeStyle/images/powerServiceIcon.png") class="miniBoxImg1 img-responsive" alt="Tv Icon">
+                                    <h5>Electricity Bills</h5>
+                                </div>
+                            </a>
+
+
+                            <a href="#"  class="sikZoom">
+							     <div class="col-md-4 miniBox2 iconMiniBox ">
+                             <h5> Pay TV</h5>
+                                 <img src=@Url.Content("/HomeStyle/images/startTimesServiceIcon.png") class="miniBoxImg1 img-responsive" alt="Tv Icon">
+								 <!-- <img src="images/tvServiceIcon.png" class="miniBoxImg2 img-responsive " alt="Tv Icon"> -->
+								 <h5>COMING SOON</h5>
+								 </div> 
+							</a>
+
+                           
+                            <a href="#"  class="sikZoom" style="display:none">
+								<div class="col-md-4 miniBox3 iconMiniBox ">
+                                <img src=@Url.Content("/HomeStyle/images/internetServiceIcon.png") class="miniBoxImg3 img-responsive" alt="Data Icon">
+								<h5>Internet Data</h5>
+								</div> 
+							 </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+</div>
+</div>

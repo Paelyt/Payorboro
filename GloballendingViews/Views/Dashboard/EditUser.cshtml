@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+@model GloballendingViews.ViewModels.LoanViewModel
+
+<div class="forms">
+    <h2 class="title1"></h2>
+    <div class="form-grids row widget-shadow" data-example-id="basic-forms">
+       <div class="form-title">
+           @if (TempData["message"] == null)
+           {
+               <div class=""></div>
+           }
+           else
+           {
+               <div id="Msg" class="alert alert-success">
+                   <h4> @TempData["message"] </h4>
+               </div>
+           }
+        <h4>Create User</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="form-body">
+                    @using (Html.BeginForm("UpdateUser", "Dashboard", FormMethod.Post, new { id = "" }))
+                    {
+                        
+                        <form>
+
+
+                            <div class="form-group">
+                                <input type="text" style="display:none;" name="id" class="form-control1" value="@ViewBag.id" id="exampleInputEmail1" placeholder="ID">
+                                <label for="exampleInputEmail1">Firstname</label>
+                                @*@Html.TextBoxFor(model => model.AccountsModel.firstname, new { placeholder = "First Name *", @class = "form-control1", type = "text", required = "required", })*@
+                                <input type="text" style="" name="firstname" class="form-control1" value="@ViewBag.firstname" id="exampleInputEmail1" placeholder="ID">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Lastname</label>
+                                @*@Html.TextBoxFor(model => model.AccountsModel.lastname, new { placeholder = "Last Name *", @class = "form-control1", type = "text", required = "required", })*@
+                                <input type="text" style="" name="lastname" class="form-control1" value="@ViewBag.lastname" id="exampleInputEmail1" placeholder="ID">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                @*@Html.TextBoxFor(model => model.AccountsModel.Email, new { placeholder = "Email *", @class = "form-control1", type = "text", required = "required" })*@
+                                <input type="text" style="" name="Email" class="form-control1" value="@ViewBag.Email" id="exampleInputEmail1" placeholder="ID">
+                            </div>
+
+                            <div class="form-group">
+                                @*<label for="exampleInputEmail1">Phone</label>
+                                @Html.TextBoxFor(model => model.AccountsModel.Phone, new { placeholder = "Phone *", @class = "form-control1", type = "text", required = "required" })*@
+                                <input type="text" style="" name="Phone" class="form-control1" value="@ViewBag.Phone" id="exampleInputEmail1" placeholder="ID">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Password</label>
+                                @*@Html.TextBoxFor(model => model.AccountsModel.pasword, new { placeholder = "Password *", @class = "form-control1", type = "password", required = "required" })*@
+                                @*<input type="text" style="" name="pasword" class="form-control1" value="ViewBag.firstname" id="exampleInputEmail1" placeholder="ID">*@
+                            </div>
+
+
+
+
+                            <button type="submit" class="btn btn-default">Update User</button>
+
+                        </form>
+                    }
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+
+    </div>
+
+</div>
+<script>
+ $(document).ready(function () {
+        $("#Msg").show();
+        setTimeout(function () { $("#Msg").hide(); }, 5000);
+    });
+</script>

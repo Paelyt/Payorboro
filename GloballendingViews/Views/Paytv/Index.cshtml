@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "cabletv";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="agileits-inner-banner-TV">
+
+</div>
+<!-- //innerbanner -->
+<!-- breadcrumbs -->
+<div class="w3layouts-breadcrumbs text-center">
+    <div class="container">
+        <span class="agile-breadcrumbs"><a href="@Url.Action("Index", "Power")><i class="fa fa-home home_1"></i></a> / <span>Select Your Pay TV Provider</span></span>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- Services Images and Links -->
+<div class="service-frame-pad">
+    <div class="container">
+
+        <div class="services-list-img">
+
+            <div class="col-md-3 service-image-links">
+     <a href=@Url.Action("Buy", "Paytv" ,new { Biller = "100" }) class="mask">
+     <img src=@Url.Content("/Styles/images/CableProviderID/1.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+             </a>
+            </div>
+           
+            <div class="col-md-3 service-image-links">
+                <a href=@Url.Action("Buys", "Paytv", new { Biller = "13" }) class="mask">
+                    <img src=@Url.Content("/Styles/images/CableProviderID/2.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefuncs(this.value)" />
+                </a>
+            </div>
+            <div class="col-md-3 service-image-links">
+                <a href=@Url.Action("Buys", "Paytv", new { Biller = "14" }) class="mask">
+                    <img src=@Url.Content("/Styles/images/CableProviderID/3.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefuncs(this.value)" />
+                </a>
+            </div>
+            @*<div class="col-md-3 service-image-links">
+                <a href=@Url.Action("Buy", "Paytv", new { Biller = "4" }) class="mask">
+                    <img src=@Url.Content("/Styles/images/CableProviderID/4.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                </a>
+            </div>
+
+            <div class="col-md-3 service-image-links">
+                <a href=@Url.Action("Buy", "Paytv", new { Biller = "5" }) class="mask">
+                    <img src=@Url.Content("/Styles/images/CableProviderID/5.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                </a>
+            </div>
+
+            <div class="col-md-3 service-image-links">
+                <a href=@Url.Action("Buy", "Paytv", new { Biller = "5" }) class="mask">
+                    <img src=@Url.Content("/Styles/images/CableProviderID/5.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                </a>
+            </div>
+
+            <div class="col-md-3 service-image-links">
+                <a href=@Url.Action("Buy", "Paytv", new { Biller = "5" }) class="mask">
+                    <img src=@Url.Content("/Styles/images/CableProviderID/5.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                </a>
+            </div>
+
+            <div class="col-md-3 service-image-links">
+                <a href=@Url.Action("Buy", "Paytv", new { Biller = "5" }) class="mask">
+                    <img src=@Url.Content("/Styles/images/CableProviderID/5.jpg") class="img-responsive zoom-img" alt="" onchange="CallChangefunc(this.value)" />
+                </a>
+            </div>*@
+
+           @* <input type="button"
+                   value="Go Somewhere Else"
+                   onclick="location.href='<%: Url.Action(" Action", "Controller" ) %>'" />*@
+
+
+            @*<input type="button" value="Create" onclick="location.href='@Url.Action("Create", "User")'" />*@
+
+           @* <button type="submit" id="button1" name="button1" formaction='@Url.Action("Action", "Controller")'>Save</button>*@
+
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+				$(document).ready(function() {
+					/*
+						var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear'
+						};
+					*/
+
+					$().UItoTop({ easingType: 'easeOutQuart' });
+
+					});
+</script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+</script>
+
+<script>
+function CallChangefunc(val)
+{
+    window.location.href = "/Paytv/Buy?value=" + Biller;
+}
+</script>
+
+<script>
+function CallChangefuncs(val)
+{
+    window.location.href = "/Paytv/Buys?value=" + Biller;
+}
+</script>
+
+

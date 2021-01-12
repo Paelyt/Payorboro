@@ -1,0 +1,424 @@
+﻿@{
+    ViewBag.Title = "Checkout";
+    Layout = null;
+}
+@model GloballendingViews.Classes.Paytv.PaytvObj
+<link href=@Url.Content("/Styles/css/bootstrap.css") rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
+<link rel="stylesheet" href=@Url.Content("/Styles/css/bootstrap-select.css")><!-- bootstrap-select-CSS -->
+<link href=@Url.Content("/Styles/css/font-awesome.css") rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type='text/javascript' src=@Url.Content("/Styles/js/jquery-2.2.3.min.js")></script>
+
+
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href=@Url.Content("/Styles/css/style.css") rel="stylesheet" type="text/css" media="all" />
+<!-- FavIcons -->
+    <link rel="icon" sizes="192x192" href=@Url.Content("/HomeStyle/images/favicon-192x192.png")>
+    <link rel="apple-touch-icon" href=@Url.Content("/HomeStyle/images/apple-touch-icon.png")>
+    <link rel="shortcut icon" href=@Url.Content("/HomeStyle/images/favicon.ico")>
+    <meta name="msapplication-square150x150logo" content=@Url.Content("/HomeStyle/images/ms-icon-150x150.png")>
+    <meta name="msapplication-config" content=@Url.Content("/HomeStyle/images/browserconfig.xml")>
+    <!-- FavIcons -->
+<header>
+    <div class="container">
+        <!--logo-->
+        <div class="logo">
+            <a href=@Url.Action("Index", "Paytv")>
+                <img src=@Url.Content("/Styles/images/logo.png") alt="" class="img-responsive">
+            </a>
+        </div>
+        <!--//logo-->
+        <div class="w3layouts-login">
+
+
+
+            @if (Session["User"] == null)
+            {
+                <a data-toggle="modal" data-target="" href=@Url.Action("Signup", "Home")><i class="glyphicon glyphicon-user"></i> Login / Register</a>
+            }
+            @if (Session["User"] != null)
+            {
+                <p>
+                    <h7 style="color:white;"> @Session["User"] </h7><a data-toggle="modal" data-target="" href=@Url.Action("Signup", "Home")>
+                        <i class="glyphicon glyphicon-user"></i>Logout
+                    </a>
+
+
+                </p>
+            }
+
+
+
+
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+    <style>
+        .txtColor {
+            background-color:#e4e4e4;
+        }
+    </style>
+</header>
+<div class="agileits-inner-banner-TV">
+
+</div>
+<!-- //innerbanner -->
+<!-- breadcrumbs -->
+<div class="w3layouts-breadcrumbs text-center">
+    <div class="container">
+        <span class="agile-breadcrumbs"><a href=@Url.Action("Index", "Paytv")><i class="fa fa-home home_1"></i></a> / <span>PAY TV</span></span>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!--Vertical Tab-->
+<div class="categories-section main-grid-border" id="mobilew3layouts">
+    <div class="container">
+        <div class="category-list">
+            <div id="parentVerticalTab">
+                <div class="agileits-tab_nav">
+                    <ul class="resp-tabs-list hor_1">
+                        <li><i class="icon fa fa-television" aria-hidden="false"></i>@TempData["BillerName"]</li>
+                        <div class="advertBox">
+
+                                <p>
+                                        Pay for your Startimes subscription with ease. 
+                                        <br>
+                                        Simply fill out your details and proceed.
+                                </p>
+
+                              
+
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="resp-tabs-container hor_1">
+                    <!-- tab1 -->
+                    <div>
+                        <div class="tabs-box">
+                            @if (TempData["ErrorMessage"] == null)
+                            {
+                                <div class=""></div>
+                            }
+                            else
+                            {
+                                <div id="Msg" class="alert alert-danger">
+                                    <h3> @TempData["ErrorMessage"] </h3>
+                                </div>
+                            }
+                            <img src="@TempData["message"]" class="w3ls-mobile" alt="" width="200" data-pin-nopin="true">
+
+                            <div class="clearfix"> </div>
+                            <div class="tab-grids">
+                                <div class="tab-grid">
+                                    <div class="login-form">
+ @using (Html.BeginForm("Checkout", "Paytv", FormMethod.Post, new { id = "signup" }))
+
+  
+    {
+      <form action="cable-confirmation.html" method="post" id="signup">
+                                                <ol>
+                                                    <li>
+													 <h4>Customer ID</h4>  
+                                                        @Html.TextBoxFor(model => model.CustomerID, null, new { type = "text", id = "tel", required = "required" , @class= "field-Tint", @style = "background-color:#e4e4e4;", @readonly = "true"})         
+                  
+                                                    </li>
+                                                    <li>
+													<h4>Customer Name</h4>
+                                                        @Html.TextBoxFor(model => model.customerName, null, new { type = "text", id = "tel", required = "required", @class = "field-Tint", @style = "background-color:#e4e4e4;", @readonly = "true" })
+                                                        
+                                                    </li>
+<li>
+													<h4>Bouquet type</h4>
+                                                        @Html.TextBoxFor(model => model.Bouquet, null, new { type = "text", id = "tel", @class = "field-Tint", required = "required", @style = "background-color:#e4e4e4;", @readonly = "true" })
+                                                        
+                                                    </li>
+                                                    <li>
+													<h4>Service</h4>
+                                                        @Html.TextBoxFor(model => model.Service, null, new { type = "text", id = "tel", required = "required", @style = "background-color:#e4e4e4;", @class = "field-Tint", @readonly = "true" })
+                                                        
+                                                    </li>
+
+                                                    
+                                                    <li>
+													<h4>Phone Number</h4>
+                                                        @Html.TextBoxFor(model => model.Phone, null, new { type = "text", id = "tel", required = "required", @style = "background-color:#e4e4e4;", @class = "field-Tint", @readonly = "true" })
+                                                        
+                                                    </li>
+                                                    <li>
+													<h4>Transaction No</h4>
+                                                        @Html.TextBoxFor(model => model.transactionlNo, null, new { type = "text", id = "tel", @style = "background-color:#e4e4e4;", @class = "field-Tint", required = "required", @readonly = "true" })
+                                                        
+                                                    </li>
+                                                    <li>
+                                                        <h4>Amount</h4>
+                                                        @Html.TextBoxFor(model => model.Amount, null, new { type = "text", id = "tel", required = "required", @style = "background-color:#e4e4e4;", @class = "field-Tint", @readonly = "true" })
+                                                        
+                                                    </li>
+                                                    <li>
+                                                        <h4>Convenience fee</h4>
+                                                        @Html.TextBoxFor(model => model.ConvFee, null, new { type = "text", id = "tel", required = "required", @style = "background-color:#e4e4e4;", @class= "field-Tint", @readonly = "true" })
+                                                        
+                                                    </li>
+
+                                                    @*<li>
+                                                        <h4>Total Amount</h4>
+            <input type = "text" id = "tel" required = "required" style = "background-color:#e4e4e4;" value="@TempData["TotalAmt"]" readonly = "true" />
+                                                         
+                                                    </li>*@
+                                                    <li>
+                                                        <div class="mobile-right ">
+                                          <h4>Total Amount</h4>
+                                                            <div class="send-bnt-box">
+                                                                <input type="text" id="tel" required="required" class="field-Tint" value="@TempData["TotalAmt"]" readonly="true" />
+                                                                
+                                                            </div>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </li>
+
+                                                    @*I Added this one*@
+                                                    @*
+                                                        Commentted Out on May 20 2019
+                                                        <li>
+                                                        <div class="mobile-right ">
+                                                            <h4>Wallet Balance</h4>
+            <div class="send-bnt-box">
+           <input type="text" id="tels" name="walletvalue" required="required" class="field-Tint" value="@TempData["Wallet"]" readonly="true" /></div>
+            <div class="clearfix"></div>
+                                                        </div>
+                                                    </li>*@
+                                                    @*I Added this one*@
+
+                                                    @*<li>
+                                                        <input type="submit" class="submit" value="Proceed" />
+                                                    </li>*@
+                                                    @if (ViewBag.Wallet != 0)
+                                                    {
+                                                        <li>
+
+       <div class="mobile-right">
+                                             <h4>Wallet Balance</h4>
+      <div class="send-bnt-box">
+     <input type="text" id="tel" required="required" class="field-Tint" value="@ViewBag.Wallet" readonly="true" />
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+
+                                                        </li>
+                              <div class="row backFrontButtons">
+                                  <div class="col-md-6">
+    
+                                      <div class="col-md-4">
+                                          Wallet
+                                          @Html.RadioButtonFor(model => model.paymethod, "1", new { @class = "col-md-4" })
+                                          </div>
+                                          <div class="col-md-3">
+                                              Card   @Html.RadioButtonFor(model => model.paymethod, "0", new { @checked = "checked", @class = "col-md-4" })
+</div>
+                                          </div>
+                    </div>
+
+                                                    }
+                                                    <div class="row backFrontButtons">
+                                                        <div class="col-md-6">
+                                                            <li>
+                                                                <input type="button" onclick="history.go(-1); return false;" class="submit buttonFB" value="Back" />
+                                                                @*<a class="submit buttonFB" onclick="history.go(-1); return false;" href="#">Back</a>*@
+                                                            </li>
+                                                        </div>
+
+
+
+                                                        <div class="col-md-6">
+                                                            <li>
+                                                                <input type="submit" class="submit buttonFB" value="Proceed" />
+                                                            </li>
+
+                                                        </div>
+
+                                                    </div>
+                                                </ol>
+                                            </form>
+                                        }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+                        <!-- script -->
+                        <script>
+			$(document).ready(function() {
+				$("#tab2").hide();
+				$("#tab3").hide();
+				$("#tab4").hide();
+				$(".tabs-menu a").click(function(event){
+					event.preventDefault();
+					var tab=$(this).attr("href");
+					$(".tab-grid").not(tab).css("display","none");
+					$(tab).fadeIn("slow");
+				});
+			});
+                        </script>
+
+                    </div>
+                    <!-- /tab1 -->
+
+
+
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Plug-in Initialisation-->
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+
+<!--//footer-->
+<!-- for bootstrap working -->
+<script src=@Url.Content("/Styles/js/bootstrap.js")></script>
+<!-- //for bootstrap working --><!-- Responsive-slider -->
+<!-- Banner-slider -->
+<script src=@Url.Content("/Styles/js/responsiveslides.min.js")></script>
+<script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+</script>
+<!-- //Banner-slider -->
+<!-- //Responsive-slider -->
+<!-- Bootstrap select option script -->
+<script src=@Url.Content("/Styles/js/bootstrap-select.js")></script>
+<script>
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script>
+<!-- //Bootstrap select option script -->
+<!-- easy-responsive-tabs -->
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/css/easy-responsive-tabs.css") />
+<script src=@Url.Content("/Styles/js/easyResponsiveTabs.js")></script>
+<!-- //easy-responsive-tabs -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+				$(document).ready(function() {
+
+
+					$().UItoTop({ easingType: 'easeOutQuart' });
+
+					});
+</script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src=@Url.Content("/Styles/js/move-top.js")></script>
+<script type="text/javascript" src=@Url.Content("/Styles/js/easing.js")></script>
+<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+</script>
+<footer>
+    <div class="container-fluid">
+        <div class="w3-agile-footer-top-at">
+            <div class="col-md-3 agileits-amet-sed">
+                <h4>Resources</h4>
+                <ul class="w3ls-nav-bottom">
+                     <li><a href="#">About Us</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 agileits-amet-sed ">
+                <h4>Prime Partners</h4>
+                <ul class="w3ls-nav-bottom">
+                    <li><a href="#" class="scroll">Startimes</a></li>
+                        <li><a href="#" class="scroll">EKEDC</a></li>
+                        <li><a href="#" class="scroll">IBEDC</a></li>
+                        <!-- <li><a href="#mobilew3layouts" class="scroll">BSNL</a></li> -->
+                </ul>
+            </div>
+            <div class="col-md-3 agileits-amet-sed ">
+                <h4>Get In Touch</h4>
+                <ul class="w3ls-nav-bottom">
+                   <li style="display:none;"><i class="fa fa-home"></i> 10B Kingsley Emu Street, <br><span style="padding-left:20px;">Lekki Phase1 Lagos.</span></li>
+                        <li><i class="fa fa-phone"></i> +234 902 629 8534</li>
+                        <li style="display:none;"><i class="fa fa-whatsapp"></i> +234 000 493 8136</li> 
+                        <li><i class="fa fa-envelope"></i> info@payorboro.com</li>
+                        <li><i class="fa fa-envelope"></i> support@payorboro.com</li>
+                </ul>
+            </div>
+            <div class="col-md-3 agileits-amet-sed">
+                <h4>We Are Social</h4>
+                <div class="social-top">
+                        <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                        <a href="#"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                        <a href="#"><i id="social-em" class="fa fa-instagram fa-3x social"></i></a>
+                        <!-- <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a> -->
+                        <!-- <a href="mailto:info@boro.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a> -->
+                </div>
+            </div>
+          <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="w3l-footer-bottom">
+        <div class="container-fluid">
+            <div class="col-md-4 w3-footer-logo">
+                <h2><a href="index.html">payorboro</a></h2>
+            </div>
+            <div class="col-md-8 agileits-footer-class">
+               <p>© 2018 payorboro. All Rights Reserved | Powered by  <a href="http://paelyt.com/" target="_blank">Paelyt Solutions <span style="visibility:hidden;">solution</span></a> </p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</footer>

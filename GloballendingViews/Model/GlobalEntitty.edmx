@@ -1,0 +1,1185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GlobalTransactModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ContactEmail" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amountborrowed" Type="float" />
+          <Property Name="AmountPaid" Type="float" />
+          <Property Name="OutstandingAmount" Type="float" />
+          <Property Name="IsVisible" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_FK" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GlobalTransact.dbo.CustomerLedger' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CustomerLedger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="trnDate" Type="datetime" />
+          <Property Name="RefrenceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Debit" Type="float" />
+          <Property Name="Credit" Type="float" />
+          <Property Name="Customer_FK" Type="int" />
+          <Property Name="Merchant_FK" Type="int" />
+          <Property Name="Channel" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CustomerServices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_FK" Type="int" />
+          <Property Name="CustomerIDLabel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="PackageTypeIDLabel" Type="nvarchar" MaxLength="50" />
+          <Property Name="PackageType" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherLabelID" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherLabel" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="Merchant_FK" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GlobalTransact.dbo.CustomerTransaction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CustomerTransaction">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ReferenceNumber" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Customer_FK" Type="int" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="ServiceCharge" Type="float" />
+          <Property Name="TrnDate" Type="datetime" />
+          <Property Name="TransactionType" Type="int" />
+          <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServiceDetails" Type="nvarchar" MaxLength="250" />
+          <Property Name="Merchant_FK" Type="int" />
+          <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Loan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_Fk" Type="int" />
+          <Property Name="Firstname" Type="varchar" MaxLength="100" />
+          <Property Name="Lastname" Type="varchar" MaxLength="100" />
+          <Property Name="LoanAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Tenor" Type="int" />
+          <Property Name="InterestRate" Type="int" />
+          <Property Name="MonthlySalary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PrimaryPhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="SecondaryPhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="varchar" MaxLength="50" />
+          <Property Name="ContactAddress" Type="varchar" MaxLength="500" />
+          <Property Name="PrimaryEmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="SecondaryEmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="OtherIncome" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="LoanBank">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Loan_Fk" Type="int" />
+          <Property Name="BankName" Type="varchar" MaxLength="50" />
+          <Property Name="AccountName" Type="varchar" MaxLength="50" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Bvn" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LoanEmployeeInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Loan_Fk" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="OfficeAddress" Type="varchar" MaxLength="50" />
+          <Property Name="EmploymentStatus" Type="varchar" MaxLength="50" />
+          <Property Name="EmploymentDuration" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LoanSocial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Loan_Fk" Type="int" />
+          <Property Name="Social" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Merchant">
+          <Key>
+            <PropertyRef Name="MarchantName" />
+          </Key>
+          <Property Name="ID" Type="int" />
+          <Property Name="MarchantName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MarchantCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServiceCharge" Type="float" />
+          <Property Name="MerchantServiceType_FK" Type="int" />
+          <Property Name="IsVisible" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GlobalTransact.dbo.MerchantServiceType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MerchantServiceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsVisible" Type="int" />
+        </EntityType>
+        <EntityType Name="Pag">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PageUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleId" Type="int" />
+          <Property Name="isvisible" Type="int" />
+          <Property Name="pageHeader" Type="int" />
+        </EntityType>
+        <EntityType Name="PageAuthentications">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleId" Type="int" />
+          <Property Name="isVissible" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pageHeader">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="page_header" Type="varchar" MaxLength="150" />
+          <Property Name="isvisible" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'GlobalTransact.dbo.PagePermissions' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PagePermissions">
+          <Property Name="Id" Type="int" />
+          <Property Name="PageName" Type="varchar" MaxLength="150" />
+          <Property Name="RoleId" Type="int" />
+          <Property Name="IsVissible" Type="int" />
+        </EntityType>-->
+        <EntityType Name="PaymentLog">
+          <Key>
+            <PropertyRef Name="ReferenceNumber" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="150" />
+          <Property Name="CustomerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="ServiceCharge" Type="float" />
+          <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaymentReference" Type="nvarchar" MaxLength="50" />
+          <Property Name="TrxToken" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerPhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="TrnDate" Type="datetime" />
+          <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResponseCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResponseDescription" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" />
+          <Property Name="isVissible" Type="int" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TransactionLog">
+          <Key>
+            <PropertyRef Name="ReferenceNumber" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Customer_FK" Type="int" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="ServiceCharge" Type="float" />
+          <Property Name="TrnDate" Type="datetime" />
+          <Property Name="TransactionType" Type="int" />
+          <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServiceDetails" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsPaid" Type="int" />
+          <Property Name="Merchant_FK" Type="int" />
+          <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TrxToken" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="varchar(max)" />
+          <Property Name="lastname" Type="varchar(max)" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="pasword" Type="nchar" MaxLength="150" />
+          <Property Name="confirmPassword" Type="nchar" MaxLength="150" />
+          <Property Name="Email" Type="nchar" MaxLength="150" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="ResetPassword" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateTim" Type="datetime" />
+          <Property Name="isVissibles" Type="int" />
+        </EntityType>
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="RoleId" Type="int" />
+          <Property Name="IsVissible" Type="int" />
+          <Property Name="dates" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_LoanBank_Loan">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="0..1" />
+          <End Role="LoanBank" Type="Self.LoanBank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanBank">
+              <PropertyRef Name="Loan_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanBank_Loan1">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="0..1" />
+          <End Role="LoanBank" Type="Self.LoanBank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanBank">
+              <PropertyRef Name="Loan_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanEmployeeInfo_Loan">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="1" />
+          <End Role="LoanEmployeeInfo" Type="Self.LoanEmployeeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanEmployeeInfo">
+              <PropertyRef Name="Loan_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanSocial_Loan">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="0..1" />
+          <End Role="LoanSocial" Type="Self.LoanSocial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanSocial">
+              <PropertyRef Name="Loan_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pag_Pag1">
+          <End Role="Pag" Type="Self.Pag" Multiplicity="0..1" />
+          <End Role="Pag1" Type="Self.Pag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pag">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Pag1">
+              <PropertyRef Name="pageHeader" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PageAuthentications_PageAuthentications">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="PageAuthentications" Type="Self.PageAuthentications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="PageAuthentications">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User1" Type="Self.User" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GlobalTransactModelStoreContainer">
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerServices" EntityType="Self.CustomerServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loan" EntityType="Self.Loan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoanBank" EntityType="Self.LoanBank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoanEmployeeInfo" EntityType="Self.LoanEmployeeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoanSocial" EntityType="Self.LoanSocial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Merchant" EntityType="Self.Merchant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pag" EntityType="Self.Pag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PageAuthentications" EntityType="Self.PageAuthentications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pageHeader" EntityType="Self.pageHeader" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentLog" EntityType="Self.PaymentLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionLog" EntityType="Self.TransactionLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerLedger" EntityType="Self.CustomerLedger" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CustomerLedger].[ID] AS [ID], 
+    [CustomerLedger].[trnDate] AS [trnDate], 
+    [CustomerLedger].[RefrenceNumber] AS [RefrenceNumber], 
+    [CustomerLedger].[Debit] AS [Debit], 
+    [CustomerLedger].[Credit] AS [Credit], 
+    [CustomerLedger].[Customer_FK] AS [Customer_FK], 
+    [CustomerLedger].[Merchant_FK] AS [Merchant_FK], 
+    [CustomerLedger].[Channel] AS [Channel]
+    FROM [dbo].[CustomerLedger] AS [CustomerLedger]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CustomerTransaction" EntityType="Self.CustomerTransaction" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CustomerTransaction].[ID] AS [ID], 
+    [CustomerTransaction].[CustomerID] AS [CustomerID], 
+    [CustomerTransaction].[CustomerName] AS [CustomerName], 
+    [CustomerTransaction].[Customer_FK] AS [Customer_FK], 
+    [CustomerTransaction].[Amount] AS [Amount], 
+    [CustomerTransaction].[ServiceCharge] AS [ServiceCharge], 
+    [CustomerTransaction].[TrnDate] AS [TrnDate], 
+    [CustomerTransaction].[TransactionType] AS [TransactionType], 
+    [CustomerTransaction].[ValueDate] AS [ValueDate], 
+    [CustomerTransaction].[ValueTime] AS [ValueTime], 
+    [CustomerTransaction].[ServiceDetails] AS [ServiceDetails], 
+    [CustomerTransaction].[Merchant_FK] AS [Merchant_FK], 
+    [CustomerTransaction].[ReferenceNumber] AS [ReferenceNumber]
+    FROM [dbo].[CustomerTransaction] AS [CustomerTransaction]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MerchantServiceType" EntityType="Self.MerchantServiceType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MerchantServiceType].[ID] AS [ID], 
+    [MerchantServiceType].[Name] AS [Name], 
+    [MerchantServiceType].[Description] AS [Description], 
+    [MerchantServiceType].[IsVisible] AS [IsVisible]
+    FROM [dbo].[MerchantServiceType] AS [MerchantServiceType]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_LoanBank_Loan" Association="Self.FK_LoanBank_Loan">
+            <End Role="Loan" EntitySet="Loan" />
+            <End Role="LoanBank" EntitySet="LoanBank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanBank_Loan1" Association="Self.FK_LoanBank_Loan1">
+            <End Role="Loan" EntitySet="Loan" />
+            <End Role="LoanBank" EntitySet="LoanBank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanEmployeeInfo_Loan" Association="Self.FK_LoanEmployeeInfo_Loan">
+            <End Role="Loan" EntitySet="Loan" />
+            <End Role="LoanEmployeeInfo" EntitySet="LoanEmployeeInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanSocial_Loan" Association="Self.FK_LoanSocial_Loan">
+            <End Role="Loan" EntitySet="Loan" />
+            <End Role="LoanSocial" EntitySet="LoanSocial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pag_Pag1" Association="Self.FK_Pag_Pag1">
+            <End Role="Pag" EntitySet="Pag" />
+            <End Role="Pag1" EntitySet="Pag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PageAuthentications_PageAuthentications" Association="Self.FK_PageAuthentications_PageAuthentications">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="PageAuthentications" EntitySet="PageAuthentications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="User1" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_User" Association="Self.FK_UserRoles_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GlobalTransactModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ContactEmail" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amountborrowed" Type="Double" />
+          <Property Name="AmountPaid" Type="Double" />
+          <Property Name="OutstandingAmount" Type="Double" />
+          <Property Name="IsVisible" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_FK" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerService">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_FK" Type="Int32" />
+          <Property Name="CustomerIDLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PackageTypeIDLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PackageType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherLabelID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Merchant_FK" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Loan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_Fk" Type="Int32" />
+          <Property Name="Firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LoanAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Tenor" Type="Int32" />
+          <Property Name="InterestRate" Type="Int32" />
+          <Property Name="MonthlySalary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PrimaryPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SecondaryPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PrimaryEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SecondaryEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OtherIncome" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="LoanBanks" Relationship="Self.FK_LoanBank_Loan" FromRole="Loan" ToRole="LoanBank" />
+          <NavigationProperty Name="LoanBanks1" Relationship="Self.FK_LoanBank_Loan1" FromRole="Loan" ToRole="LoanBank" />
+          <NavigationProperty Name="LoanEmployeeInfoes" Relationship="Self.FK_LoanEmployeeInfo_Loan" FromRole="Loan" ToRole="LoanEmployeeInfo" />
+          <NavigationProperty Name="LoanSocials" Relationship="Self.FK_LoanSocial_Loan" FromRole="Loan" ToRole="LoanSocial" />
+        </EntityType>
+        <EntityType Name="LoanBank">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Loan_Fk" Type="Int32" />
+          <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bvn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Loan" Relationship="Self.FK_LoanBank_Loan" FromRole="LoanBank" ToRole="Loan" />
+          <NavigationProperty Name="Loan1" Relationship="Self.FK_LoanBank_Loan1" FromRole="LoanBank" ToRole="Loan" />
+        </EntityType>
+        <EntityType Name="LoanEmployeeInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Loan_Fk" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficeAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmploymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmploymentDuration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Loan" Relationship="Self.FK_LoanEmployeeInfo_Loan" FromRole="LoanEmployeeInfo" ToRole="Loan" />
+        </EntityType>
+        <EntityType Name="LoanSocial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Loan_Fk" Type="Int32" />
+          <Property Name="Social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Loan" Relationship="Self.FK_LoanSocial_Loan" FromRole="LoanSocial" ToRole="Loan" />
+        </EntityType>
+        <EntityType Name="Merchant">
+          <Key>
+            <PropertyRef Name="MarchantName" />
+          </Key>
+          <Property Name="ID" Type="Int32" />
+          <Property Name="MarchantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MarchantCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceCharge" Type="Double" />
+          <Property Name="MerchantServiceType_FK" Type="Int32" />
+          <Property Name="IsVisible" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Pag">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PageUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
+          <Property Name="isvisible" Type="Int32" />
+          <Property Name="pageHeader" Type="Int32" />
+          <NavigationProperty Name="Pag1" Relationship="Self.FK_Pag_Pag1" FromRole="Pag" ToRole="Pag1" />
+          <NavigationProperty Name="Pag2" Relationship="Self.FK_Pag_Pag1" FromRole="Pag1" ToRole="Pag" />
+        </EntityType>
+        <EntityType Name="PageAuthentication">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
+          <Property Name="isVissible" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_PageAuthentications_PageAuthentications" FromRole="PageAuthentications" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="pageHeader">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="page_header" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="isvisible" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PaymentLog">
+          <Key>
+            <PropertyRef Name="ReferenceNumber" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="ServiceCharge" Type="Double" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaymentReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TrxToken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TrnDate" Type="DateTime" Precision="3" />
+          <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResponseCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResponseDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isVissible" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PageAuthentications" Relationship="Self.FK_PageAuthentications_PageAuthentications" FromRole="Roles" ToRole="PageAuthentications" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRoles_Roles" FromRole="Roles" ToRole="UserRoles" />
+        </EntityType>
+        <EntityType Name="TransactionLog">
+          <Key>
+            <PropertyRef Name="ReferenceNumber" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_FK" Type="Int32" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="ServiceCharge" Type="Double" />
+          <Property Name="TrnDate" Type="DateTime" Precision="3" />
+          <Property Name="TransactionType" Type="Int32" />
+          <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsPaid" Type="Int32" />
+          <Property Name="Merchant_FK" Type="Int32" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrxToken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pasword" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="confirmPassword" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="ResetPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateTim" Type="DateTime" Precision="3" />
+          <Property Name="isVissibles" Type="Int32" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_User_User" FromRole="User" ToRole="User1" />
+          <NavigationProperty Name="User2" Relationship="Self.FK_User_User" FromRole="User1" ToRole="User" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRoles_User" FromRole="User" ToRole="UserRoles" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="RoleId" Type="Int32" />
+          <Property Name="IsVissible" Type="Int32" />
+          <Property Name="dates" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_UserRoles_Roles" FromRole="UserRoles" ToRole="Roles" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserRoles_User" FromRole="UserRoles" ToRole="User" />
+        </EntityType>
+        <EntityType Name="CustomerLedger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="trnDate" Type="DateTime" Precision="3" />
+          <Property Name="RefrenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Debit" Type="Double" />
+          <Property Name="Credit" Type="Double" />
+          <Property Name="Customer_FK" Type="Int32" />
+          <Property Name="Merchant_FK" Type="Int32" />
+          <Property Name="Channel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CustomerTransaction">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ReferenceNumber" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_FK" Type="Int32" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="ServiceCharge" Type="Double" />
+          <Property Name="TrnDate" Type="DateTime" Precision="3" />
+          <Property Name="TransactionType" Type="Int32" />
+          <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Merchant_FK" Type="Int32" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MerchantServiceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsVisible" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_LoanBank_Loan">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="0..1" />
+          <End Role="LoanBank" Type="Self.LoanBank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanBank">
+              <PropertyRef Name="Loan_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanBank_Loan1">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="0..1" />
+          <End Role="LoanBank" Type="Self.LoanBank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanBank">
+              <PropertyRef Name="Loan_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanEmployeeInfo_Loan">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="1" />
+          <End Role="LoanEmployeeInfo" Type="Self.LoanEmployeeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanEmployeeInfo">
+              <PropertyRef Name="Loan_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanSocial_Loan">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="0..1" />
+          <End Role="LoanSocial" Type="Self.LoanSocial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanSocial">
+              <PropertyRef Name="Loan_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pag_Pag1">
+          <End Role="Pag" Type="Self.Pag" Multiplicity="0..1" />
+          <End Role="Pag1" Type="Self.Pag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pag">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Pag1">
+              <PropertyRef Name="pageHeader" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PageAuthentications_PageAuthentications">
+          <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="PageAuthentications" Type="Self.PageAuthentication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="PageAuthentications">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Roles">
+          <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User1" Type="Self.User" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GlobalTransactEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="CustomerServices" EntityType="Self.CustomerService" />
+          <EntitySet Name="Loans" EntityType="Self.Loan" />
+          <EntitySet Name="LoanBanks" EntityType="Self.LoanBank" />
+          <EntitySet Name="LoanEmployeeInfoes" EntityType="Self.LoanEmployeeInfo" />
+          <EntitySet Name="LoanSocials" EntityType="Self.LoanSocial" />
+          <EntitySet Name="Merchants" EntityType="Self.Merchant" />
+          <EntitySet Name="Pags" EntityType="Self.Pag" />
+          <EntitySet Name="PageAuthentications" EntityType="Self.PageAuthentication" />
+          <EntitySet Name="pageHeaders" EntityType="Self.pageHeader" />
+          <EntitySet Name="PaymentLogs" EntityType="Self.PaymentLog" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="TransactionLogs" EntityType="Self.TransactionLog" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+          <EntitySet Name="CustomerLedgers" EntityType="Self.CustomerLedger" />
+          <EntitySet Name="CustomerTransactions" EntityType="Self.CustomerTransaction" />
+          <EntitySet Name="MerchantServiceTypes" EntityType="Self.MerchantServiceType" />
+          <AssociationSet Name="FK_LoanBank_Loan" Association="Self.FK_LoanBank_Loan">
+            <End Role="Loan" EntitySet="Loans" />
+            <End Role="LoanBank" EntitySet="LoanBanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanBank_Loan1" Association="Self.FK_LoanBank_Loan1">
+            <End Role="Loan" EntitySet="Loans" />
+            <End Role="LoanBank" EntitySet="LoanBanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanEmployeeInfo_Loan" Association="Self.FK_LoanEmployeeInfo_Loan">
+            <End Role="Loan" EntitySet="Loans" />
+            <End Role="LoanEmployeeInfo" EntitySet="LoanEmployeeInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanSocial_Loan" Association="Self.FK_LoanSocial_Loan">
+            <End Role="Loan" EntitySet="Loans" />
+            <End Role="LoanSocial" EntitySet="LoanSocials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pag_Pag1" Association="Self.FK_Pag_Pag1">
+            <End Role="Pag" EntitySet="Pags" />
+            <End Role="Pag1" EntitySet="Pags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PageAuthentications_PageAuthentications" Association="Self.FK_PageAuthentications_PageAuthentications">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="PageAuthentications" EntitySet="PageAuthentications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_User" Association="Self.FK_UserRoles_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GlobalTransactModelStoreContainer" CdmEntityContainer="GlobalTransactEntities1">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="GlobalTransactModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+                <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+                <ScalarProperty Name="Amountborrowed" ColumnName="Amountborrowed" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="OutstandingAmount" ColumnName="OutstandingAmount" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="User_FK" ColumnName="User_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerServices">
+            <EntityTypeMapping TypeName="GlobalTransactModel.CustomerService">
+              <MappingFragment StoreEntitySet="CustomerServices">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Customer_FK" ColumnName="Customer_FK" />
+                <ScalarProperty Name="CustomerIDLabel" ColumnName="CustomerIDLabel" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="PackageTypeIDLabel" ColumnName="PackageTypeIDLabel" />
+                <ScalarProperty Name="PackageType" ColumnName="PackageType" />
+                <ScalarProperty Name="OtherLabelID" ColumnName="OtherLabelID" />
+                <ScalarProperty Name="OtherLabel" ColumnName="OtherLabel" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+                <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+                <ScalarProperty Name="Merchant_FK" ColumnName="Merchant_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loans">
+            <EntityTypeMapping TypeName="GlobalTransactModel.Loan">
+              <MappingFragment StoreEntitySet="Loan">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Customer_Fk" ColumnName="Customer_Fk" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+                <ScalarProperty Name="MonthlySalary" ColumnName="MonthlySalary" />
+                <ScalarProperty Name="PrimaryPhoneNumber" ColumnName="PrimaryPhoneNumber" />
+                <ScalarProperty Name="SecondaryPhoneNumber" ColumnName="SecondaryPhoneNumber" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+                <ScalarProperty Name="PrimaryEmailAddress" ColumnName="PrimaryEmailAddress" />
+                <ScalarProperty Name="SecondaryEmailAddress" ColumnName="SecondaryEmailAddress" />
+                <ScalarProperty Name="OtherIncome" ColumnName="OtherIncome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoanBanks">
+            <EntityTypeMapping TypeName="GlobalTransactModel.LoanBank">
+              <MappingFragment StoreEntitySet="LoanBank">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Loan_Fk" ColumnName="Loan_Fk" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Bvn" ColumnName="Bvn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoanEmployeeInfoes">
+            <EntityTypeMapping TypeName="GlobalTransactModel.LoanEmployeeInfo">
+              <MappingFragment StoreEntitySet="LoanEmployeeInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Loan_Fk" ColumnName="Loan_Fk" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="OfficeAddress" ColumnName="OfficeAddress" />
+                <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+                <ScalarProperty Name="EmploymentDuration" ColumnName="EmploymentDuration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoanSocials">
+            <EntityTypeMapping TypeName="GlobalTransactModel.LoanSocial">
+              <MappingFragment StoreEntitySet="LoanSocial">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Loan_Fk" ColumnName="Loan_Fk" />
+                <ScalarProperty Name="Social" ColumnName="Social" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Merchants">
+            <EntityTypeMapping TypeName="GlobalTransactModel.Merchant">
+              <MappingFragment StoreEntitySet="Merchant">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MarchantName" ColumnName="MarchantName" />
+                <ScalarProperty Name="MarchantCode" ColumnName="MarchantCode" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="ContactPhoneNumber" ColumnName="ContactPhoneNumber" />
+                <ScalarProperty Name="ServiceCharge" ColumnName="ServiceCharge" />
+                <ScalarProperty Name="MerchantServiceType_FK" ColumnName="MerchantServiceType_FK" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pags">
+            <EntityTypeMapping TypeName="GlobalTransactModel.Pag">
+              <MappingFragment StoreEntitySet="Pag">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="isvisible" ColumnName="isvisible" />
+                <ScalarProperty Name="pageHeader" ColumnName="pageHeader" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PageAuthentications">
+            <EntityTypeMapping TypeName="GlobalTransactModel.PageAuthentication">
+              <MappingFragment StoreEntitySet="PageAuthentications">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="isVissible" ColumnName="isVissible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pageHeaders">
+            <EntityTypeMapping TypeName="GlobalTransactModel.pageHeader">
+              <MappingFragment StoreEntitySet="pageHeader">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="page_header" ColumnName="page_header" />
+                <ScalarProperty Name="isvisible" ColumnName="isvisible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentLogs">
+            <EntityTypeMapping TypeName="GlobalTransactModel.PaymentLog">
+              <MappingFragment StoreEntitySet="PaymentLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ServiceCharge" ColumnName="ServiceCharge" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+                <ScalarProperty Name="TrxToken" ColumnName="TrxToken" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerPhoneNumber" ColumnName="CustomerPhoneNumber" />
+                <ScalarProperty Name="TrnDate" ColumnName="TrnDate" />
+                <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+                <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+                <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+                <ScalarProperty Name="ResponseDescription" ColumnName="ResponseDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="GlobalTransactModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="isVissible" ColumnName="isVissible" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionLogs">
+            <EntityTypeMapping TypeName="GlobalTransactModel.TransactionLog">
+              <MappingFragment StoreEntitySet="TransactionLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Customer_FK" ColumnName="Customer_FK" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ServiceCharge" ColumnName="ServiceCharge" />
+                <ScalarProperty Name="TrnDate" ColumnName="TrnDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+                <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+                <ScalarProperty Name="ServiceDetails" ColumnName="ServiceDetails" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="Merchant_FK" ColumnName="Merchant_FK" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="TrxToken" ColumnName="TrxToken" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="GlobalTransactModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="pasword" ColumnName="pasword" />
+                <ScalarProperty Name="confirmPassword" ColumnName="confirmPassword" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ResetPassword" ColumnName="ResetPassword" />
+                <ScalarProperty Name="DateTim" ColumnName="DateTim" />
+                <ScalarProperty Name="isVissibles" ColumnName="isVissibles" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="GlobalTransactModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="IsVissible" ColumnName="IsVissible" />
+                <ScalarProperty Name="dates" ColumnName="dates" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerLedgers">
+            <EntityTypeMapping TypeName="GlobalTransactModel.CustomerLedger">
+              <MappingFragment StoreEntitySet="CustomerLedger">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="trnDate" ColumnName="trnDate" />
+                <ScalarProperty Name="RefrenceNumber" ColumnName="RefrenceNumber" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Customer_FK" ColumnName="Customer_FK" />
+                <ScalarProperty Name="Merchant_FK" ColumnName="Merchant_FK" />
+                <ScalarProperty Name="Channel" ColumnName="Channel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerTransactions">
+            <EntityTypeMapping TypeName="GlobalTransactModel.CustomerTransaction">
+              <MappingFragment StoreEntitySet="CustomerTransaction">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Customer_FK" ColumnName="Customer_FK" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ServiceCharge" ColumnName="ServiceCharge" />
+                <ScalarProperty Name="TrnDate" ColumnName="TrnDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+                <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+                <ScalarProperty Name="ServiceDetails" ColumnName="ServiceDetails" />
+                <ScalarProperty Name="Merchant_FK" ColumnName="Merchant_FK" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MerchantServiceTypes">
+            <EntityTypeMapping TypeName="GlobalTransactModel.MerchantServiceType">
+              <MappingFragment StoreEntitySet="MerchantServiceType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

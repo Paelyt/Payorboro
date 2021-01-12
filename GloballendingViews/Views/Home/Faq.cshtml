@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Faqs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="agileits-inner-banner">
+
+</div>
+<div class="w3layouts-breadcrumbs text-center">
+    <div class="container">
+        <span class="agile-breadcrumbs"><a href="@Url.Action("Index","Home")"><i class="fa fa-home home_1"></i></a> / <span>FAQ</span></span>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- Movies -->
+<div class="agile-movies w3layouts-content">
+    <div class="container">
+        <h3 class="w3-head">Select</h3>
+        <div class="">
+            <div class="col-md-4">
+                <a href="@Url.Action("faqpower","Home")" class="mask">
+                    <img src=@Url.Content("/HomeStyle/images/termsLink01.jpg") class="img-responsive zoom-img" alt="" /></a>
+            </div>
+            <div class="col-md-4">
+                <a href="@Url.Action("faqpaytv","Home")" class="mask">
+                    <img src=@Url.Content("/HomeStyle/images/termsLink02.jpg") class="img-responsive zoom-img" alt="" /></a>
+            </div>
+            <div class="col-md-4">
+                <a href="@Url.Action("faqairtimedata","Home")" class="mask">
+                    <img src=@Url.Content("/HomeStyle/images/termsLink03.jpg") class="img-responsive zoom-img" alt="" /></a>
+            </div>
+          <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>

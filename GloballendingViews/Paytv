@@ -1,0 +1,502 @@
+--------------------------
+2018-11-09 @ 10:52:47
+--------------------------
+Message: The best overloaded method match for 'GloballendingViews.Controllers.PaytvController.ValidateNum(string, string)' has some invalid arguments
+
+--------------------------
+2018-11-09 @ 12:42:10
+--------------------------
+Message: Root element is missing.
+
+--------------------------
+2018-11-09 @ 12:45:53
+--------------------------
+Message: Root element is missing.
+
+--------------------------
+2018-11-09 @ 12:48:22
+--------------------------
+Message: Root element is missing.
+
+--------------------------
+2018-11-09 @ 12:49:44
+--------------------------
+Message: Root element is missing.
+
+--------------------------
+2018-11-09 @ 12:51:22
+--------------------------
+Message: Root element is missing.
+
+--------------------------
+2018-11-09 @ 12:52:20
+--------------------------
+Message: Root element is missing.
+
+--------------------------
+2018-11-09 @ 12:53:17
+--------------------------
+Message: Root element is missing.
+
+--------------------------
+2018-11-09 @ 12:54:28
+--------------------------
+Message: Root element is missing.
+
+--------------------------
+2018-11-09 @ 14:45:40
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-09 @ 14:50:13
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-09 @ 14:58:26
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-09 @ 15:06:16
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-09 @ 15:16:01
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-09 @ 16:26:55
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-10 @ 16:40:09
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 16:41:07
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 16:47:18
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 16:48:48
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 16:50:59
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 16:53:53
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 16:54:22
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 16:58:12
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 17:01:10
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 17:02:03
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 17:03:10
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 17:06:00
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 17:08:38
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-10 @ 17:10:11
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-11 @ 20:35:05
+--------------------------
+Message: Cannot implicitly convert type 'Newtonsoft.Json.Linq.JObject' to 'string'. An explicit conversion exists (are you missing a cast?)
+
+--------------------------
+2018-11-11 @ 20:40:49
+--------------------------
+Message: Cannot implicitly convert type 'Newtonsoft.Json.Linq.JObject' to 'string'. An explicit conversion exists (are you missing a cast?)
+
+--------------------------
+2018-11-11 @ 20:42:59
+--------------------------
+Message: Cannot implicitly convert type 'Newtonsoft.Json.Linq.JObject' to 'string'. An explicit conversion exists (are you missing a cast?)
+
+--------------------------
+2018-11-11 @ 20:48:10
+--------------------------
+Message: Cannot implicitly convert type 'Newtonsoft.Json.Linq.JObject' to 'string'. An explicit conversion exists (are you missing a cast?)
+
+--------------------------
+2018-11-11 @ 21:32:56
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-11 @ 21:33:04
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-11 @ 21:34:50
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-11 @ 21:36:29
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-12 @ 10:24:51
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-12 @ 10:29:23
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-12 @ 11:02:40
+--------------------------
+Message: Cannot implicitly convert type 'Newtonsoft.Json.Linq.JObject' to 'string'. An explicit conversion exists (are you missing a cast?)
+
+--------------------------
+2018-11-12 @ 11:58:12
+--------------------------
+Message: Cannot implicitly convert type 'Newtonsoft.Json.Linq.JObject' to 'string'. An explicit conversion exists (are you missing a cast?)
+
+--------------------------
+2018-11-12 @ 11:58:12
+--------------------------
+Message: 'string' does not contain a definition for 'Data'
+
+--------------------------
+2018-11-12 @ 11:58:12
+--------------------------
+Message: 'object' does not contain a definition for 'Data'
+
+--------------------------
+2018-11-12 @ 12:03:50
+--------------------------
+Message: Cannot implicitly convert type 'Newtonsoft.Json.Linq.JObject' to 'string'. An explicit conversion exists (are you missing a cast?)
+
+--------------------------
+2018-11-12 @ 12:39:48
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 12:46:31
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 15:24:47
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 15:26:17
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 17:32:29
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 17:56:16
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 17:56:23
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 18:43:35
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 18:48:28
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 18:50:17
+--------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+--------------------------
+2018-11-12 @ 18:50:20
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 18:50:43
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 19:00:10
+--------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+--------------------------
+2018-11-12 @ 19:00:10
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 19:01:03
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-12 @ 19:20:52
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-13 @ 09:38:59
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-14 @ 11:42:00
+--------------------------
+Message: 'object' does not contain a definition for 'tranNum'
+
+--------------------------
+2018-11-19 @ 16:20:22
+--------------------------
+Message: Data at the root level is invalid. Line 1, position 1.
+
+--------------------------
+2018-11-19 @ 16:20:27
+--------------------------
+Message: Error reading JObject from JsonReader. Path '', line 0, position 0.
+
+--------------------------
+2018-11-20 @ 19:21:49
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 19:21:51
+--------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+--------------------------
+2018-11-20 @ 19:51:00
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 19:51:56
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 19:53:14
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 19:54:26
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 19:56:03
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 20:01:14
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 20:02:04
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 20:03:52
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 20:14:36
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 20:17:14
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 20:17:16
+--------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+--------------------------
+2018-11-20 @ 20:17:32
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 20:18:54
+--------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+--------------------------
+2018-11-20 @ 20:56:12
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 20:58:03
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:27:30
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:28:32
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:29:21
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:30:45
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:32:55
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:41:48
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:43:08
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:43:48
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:45:25
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:45:44
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:50:47
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:52:53
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-20 @ 21:53:09
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-21 @ 08:03:53
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-21 @ 09:57:32
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-21 @ 09:57:33
+--------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+--------------------------
+2018-11-21 @ 10:50:31
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-21 @ 10:50:33
+--------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+

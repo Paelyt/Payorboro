@@ -1,0 +1,442 @@
+﻿@{
+    ViewBag.Title = "Buy";
+    Layout = null;
+}
+@model GloballendingViews.Classes.Paytv.PaytvObj
+<link href=@Url.Content("/Styles/css/bootstrap.css") rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
+<link rel="stylesheet" href=@Url.Content("/Styles/css/bootstrap-select.css")><!-- bootstrap-select-CSS -->
+<link href=@Url.Content("/Styles/css/font-awesome.css") rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type='text/javascript' src=@Url.Content("/Styles/js/jquery-2.2.3.min.js")></script>
+
+<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href=@Url.Content("/Styles/css/style.css") rel="stylesheet" type="text/css" media="all" />
+<header>
+    <div class="container">
+        <!--logo-->
+        <div class="logo">
+            <a href=@Url.Action("Index", "Home")>
+                <img src=@Url.Content("/Styles/images/logo.png") alt="" class="img-responsive">
+            </a>
+        </div>
+        <!--//logo-->
+        <div class="w3layouts-login">
+
+
+
+            @if (Session["User"] == null)
+            {
+                <a data-toggle="modal" data-target="" href=@Url.Action("Signup", "Home")><i class="glyphicon glyphicon-user"></i> Login / Register</a>
+            }
+            @if (Session["User"] != null)
+            {
+                <p>
+                    <h7 style="color:white;"> @Session["User"] </h7><a data-toggle="modal" data-target="" href=@Url.Action("LogOut", "Home")>
+                        <i class="glyphicon glyphicon-user"></i>Logout
+                    </a>
+
+
+                </p>
+            }
+
+
+
+
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+</header>
+<div class="agileits-inner-banner-TV">
+
+</div>
+<!-- //innerbanner -->
+<!-- breadcrumbs -->
+<div class="w3layouts-breadcrumbs text-center">
+    <div class="container">
+        <span class="agile-breadcrumbs"><a href=@Url.Action("Index", "Paytv")><i class="fa fa-home home_1"></i></a> / <span>Service List</span></span>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!--Vertical Tab-->
+<div class="categories-section main-grid-border" id="mobilew3layouts">
+    <div class="container">
+        <div class="category-list">
+            <div id="parentVerticalTab">
+                <div class="agileits-tab_nav">
+    <ul class="resp-tabs-list hor_1">
+    @*<li><i class="icon fa fa-television" aria-hidden="false"></i>@TempData["BillerName"]</li>*@
+</ul>
+                </div>
+
+
+                <div class="resp-tabs-container hor_1">
+                    <!-- tab1 -->
+                    <div>
+                       
+                        <div class="tabs-box">
+                            <img src="@TempData["message"]" class="w3ls-mobile" alt="" width="200" data-pin-nopin="true">
+
+                            <div class="clearfix"> </div>
+                            <div class="tab-grids">
+                                <div class="tab-grid" id="Services">
+                                    <p>
+                                        <a href="@Url.Action("ServiceList","ServiceList")">Add New Service</a>
+                                    </p>
+                  <table cellpadding="2" cellspacing="2" border="1">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Customer_Fk</th>
+                                            <th>CustomerIDLabel</th>
+                                            <th>CustomerID</th>
+                                            <th>PackageTypeIDLabel</th>
+                                            <th>PackageType</th>
+                                            <th>OtherLabelID</th>
+                                            <th>OtherLabel</th>
+                                            <th>DateCreated</th>
+                                            <th>ValueDate</th>
+                                        </tr>
+                                        @foreach (var ServiceList in ViewBag.ServiceList)
+                                        {
+                                            <tr>
+
+                                                <td>@ServiceList.Customer_FK</td>
+                                                <td>@ServiceList.CustomerIDLabel</td>
+                                                <td>@ServiceList.CustomerID</td>
+                                                <td>@ServiceList.PackageTypeIDLabel</td>
+                                                <td>@ServiceList.PackageType</td>
+                                                <td>@ServiceList.OtherLabelID</td>
+                                                <td>@ServiceList.OtherLabel</td>
+                                                <td>@ServiceList.DateCreated</td>
+                                                <td>@ServiceList.ValueDate</td>
+
+
+                                                <td>
+                                                    <a onclick="return confirm('Are You Sure ?')" href="@Url.Action("Delete","Loan", new { id = ServiceList.ID  })">Remove</a>
+
+                                                    <a onclick="return confirm('Are You Want To Edit ?')" href="@Url.Action("Edit","Loan", new { id = ServiceList.ID  })"> Update
+                                                </td>
+
+
+                                            </tr>
+                                        }
+
+                                    </table>
+
+
+                                </div>
+
+                            </div>
+                            <div class="login-form" id="serviceList">
+                                @using (Html.BeginForm("Buy", "Paytv", FormMethod.Post, new { id = "signup" }))
+                                {
+                                    <form action="cable-confirmation.html" method="post" id="signup">
+
+
+                                        <ol>
+                                            <input type="text" name="BillerName" value="@TempData["BillerName"]" style="display:none;" readonly="true" />
+                                            <input type="text" name="ImageUrl" value="@TempData["message"]" style="display:none;" readonly="true" />
+
+                                            <li>
+                                                <div class="agileits-select">
+
+
+                                                    <select id="Services" name="Services" class="sikSelect" data-live-search="true" required="required">
+                                                        <option data-tokens="Select Operator"> Select Service type</option>
+                                                        @*@foreach (var Services in ViewBag.Services)
+                                                        {
+                                                            <option id="Services" value="@Services.Name" data-tokens="@Services.Name">@Services.Name</option>
+                                                        }*@
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="agileits-select">
+
+                                                    @*<select id="ServiceList" class="form-control" name="ServiceList" data-live-search="true" required="required" onchange="getText();">
+                                    <option></option>
+                                </select>*@
+
+                                                    @*<select id="ServiceList"  name="ServiceList" class="selectpicker show-tick" data-live-search="true" required="required" onchange="getText();">
+
+
+                                <option  data-tokens="Select Operator"> Select Service </option> <option  id="ServiceLists"  value="" data-tokens="" ></option></select>*@
+
+
+
+                                                    <select id="ServiceList" name="ServiceList" class="sikSelect" data-live-search="true" required="required" onchange="getText();">
+                                                        <option data-tokens="Select Operator"></option>
+
+
+                                                    </select>
+
+
+                                                </div>
+                                            </li>
+                                            <li>
+                                                @*<input type="number" id="tel" name="CustomerId" pattern="\d{10}" placeholder="Enter customer ID" required="required" />*@
+                                                @Html.TextBoxFor(model => model.CustomerID, null, new { type = "", id = "", @class = "sikField", required = "required", placeholder = "Enter Smartcard Number", onkeydown = " return isNumber(event);", onkeypress = "return isNumber(event);", ondrop = "return isNumber(event);", onpaste = "return isNumber(event);" })
+                                                <p class="validation01">
+                                                    <span class="invalid">Please enter a valid Smartcard Number</span>
+
+                                                </p>
+                                            </li>
+
+                                            <li>
+                                                @*<input type="number" id="tel" name="CustomerId" pattern="\d{10}" placeholder="Enter customer ID" required="required" />*@
+                                                @Html.TextBoxFor(model => model.Phone, null, new { type = "", id = "", maxlength = 11, @class = "sikField", required = "required", placeholder = "Enter Phone", onkeydown = " return isNumber(event);", ondrop = "return isNumber(event);", onkeypress = "return isNumber(event);", onpaste = "return isNumber(event);" })
+                                                <p class="validation01">
+                                                    <span class="invalid">Please enter a valid Phone Number</span>
+
+                                                </p>
+                                            </li>
+                                            <li>
+
+                                                @Html.TextBoxFor(model => model.Email, null, new { type = "", id = "", @class = "sikField", placeholder = "Enter Email" })
+                                                <p class="validation01">
+                                                    <span class="invalid">Please enter a valid Email Address</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                @*<input type="text" id="Amts" name="Amount" placeholder="Enter Amount" class="time" required="" />*@
+                                                @Html.TextBoxFor(model => model.Amount, null, new { type = "", id = "Amts", @class = "sikField", required = "required", placeholder = "Enter Amount", onkeydown = " return isNumber(event);", onkeypress = "return isNumber(event);", ondrop = "return isNumber(event);", onpaste = "return isNumber(event);" })
+
+                                                <p class="validation01">
+                                                    <span class="invalid">Please enter a valid Amount</span>
+
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <div class="agileits-select">
+                                                    <select id="Recuring" name="Recuring" class="sikSelect" data-live-search="true" required="required">
+                                                        <option data-tokens="Select One" value="0"> Select Payment type</option>
+
+
+                                                        <option id="Services" value="2" data-tokens="Recurring">Recurring Payment</option>
+                                                        <option id="Services" value="1" data-tokens="One-off-Payment">One-off Payment</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+
+                                            <li><p><a href="@Url.Action("RecurringBenefit","Home")">Click to see</a> Terms and Conditions.</p></li>
+                                            <li>
+                                                <input type="submit" id="sbn" class="submit" value="Proceed" />
+                                            </li>
+                                        </ol>
+                                    </form>
+                                }
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+                        <!-- script -->
+                        <script>
+			$(document).ready(function() {
+				$("#tab2").hide();
+				$("#tab3").hide();
+				$("#tab4").hide();
+				$(".tabs-menu a").click(function(event){
+					event.preventDefault();
+					var tab=$(this).attr("href");
+					$(".tab-grid").not(tab).css("display","none");
+					$(tab).fadeIn("slow");
+				});
+			});
+                        </script>
+
+                    </div>
+                    <!-- /tab1 -->
+
+
+
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Plug-in Initialisation-->
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+
+<!--//footer-->
+<!-- for bootstrap working -->
+<script src=@Url.Content("/Styles/js/bootstrap.js")></script>
+<!-- //for bootstrap working --><!-- Responsive-slider -->
+<!-- Banner-slider -->
+<script src=@Url.Content("/Styles/js/responsiveslides.min.js")></script>
+<script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+</script>
+<!-- //Banner-slider -->
+<!-- //Responsive-slider -->
+<!-- Bootstrap select option script -->
+<script src=@Url.Content("/Styles/js/bootstrap-select.js")></script>
+@* <script>
+    $(document).ready(function () {
+      var mySelect = $('#first-disabled2');
+
+      $('#special').on('click', function () {
+        mySelect.find('option:selected').prop('disabled', true);
+        mySelect.selectpicker('refresh');
+      });
+
+      $('#special2').on('click', function () {
+        mySelect.find('option:disabled').prop('disabled', false);
+        mySelect.selectpicker('refresh');
+      });
+
+      $('#basic2').selectpicker({
+        liveSearch: true,
+        maxOptions: 1
+      });
+    });
+      </script>*@
+<!-- //Bootstrap select option script -->
+<!-- easy-responsive-tabs -->
+<link rel="stylesheet" type="text/css" href=@Url.Content("/Styles/css/easy-responsive-tabs.css") />
+<script src=@Url.Content("/Styles/js/easyResponsiveTabs.js")></script>
+<!-- //easy-responsive-tabs -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+				$(document).ready(function() {
+
+
+					$().UItoTop({ easingType: 'easeOutQuart' });
+
+					});
+</script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src=@Url.Content("/Styles/js/move-top.js")></script>
+<script type="text/javascript" src=@Url.Content("/Styles/js/easing.js")></script>
+<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+</script>
+<footer>
+    <div class="container-fluid">
+        <div class="w3-agile-footer-top-at">
+            <div class="col-md-3 agileits-amet-sed">
+                <h4>Resources</h4>
+                <ul class="w3ls-nav-bottom">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="@Url.Action("Faqs", "Home")">FAQ</a></li>
+                    <li><a href="@Url.Action("Terms", "Home")">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 agileits-amet-sed ">
+                <h4>Prime Partners</h4>
+                <ul class="w3ls-nav-bottom">
+                    <li><a href="http://startimestv.com" target="_blank">Startimes</a></li>
+                    <li><a href="https://powernow.com.ng" target="_blank">PowerNow</a></li>
+                    <li><a href="https://ekedp.com" target="_blank">EKEDC</a></li>
+                    <!-- <li><a href="#mobilew3layouts" class="scroll">BSNL</a></li> -->
+                </ul>
+            </div>
+            <div class="col-md-3 agileits-amet-sed ">
+                <h4>Get In Touch</h4>
+                <ul class="w3ls-nav-bottom">
+                    <li style="display:none;"><i class="fa fa-home"></i> 10B Kingsley Emu Street, <br><span style="padding-left:20px;">Lekki Phase1 Lagos.</span></li>
+                    <li><i class="fa fa-phone"></i> +234 0708 235 7630</li>
+                    <li style="display:none;"><i class="fa fa-whatsapp"></i> +234 000 493 8136</li>
+                    <li><i class="fa fa-envelope"></i> info@payorboro.com</li>
+                    <li><i class="fa fa-envelope"></i> customercare@payorboro.com</li>
+                </ul>
+            </div>
+            <div class="col-md-3 agileits-amet-sed">
+                <h4>We Are Social</h4>
+                <div class="social-top">
+                    <a href="https://www.facebook.com/payorboro" target="_blank"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                    <a href="https://twitter.com/payorboro" target="_blank"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                    <a href="https://www.instagram.com/payorboro/" target="_blank"><i id="social-em" class="fa fa-instagram fa-3x social"></i></a>
+                    <!-- <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a> -->
+                    <!-- <a href="mailto:info@boro.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a> -->
+                </div>
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="w3l-footer-bottom">
+        <div class="container-fluid">
+            <div class="col-md-4 w3-footer-logo">
+                <h2><a href="@Url.Action("index", "Home")">payorboro</a></h2>
+            </div>
+            <div class="col-md-8 agileits-footer-class">
+                <p>© 2018 payorboro. All Rights Reserved | Powered by  <a href="http://paelyt.com/" target="_blank">Paelyt Solutions <span style="visibility:hidden;">solution</span></a> </p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript">
+   
+    $(document).ready(function () {
+        $("#Msg").show();
+        setTimeout(function () { $("#Msg").hide(); }, 5000);
+    });
+
+
+    $("#Services").click(function () {
+        alert("button"); // Remove this line if it worked
+        $("#Services").hide();
+        $("#serviceList").show();
+    });
+
+    //$(function () {
+
+    //    $("#Services").change(function () {
+
+    //        var service = $(this).val();
+
+    //        if (service === "Top-up") {
+    //            //alert("Moving Forward");
+    //            $("#VoucherDiv").show();
+    //        }
+    //        else if (service !== "Top-up") {
+    //            // alert("Hide Div");
+    //            $("#VoucherDiv").hide();
+    //         }
+    //     });
+    //});
+
+</script>
+
+

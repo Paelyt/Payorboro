@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "AllUserRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AllUserRoles</h2>
+<p>
+    <a href="@Url.Action("UserRole","Index")">Add Users Role</a>
+</p>
+<table cellpadding="2" cellspacing="2" border="1">
+    <tr>
+
+        <th>userid</th>
+        <th>Role ID</th>
+        <th>Role Name</th>
+        <th>Email</th>
+        <th>ID</th>
+       
+
+    </tr>
+    @foreach (var UserRole in Model.getAllUserAndRoless)
+    {
+        <tr>
+            <td>@UserRole.userid</td>
+            <td>@UserRole.roleid</td>
+            <td>@UserRole.rolename</td>
+            <td>@UserRole.email</td>
+            <td>@UserRole.id</td>
+          <td>
+                <a onclick="return confirm('Are You Sure ?')" href="@Url.Action("Delete","Loan", new { id = UserRole.userid  })">Delete</a>
+
+                <a onclick="return confirm('Are You Want To Edit ?')" href="@Url.Action("Edit","Loan", new { id = UserRole.userid  })"> Edit</a>
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+

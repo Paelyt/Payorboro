@@ -1,0 +1,330 @@
+--------------------------
+2018-10-26 @ 18:18:45
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-10-26 @ 18:35:24
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-10-26 @ 18:42:59
+--------------------------
+Message: Unexpected character encountered while parsing value: j. Path '', line 0, position 0.
+
+--------------------------
+2018-10-26 @ 18:57:02
+--------------------------
+Message: The best overloaded method match for 'System.Web.Script.Serialization.JavaScriptSerializer.Deserialize<GloballendingViews.Classes.Power>(string)' has some invalid arguments
+
+--------------------------
+2018-10-26 @ 18:59:51
+--------------------------
+Message: The best overloaded method match for 'System.Web.Script.Serialization.JavaScriptSerializer.Deserialize<GloballendingViews.Models.Power>(string)' has some invalid arguments
+
+--------------------------
+2018-10-26 @ 19:09:04
+--------------------------
+Message: The best overloaded method match for 'System.Web.Script.Serialization.JavaScriptSerializer.Deserialize<GloballendingViews.Models.Power>(string)' has some invalid arguments
+
+--------------------------
+2018-11-02 @ 10:51:18
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-02 @ 10:53:06
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-02 @ 11:31:48
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-02 @ 13:20:13
+--------------------------
+Message: Unable to cast object of type 'CustomerObj' to type 'GloballendingViews.Models.Power'.
+
+--------------------------
+2018-11-02 @ 13:26:14
+--------------------------
+Message: Unable to cast object of type 'CustomerObj' to type 'GloballendingViews.Models.Power'.
+
+--------------------------
+2018-11-05 @ 11:54:45
+--------------------------
+Message: Unable to cast object of type 'CustomerObj' to type 'GloballendingViews.Models.Power'.
+
+--------------------------
+2018-11-05 @ 12:36:41
+--------------------------
+Message: 'GloballendingViews.Classes.Power.CustomerObj' does not contain a definition for 'Merchant_fk'
+
+--------------------------
+2018-11-05 @ 12:36:58
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-05 @ 12:38:58
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-05 @ 13:00:27
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-05 @ 13:00:44
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-05 @ 13:35:04
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-05 @ 14:01:07
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-05 @ 14:28:35
+--------------------------
+Executing Assembly: System.Net.WebClient, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Executing Method: UploadDataInternal
+Executing Line Number: 0
+Exeption Message: The operation has timed out
+
+--------------------------
+2018-11-05 @ 14:28:35
+--------------------------
+Message: Value cannot be null.
+Parameter name: s
+
+--------------------------
+2018-11-05 @ 15:45:30
+--------------------------
+Executing Assembly: System.Net.WebClient, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Executing Method: UploadDataInternal
+Executing Line Number: 0
+Exeption Message: The remote name could not be resolved: 'www.powernow.com.ng'
+
+--------------------------
+2018-11-05 @ 15:45:30
+--------------------------
+Message: Value cannot be null.
+Parameter name: s
+
+--------------------------
+2018-11-05 @ 15:49:10
+--------------------------
+Executing Assembly: System.Net.WebClient, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Executing Method: UploadDataInternal
+Executing Line Number: 0
+Exeption Message: The remote name could not be resolved: 'www.powernow.com.ng'
+
+--------------------------
+2018-11-05 @ 15:51:07
+--------------------------
+Message: Value cannot be null.
+Parameter name: s
+
+--------------------------
+2018-11-05 @ 15:53:00
+--------------------------
+Executing Assembly: System.Net.WebClient, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Executing Method: UploadDataInternal
+Executing Line Number: 0
+Exeption Message: The remote name could not be resolved: 'www.powernow.com.ng'
+
+--------------------------
+2018-11-05 @ 15:53:00
+--------------------------
+Message: Value cannot be null.
+Parameter name: s
+
+--------------------------
+2018-11-05 @ 15:57:05
+--------------------------
+Executing Assembly: System.Net.WebClient, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Executing Method: UploadDataInternal
+Executing Line Number: 0
+Exeption Message: The remote name could not be resolved: 'www.powernow.com.ng'
+
+--------------------------
+2018-11-05 @ 16:16:25
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-06 @ 12:41:23
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-06 @ 12:42:45
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-06 @ 14:21:40
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-06 @ 17:45:53
+--------------------------
+Executing Assembly: System.Net.WebClient, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Executing Method: UploadDataInternal
+Executing Line Number: 0
+Exeption Message: The remote server returned an error: (404) Not Found.
+
+--------------------------
+2018-11-06 @ 17:46:48
+--------------------------
+Executing Assembly: System.Net.WebClient, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Executing Method: UploadDataInternal
+Executing Line Number: 0
+Exeption Message: The remote server returned an error: (404) Not Found.
+
+--------------------------
+2018-11-06 @ 19:00:44
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-06 @ 19:03:03
+--------------------------
+Message: Cannot perform runtime binding on a null reference
+
+--------------------------
+2018-11-06 @ 19:26:50
+--------------------------
+Message: Unable to cast object of type 'CustomerObj' to type 'GloballendingViews.Models.Power'.
+
+--------------------------
+2018-11-06 @ 20:11:55
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-06 @ 20:14:10
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-06 @ 20:25:18
+--------------------------
+Message: Unable to cast object of type 'GloballendingViews.Models.Power' to type 'CustomerObj'.
+
+--------------------------
+2018-11-06 @ 20:27:34
+--------------------------
+Message: Unable to cast object of type 'GloballendingViews.Models.Power' to type 'CustomerObj'.
+
+--------------------------
+2018-11-07 @ 06:54:50
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 07:06:39
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 08:02:42
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 08:16:34
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 08:24:39
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 08:47:26
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 08:48:55
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 08:50:23
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 08:51:24
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 09:07:27
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 09:11:04
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 09:14:13
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 09:26:12
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 09:34:36
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 09:52:21
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 10:19:48
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-07 @ 10:24:49
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-14 @ 18:03:56
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-14 @ 18:05:22
+--------------------------
+Message: Object reference not set to an instance of an object.
+
+--------------------------
+2018-11-21 @ 10:59:03
+--------------------------
+Message: Object reference not set to an instance of an object.
+

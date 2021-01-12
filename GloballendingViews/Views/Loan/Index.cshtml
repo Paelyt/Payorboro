@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Index";
+ }
+
+<h2>Index</h2>
+
+<p>
+    <a href="@Url.Action("index","Loan")">Add New Loan</a>
+</p>
+<table cellpadding="2" cellspacing="2" border="1">
+    <tr>
+      
+                                <th>ID</th>
+                                <th>Customer_Fk</th>
+                                <th>LoanAmount</th>
+                                <th>Tenor</th>
+                                <th>InterestRate</th>
+                                <th>MonthlySalary</th>
+                                <th>PrimaryPhoneNumber</th>
+                                <th>SecondaryPhoneNumber</th>
+                                <th>DateOfBirth</th>
+                                <th>ContactAddress</th>
+                                <th>PrimaryEmailAddress</th>
+                                <th>SecondaryEmailAddress</th>
+                                <th>OtherIncome</th>
+                                
+
+    </tr>
+    @foreach (var Loan in ViewBag.listLoan)
+    {
+        <tr>
+            <td>@Loan.ID</td>
+            <td>@Loan.Customer_Fk</td>
+            <td>@Loan.LoanAmount</td>
+            <td>@Loan.Tenor</td>
+            <td>@Loan.InterestRate</td>
+            <td>@Loan.MonthlySalary</td>
+            <td>@Loan.PrimaryPhoneNumber</td>
+            <td>@Loan.SecondaryPhoneNumber</td>
+            <td>@Loan.DateOfBirth</td>
+            <td>@Loan.ContactAddress</td>
+            <td>@Loan.PrimaryEmailAddress</td>
+            <td>@Loan.SecondaryEmailAddress</td>
+            <td>@Loan.OtherIncome</td>
+           
+            <td>
+                <a onclick="return confirm('Are You Sure ?')" href="@Url.Action("Delete","Loan", new { id = Loan.ID  })">Delete</a>
+
+                <a onclick="return confirm('Are You Want To Edit ?')" href="@Url.Action("Edit","Loan", new { id = Loan.ID  })"> Edit
+            </td>
+
+
+        </tr>
+    }
+
+</table>

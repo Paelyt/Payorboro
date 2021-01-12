@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<form method="post" action="$action" name="paytrx_form" id="paytrx_form">
+    <input type="hidden" name="planId" value="$planId" size="50" />
+    <input type="hidden" name="publicKey" value="$publicKey" size="50" />
+    <input type="hidden" name="product" value="$product" size="50" />
+    <input type="hidden" name="trxRef" value="$trxRef" size="50" />
+    <input type="hidden" name="customerId" value="$customerId" size="50" />
+    <input type="hidden" name="customerName" value="$customerName" size="50" />
+    <input type="hidden" name="email" value="$email" size="50" />
+    <input type="hidden" name="phone" value="$phone" size="50" />
+    <input type="hidden" name="amount" value="$amount" size="50" />
+    <input type="hidden" name="currency" value="$currency" size="50" />
+    <input type="hidden" name="narration" value="$narration" size="50" />
+    <input type="hidden" name="returnUrl" value="$returnUrl" size="50" />
+    <input type="hidden" name="hash" value="$hash" size="50" />
+  
+
+</form>
+</body>
+</html>
+<script type="text/javascript">
+    document.getElementById('paytrx_form').submit();
+</script>

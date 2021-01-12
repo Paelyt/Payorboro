@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Signin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model GloballendingViews.ViewModels.LoanViewModel
+
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Page n Role</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Page n Role</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+@using (Html.BeginForm("PageRole", "Index", FormMethod.Post))
+{
+
+
+    <form action="" method="post">
+
+        <div class="row list-input">
+            <div class="col-md-3 mr0" style="margin:auto;">
+                <div class="single-get-touch">
+
+
+                @Html.DropDownList("id", new SelectList(ViewBag.listPage, "id", "PageName",ViewBag.SelectedItem), new { @onchange = "CallChangefunc(this.value)" })
+                  
+                </div>
+            </div>
+
+
+        </div>
+        <br />
+
+        <div class="row list-input">
+            <div class="col-md-3 mr0" style="margin:auto;">
+
+                <div class="single-get-touch">
+
+                    @foreach (var Assigned in Model.GetAssignPagess)
+                    {
+
+
+                        <input id="@Assigned.pageid" type="checkbox" name="skill" value="@Assigned.pageid" checked="checked" disabled="disabled" />
+                            <label for="@Assigned.pageid">
+                                @Assigned.Rolename
+                            </label>
+                    }
+                </div>
+            </div>
+
+
+        </div>
+<div class="row list-input">
+            <div class="col-md-3 mr0" style="margin:auto;">
+                <div class="single-get-touch">
+                    @foreach (var unAssigned in Model.UnGetAssignRoless)
+                    {
+<input id="@unAssigned.Roleid" type="checkbox" name="RoleId" value="@unAssigned.Roleid" />
+                        <label for="@unAssigned.Roleid">
+                            @unAssigned.Rolename
+                        </label>
+                    }
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-3" style="margin:auto;">
+            <div class="single-get-touch">
+                <input type="submit" name="submit" class="btn btn-default btn-sm" value="Create Page" />
+            </div>
+        </div>
+    </form>
+}
+
+<script>
+function CallChangefunc(val)
+{
+    window.location.href = "/Index/PageRole?value=" + val;
+}
+</script>
